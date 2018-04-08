@@ -8,11 +8,11 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 [STAThreadAttribute]
-int main(array<System::String ^> ^args)
+int Main(array<System::String ^> ^args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	ConsoleApplication1::asdasdad mainForm;
+	FBManagmentSytem::MyForm mainForm;
 	Application::Run(%mainForm);
 
     return 0;
