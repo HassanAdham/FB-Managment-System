@@ -37,11 +37,15 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	protected: 
 	private: System::Windows::Forms::Button^  loginBtn;
-	private: Bunifu::Framework::UI::BunifuMetroTextbox^  usernameTxt;
+
 	private: System::Windows::Forms::Label^  SignupLbl;
-	private: Bunifu::Framework::UI::BunifuMetroTextbox^  bunifuMetroTextbox2;
-	private: Bunifu::Framework::UI::BunifuMetroTextbox^  pwTxt;
+
+
 	private: System::Windows::Forms::Label^  NeedLbl;
+	private: Bunifu::Framework::UI::BunifuMetroTextbox^  usernameTxt;
+	private: Bunifu::Framework::UI::BunifuMetroTextbox^  pwTxt;
+
+
 
 	private:
 		/// <summary>
@@ -59,11 +63,10 @@ namespace FBManagmentSytem {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->loginBtn = (gcnew System::Windows::Forms::Button());
-			this->usernameTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			this->SignupLbl = (gcnew System::Windows::Forms::Label());
-			this->bunifuMetroTextbox2 = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
-			this->pwTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			this->NeedLbl = (gcnew System::Windows::Forms::Label());
+			this->usernameTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
+			this->pwTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -95,6 +98,32 @@ namespace FBManagmentSytem {
 			this->loginBtn->Text = L"Log In";
 			this->loginBtn->UseVisualStyleBackColor = false;
 			// 
+			// SignupLbl
+			// 
+			this->SignupLbl->AutoSize = true;
+			this->SignupLbl->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->SignupLbl->ForeColor = System::Drawing::Color::White;
+			this->SignupLbl->Location = System::Drawing::Point(103, 556);
+			this->SignupLbl->Name = L"SignupLbl";
+			this->SignupLbl->Size = System::Drawing::Size(148, 16);
+			this->SignupLbl->TabIndex = 6;
+			this->SignupLbl->Text = L"Sign Up For Facebook";
+			// 
+			// NeedLbl
+			// 
+			this->NeedLbl->AutoSize = true;
+			this->NeedLbl->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->NeedLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->NeedLbl->ForeColor = System::Drawing::Color::White;
+			this->NeedLbl->Location = System::Drawing::Point(129, 591);
+			this->NeedLbl->Name = L"NeedLbl";
+			this->NeedLbl->Size = System::Drawing::Size(84, 16);
+			this->NeedLbl->TabIndex = 6;
+			this->NeedLbl->Text = L"Need Help\?";
+			// 
 			// usernameTxt
 			// 
 			this->usernameTxt->BackColor = System::Drawing::Color::White;
@@ -114,39 +143,6 @@ namespace FBManagmentSytem {
 			this->usernameTxt->TabIndex = 5;
 			this->usernameTxt->Text = L"  Email or phone number";
 			this->usernameTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			// 
-			// SignupLbl
-			// 
-			this->SignupLbl->AutoSize = true;
-			this->SignupLbl->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->SignupLbl->ForeColor = System::Drawing::Color::White;
-			this->SignupLbl->Location = System::Drawing::Point(103, 556);
-			this->SignupLbl->Name = L"SignupLbl";
-			this->SignupLbl->Size = System::Drawing::Size(148, 16);
-			this->SignupLbl->TabIndex = 6;
-			this->SignupLbl->Text = L"Sign Up For Facebook";
-			// 
-			// bunifuMetroTextbox2
-			// 
-			this->bunifuMetroTextbox2->BackColor = System::Drawing::Color::White;
-			this->bunifuMetroTextbox2->BorderColorFocused = System::Drawing::Color::Transparent;
-			this->bunifuMetroTextbox2->BorderColorIdle = System::Drawing::Color::Transparent;
-			this->bunifuMetroTextbox2->BorderColorMouseHover = System::Drawing::Color::Transparent;
-			this->bunifuMetroTextbox2->BorderThickness = 1;
-			this->bunifuMetroTextbox2->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->bunifuMetroTextbox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->bunifuMetroTextbox2->ForeColor = System::Drawing::Color::DarkGray;
-			this->bunifuMetroTextbox2->isPassword = false;
-			this->bunifuMetroTextbox2->Location = System::Drawing::Point(17, 273);
-			this->bunifuMetroTextbox2->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
-			this->bunifuMetroTextbox2->Name = L"bunifuMetroTextbox2";
-			this->bunifuMetroTextbox2->Size = System::Drawing::Size(330, 48);
-			this->bunifuMetroTextbox2->TabIndex = 5;
-			this->bunifuMetroTextbox2->Text = L"  Email or phone number";
-			this->bunifuMetroTextbox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// pwTxt
 			// 
@@ -168,19 +164,6 @@ namespace FBManagmentSytem {
 			this->pwTxt->Text = L"  Password";
 			this->pwTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
-			// NeedLbl
-			// 
-			this->NeedLbl->AutoSize = true;
-			this->NeedLbl->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->NeedLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->NeedLbl->ForeColor = System::Drawing::Color::White;
-			this->NeedLbl->Location = System::Drawing::Point(129, 591);
-			this->NeedLbl->Name = L"NeedLbl";
-			this->NeedLbl->Size = System::Drawing::Size(84, 16);
-			this->NeedLbl->TabIndex = 6;
-			this->NeedLbl->Text = L"Need Help\?";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -191,7 +174,6 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->NeedLbl);
 			this->Controls->Add(this->SignupLbl);
 			this->Controls->Add(this->pwTxt);
-			this->Controls->Add(this->bunifuMetroTextbox2);
 			this->Controls->Add(this->usernameTxt);
 			this->Controls->Add(this->loginBtn);
 			this->Controls->Add(this->pictureBox1);
