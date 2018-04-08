@@ -10,12 +10,12 @@ namespace FBManagmentSytem {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm1
+	/// Summary for Signup
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class Signup : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		Signup(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace FBManagmentSytem {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm1()
+		~Signup()
 		{
 			if (components)
 			{
@@ -82,7 +82,7 @@ namespace FBManagmentSytem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Signup::typeid));
 			this->lnTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			this->mailTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			this->remailTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
@@ -278,7 +278,7 @@ namespace FBManagmentSytem {
 			this->maleRadio->TabStop = true;
 			this->maleRadio->Text = L"Male";
 			this->maleRadio->UseVisualStyleBackColor = true;
-			this->maleRadio->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton1_CheckedChanged);
+			this->maleRadio->CheckedChanged += gcnew System::EventHandler(this, &Signup::radioButton1_CheckedChanged);
 			// 
 			// fmaleRadio
 			// 
@@ -293,7 +293,7 @@ namespace FBManagmentSytem {
 			this->fmaleRadio->TabStop = true;
 			this->fmaleRadio->Text = L"Female";
 			this->fmaleRadio->UseVisualStyleBackColor = true;
-			this->fmaleRadio->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton1_CheckedChanged);
+			this->fmaleRadio->CheckedChanged += gcnew System::EventHandler(this, &Signup::radioButton1_CheckedChanged);
 			// 
 			// pictureBox1
 			// 
@@ -318,7 +318,7 @@ namespace FBManagmentSytem {
 			this->label1->Size = System::Drawing::Size(185, 23);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"Create an account";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm1::label1_Click);
+			this->label1->Click += gcnew System::EventHandler(this, &Signup::label1_Click);
 			// 
 			// label2
 			// 
@@ -365,7 +365,7 @@ namespace FBManagmentSytem {
 			this->signupBtn->Text = L"Sign Up";
 			this->signupBtn->UseVisualStyleBackColor = false;
 			// 
-			// MyForm1
+			// Signup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -389,8 +389,9 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->fnTxt);
 			this->Controls->Add(this->lnTxt);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Name = L"Signup";
+			this->Text = L"Signup";
+			this->Load += gcnew System::EventHandler(this, &Signup::Signup_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -400,6 +401,8 @@ namespace FBManagmentSytem {
 	private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

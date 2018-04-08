@@ -10,12 +10,12 @@ namespace FBManagmentSytem {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm
+	/// Summary for Login
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class Login : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		Login(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace FBManagmentSytem {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~Login()
 		{
 			if (components)
 			{
@@ -60,7 +60,7 @@ namespace FBManagmentSytem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->loginBtn = (gcnew System::Windows::Forms::Button());
 			this->SignupLbl = (gcnew System::Windows::Forms::Label());
@@ -164,7 +164,7 @@ namespace FBManagmentSytem {
 			this->pwTxt->Text = L"  Password";
 			this->pwTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
-			// MyForm
+			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -178,13 +178,17 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->loginBtn);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MyForm";
+			this->Name = L"Login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+};
 }

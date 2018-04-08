@@ -12,7 +12,7 @@ int Main(array<System::String ^> ^args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	FBManagmentSytem::MyForm mainForm;
+	FBManagmentSytem::Login mainForm;
 	Application::Run(%mainForm);
 
     return 0;
