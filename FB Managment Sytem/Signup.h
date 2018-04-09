@@ -390,6 +390,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->lnTxt);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Signup";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Signup";
 			this->Load += gcnew System::EventHandler(this, &Signup::Signup_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
