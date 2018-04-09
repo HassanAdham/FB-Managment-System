@@ -67,13 +67,13 @@ namespace FBManagmentSytem {
 			this->NeedLbl = (gcnew System::Windows::Forms::Label());
 			this->usernameTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
 			this->pwTxt = (gcnew Bunifu::Framework::UI::BunifuMetroTextbox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->pictureBox1->Location = System::Drawing::Point(80, 89);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -83,12 +83,12 @@ namespace FBManagmentSytem {
 			// 
 			// loginBtn
 			// 
-			this->loginBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(80)), static_cast<System::Int32>(static_cast<System::Byte>(104)), 
+			this->loginBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(80)), static_cast<System::Int32>(static_cast<System::Byte>(104)),
 				static_cast<System::Int32>(static_cast<System::Byte>(164)));
 			this->loginBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->loginBtn->FlatAppearance->BorderSize = 0;
 			this->loginBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->loginBtn->ForeColor = System::Drawing::Color::White;
 			this->loginBtn->Location = System::Drawing::Point(17, 333);
@@ -103,7 +103,7 @@ namespace FBManagmentSytem {
 			// 
 			this->SignupLbl->AutoSize = true;
 			this->SignupLbl->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->SignupLbl->ForeColor = System::Drawing::Color::White;
 			this->SignupLbl->Location = System::Drawing::Point(105, 557);
@@ -117,7 +117,7 @@ namespace FBManagmentSytem {
 			// 
 			this->NeedLbl->AutoSize = true;
 			this->NeedLbl->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->NeedLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->NeedLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NeedLbl->ForeColor = System::Drawing::Color::White;
 			this->NeedLbl->Location = System::Drawing::Point(138, 590);
@@ -134,7 +134,7 @@ namespace FBManagmentSytem {
 			this->usernameTxt->BorderColorMouseHover = System::Drawing::Color::Transparent;
 			this->usernameTxt->BorderThickness = 1;
 			this->usernameTxt->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->usernameTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->usernameTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->usernameTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->usernameTxt->isPassword = false;
@@ -145,6 +145,8 @@ namespace FBManagmentSytem {
 			this->usernameTxt->TabIndex = 5;
 			this->usernameTxt->Text = L"  Email or phone number";
 			this->usernameTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->usernameTxt->Enter += gcnew System::EventHandler(this, &Login::usernameTxt_Enter);
+			this->usernameTxt->Leave += gcnew System::EventHandler(this, &Login::usernameTxt_Leave);
 			// 
 			// pwTxt
 			// 
@@ -154,7 +156,7 @@ namespace FBManagmentSytem {
 			this->pwTxt->BorderColorMouseHover = System::Drawing::Color::Transparent;
 			this->pwTxt->BorderThickness = 1;
 			this->pwTxt->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->pwTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->pwTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->pwTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->pwTxt->isPassword = false;
@@ -165,12 +167,14 @@ namespace FBManagmentSytem {
 			this->pwTxt->TabIndex = 5;
 			this->pwTxt->Text = L"  Password";
 			this->pwTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->pwTxt->Enter += gcnew System::EventHandler(this, &Login::pwTxt_Enter);
+			this->pwTxt->Leave += gcnew System::EventHandler(this, &Login::pwTxt_Leave);
 			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->NeedLbl);
@@ -184,7 +188,7 @@ namespace FBManagmentSytem {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -198,5 +202,29 @@ namespace FBManagmentSytem {
 				Signup ^s = gcnew Signup();
 				s->Show();
 			 }
+private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+	if (usernameTxt->Text == "  Email or phone number") {
+		usernameTxt->Text = "";
+		usernameTxt->ForeColor = Color::Black;
+	}
+}
+private: System::Void usernameTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+	if (usernameTxt->Text == "") {
+		usernameTxt->Text = "  Email or phone number";
+		usernameTxt->ForeColor = Color::DarkGray;
+	}
+}
+private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+	if (pwTxt->Text == "  Password") {
+		pwTxt->Text = "";
+		pwTxt->ForeColor = Color::Black;
+	}
+}
+private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+	if (pwTxt->Text == "") {
+		pwTxt->Text = "  Password";
+		pwTxt->ForeColor = Color::DarkGray;
+	}
+}
 };
 }
