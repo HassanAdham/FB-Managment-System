@@ -49,6 +49,7 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Panel^  pplPanel;
 	private: System::Windows::Forms::Panel^  stngsPanel;
 	private: System::Windows::Forms::Panel^  notiPanel;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 
 
 	protected: 
@@ -78,13 +79,16 @@ namespace FBManagmentSytem {
 			this->pplPanel = (gcnew System::Windows::Forms::Panel());
 			this->stngsPanel = (gcnew System::Windows::Forms::Panel());
 			this->notiPanel = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitter1
 			// 
 			this->splitter1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->splitter1->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->splitter1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->splitter1->Location = System::Drawing::Point(0, 0);
 			this->splitter1->Name = L"splitter1";
@@ -97,7 +101,6 @@ namespace FBManagmentSytem {
 			// 
 			this->bunifuTextbox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(93)));
-			this->bunifuTextbox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"bunifuTextbox1.BackgroundImage")));
 			this->bunifuTextbox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->bunifuTextbox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
@@ -185,37 +188,48 @@ namespace FBManagmentSytem {
 			// 
 			// feedsPanel
 			// 
-			this->feedsPanel->Location = System::Drawing::Point(0, 100);
+			this->feedsPanel->BackColor = System::Drawing::Color::LightGray;
+			this->feedsPanel->Location = System::Drawing::Point(0, 110);
 			this->feedsPanel->Name = L"feedsPanel";
-			this->feedsPanel->Size = System::Drawing::Size(360, 540);
+			this->feedsPanel->Size = System::Drawing::Size(360, 530);
 			this->feedsPanel->TabIndex = 4;
 			// 
 			// pplPanel
 			// 
-			this->pplPanel->Location = System::Drawing::Point(366, 100);
+			this->pplPanel->Location = System::Drawing::Point(366, 110);
 			this->pplPanel->Name = L"pplPanel";
-			this->pplPanel->Size = System::Drawing::Size(360, 540);
+			this->pplPanel->Size = System::Drawing::Size(360, 530);
 			this->pplPanel->TabIndex = 5;
 			// 
 			// stngsPanel
 			// 
-			this->stngsPanel->Location = System::Drawing::Point(1098, 100);
+			this->stngsPanel->Location = System::Drawing::Point(1098, 110);
 			this->stngsPanel->Name = L"stngsPanel";
-			this->stngsPanel->Size = System::Drawing::Size(360, 540);
+			this->stngsPanel->Size = System::Drawing::Size(360, 530);
 			this->stngsPanel->TabIndex = 5;
 			// 
 			// notiPanel
 			// 
-			this->notiPanel->Location = System::Drawing::Point(732, 100);
+			this->notiPanel->Location = System::Drawing::Point(732, 110);
 			this->notiPanel->Name = L"notiPanel";
-			this->notiPanel->Size = System::Drawing::Size(360, 540);
+			this->notiPanel->Size = System::Drawing::Size(360, 530);
 			this->notiPanel->TabIndex = 5;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->pictureBox1->Location = System::Drawing::Point(0, 105);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(360, 3);
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
 			// 
 			// Mainapp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1477, 640);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pplPanel);
 			this->Controls->Add(this->stngsPanel);
 			this->Controls->Add(this->notiPanel);
@@ -233,6 +247,7 @@ namespace FBManagmentSytem {
 			this->Text = L"Mainapp";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
