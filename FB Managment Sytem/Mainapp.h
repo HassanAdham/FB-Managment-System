@@ -37,9 +37,13 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Splitter^  splitter1;
 	private: Bunifu::Framework::UI::BunifuTextbox^  bunifuTextbox1;
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
-	private: System::Windows::Forms::RadioButton^  radioButton1;
-	private: System::Windows::Forms::RadioButton^  radioButton2;
-	private: System::Windows::Forms::RadioButton^  radioButton3;
+	private: System::Windows::Forms::RadioButton^  feedsBtn;
+
+	private: System::Windows::Forms::RadioButton^  pplBtn;
+	private: System::Windows::Forms::RadioButton^  noti;
+
+
+
 	private: System::Windows::Forms::RadioButton^  radioButton4;
 
 
@@ -62,9 +66,9 @@ namespace FBManagmentSytem {
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
 			this->bunifuTextbox1 = (gcnew Bunifu::Framework::UI::BunifuTextbox());
 			this->bunifuImageButton1 = (gcnew Bunifu::Framework::UI::BunifuImageButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
+			this->feedsBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->pplBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->noti = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->BeginInit();
 			this->SuspendLayout();
@@ -100,6 +104,7 @@ namespace FBManagmentSytem {
 			// 
 			this->bunifuImageButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(89)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->bunifuImageButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"bunifuImageButton1.Image")));
 			this->bunifuImageButton1->ImageActive = nullptr;
 			this->bunifuImageButton1->Location = System::Drawing::Point(315, 14);
@@ -110,50 +115,50 @@ namespace FBManagmentSytem {
 			this->bunifuImageButton1->TabStop = false;
 			this->bunifuImageButton1->Zoom = 10;
 			// 
-			// radioButton1
+			// feedsBtn
 			// 
-			this->radioButton1->Appearance = System::Windows::Forms::Appearance::Button;
-			this->radioButton1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"radioButton1.BackgroundImage")));
-			this->radioButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->radioButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->radioButton1->FlatAppearance->BorderSize = 0;
-			this->radioButton1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->radioButton1->Location = System::Drawing::Point(0, 60);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(90, 40);
-			this->radioButton1->TabIndex = 3;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->UseVisualStyleBackColor = true;
+			this->feedsBtn->Appearance = System::Windows::Forms::Appearance::Button;
+			this->feedsBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"feedsBtn.BackgroundImage")));
+			this->feedsBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->feedsBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->feedsBtn->FlatAppearance->BorderSize = 0;
+			this->feedsBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->feedsBtn->Location = System::Drawing::Point(0, 60);
+			this->feedsBtn->Name = L"feedsBtn";
+			this->feedsBtn->Size = System::Drawing::Size(90, 40);
+			this->feedsBtn->TabIndex = 3;
+			this->feedsBtn->TabStop = true;
+			this->feedsBtn->UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// pplBtn
 			// 
-			this->radioButton2->Appearance = System::Windows::Forms::Appearance::Button;
-			this->radioButton2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"radioButton2.BackgroundImage")));
-			this->radioButton2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->radioButton2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->radioButton2->FlatAppearance->BorderSize = 0;
-			this->radioButton2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->radioButton2->Location = System::Drawing::Point(90, 60);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(90, 40);
-			this->radioButton2->TabIndex = 3;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->UseVisualStyleBackColor = true;
+			this->pplBtn->Appearance = System::Windows::Forms::Appearance::Button;
+			this->pplBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pplBtn.BackgroundImage")));
+			this->pplBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pplBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pplBtn->FlatAppearance->BorderSize = 0;
+			this->pplBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->pplBtn->Location = System::Drawing::Point(90, 60);
+			this->pplBtn->Name = L"pplBtn";
+			this->pplBtn->Size = System::Drawing::Size(90, 40);
+			this->pplBtn->TabIndex = 3;
+			this->pplBtn->TabStop = true;
+			this->pplBtn->UseVisualStyleBackColor = true;
 			// 
-			// radioButton3
+			// noti
 			// 
-			this->radioButton3->Appearance = System::Windows::Forms::Appearance::Button;
-			this->radioButton3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"radioButton3.BackgroundImage")));
-			this->radioButton3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->radioButton3->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->radioButton3->FlatAppearance->BorderSize = 0;
-			this->radioButton3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->radioButton3->Location = System::Drawing::Point(180, 60);
-			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(90, 40);
-			this->radioButton3->TabIndex = 3;
-			this->radioButton3->TabStop = true;
-			this->radioButton3->UseVisualStyleBackColor = true;
+			this->noti->Appearance = System::Windows::Forms::Appearance::Button;
+			this->noti->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"noti.BackgroundImage")));
+			this->noti->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->noti->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->noti->FlatAppearance->BorderSize = 0;
+			this->noti->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->noti->Location = System::Drawing::Point(180, 60);
+			this->noti->Name = L"noti";
+			this->noti->Size = System::Drawing::Size(90, 40);
+			this->noti->TabIndex = 3;
+			this->noti->TabStop = true;
+			this->noti->UseVisualStyleBackColor = true;
 			// 
 			// radioButton4
 			// 
@@ -176,9 +181,9 @@ namespace FBManagmentSytem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->radioButton4);
-			this->Controls->Add(this->radioButton3);
-			this->Controls->Add(this->radioButton2);
-			this->Controls->Add(this->radioButton1);
+			this->Controls->Add(this->noti);
+			this->Controls->Add(this->pplBtn);
+			this->Controls->Add(this->feedsBtn);
 			this->Controls->Add(this->bunifuImageButton1);
 			this->Controls->Add(this->bunifuTextbox1);
 			this->Controls->Add(this->splitter1);
