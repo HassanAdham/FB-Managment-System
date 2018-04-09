@@ -197,6 +197,8 @@ namespace FBManagmentSytem {
 #pragma endregion
 	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
 	 }
+
+	 
 			private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e) {
 				Mainapp ^s = gcnew Mainapp();
 				s->Show();

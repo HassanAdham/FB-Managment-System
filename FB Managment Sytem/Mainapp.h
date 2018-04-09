@@ -45,6 +45,10 @@ namespace FBManagmentSytem {
 
 
 	private: System::Windows::Forms::RadioButton^  radioButton4;
+	private: System::Windows::Forms::Panel^  feedsPanel;
+	private: System::Windows::Forms::Panel^  pplPanel;
+	private: System::Windows::Forms::Panel^  stngsPanel;
+	private: System::Windows::Forms::Panel^  notiPanel;
 
 
 	protected: 
@@ -70,6 +74,10 @@ namespace FBManagmentSytem {
 			this->pplBtn = (gcnew System::Windows::Forms::RadioButton());
 			this->noti = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
+			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
+			this->pplPanel = (gcnew System::Windows::Forms::Panel());
+			this->stngsPanel = (gcnew System::Windows::Forms::Panel());
+			this->notiPanel = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -80,7 +88,7 @@ namespace FBManagmentSytem {
 			this->splitter1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->splitter1->Location = System::Drawing::Point(0, 0);
 			this->splitter1->Name = L"splitter1";
-			this->splitter1->Size = System::Drawing::Size(360, 60);
+			this->splitter1->Size = System::Drawing::Size(1477, 60);
 			this->splitter1->TabIndex = 0;
 			this->splitter1->TabStop = false;
 			this->splitter1->SplitterMoved += gcnew System::Windows::Forms::SplitterEventHandler(this, &Mainapp::splitter1_SplitterMoved);
@@ -175,11 +183,43 @@ namespace FBManagmentSytem {
 			this->radioButton4->TabStop = true;
 			this->radioButton4->UseVisualStyleBackColor = true;
 			// 
+			// feedsPanel
+			// 
+			this->feedsPanel->Location = System::Drawing::Point(0, 100);
+			this->feedsPanel->Name = L"feedsPanel";
+			this->feedsPanel->Size = System::Drawing::Size(360, 540);
+			this->feedsPanel->TabIndex = 4;
+			// 
+			// pplPanel
+			// 
+			this->pplPanel->Location = System::Drawing::Point(366, 100);
+			this->pplPanel->Name = L"pplPanel";
+			this->pplPanel->Size = System::Drawing::Size(360, 540);
+			this->pplPanel->TabIndex = 5;
+			// 
+			// stngsPanel
+			// 
+			this->stngsPanel->Location = System::Drawing::Point(1098, 100);
+			this->stngsPanel->Name = L"stngsPanel";
+			this->stngsPanel->Size = System::Drawing::Size(360, 540);
+			this->stngsPanel->TabIndex = 5;
+			// 
+			// notiPanel
+			// 
+			this->notiPanel->Location = System::Drawing::Point(732, 100);
+			this->notiPanel->Name = L"notiPanel";
+			this->notiPanel->Size = System::Drawing::Size(360, 540);
+			this->notiPanel->TabIndex = 5;
+			// 
 			// Mainapp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(360, 640);
+			this->ClientSize = System::Drawing::Size(1477, 640);
+			this->Controls->Add(this->pplPanel);
+			this->Controls->Add(this->stngsPanel);
+			this->Controls->Add(this->notiPanel);
+			this->Controls->Add(this->feedsPanel);
 			this->Controls->Add(this->radioButton4);
 			this->Controls->Add(this->noti);
 			this->Controls->Add(this->pplBtn);
@@ -189,6 +229,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->splitter1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Mainapp";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Mainapp";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->EndInit();
