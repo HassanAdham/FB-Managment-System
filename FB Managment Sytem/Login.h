@@ -1,5 +1,6 @@
 #pragma once
 #include "Signup.h"
+#include "Mainapp.h"
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -197,6 +198,8 @@ namespace FBManagmentSytem {
 	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
 	 }
 			private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+				Mainapp ^s = gcnew Mainapp();
+				s->Show();
 		    }
 	private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e) {
 				Signup ^s = gcnew Signup();
@@ -218,12 +221,14 @@ private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e
 	if (pwTxt->Text == "  Password") {
 		pwTxt->Text = "";
 		pwTxt->ForeColor = Color::Black;
+		pwTxt->isPassword = true;
 	}
 }
 private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
 	if (pwTxt->Text == "") {
 		pwTxt->Text = "  Password";
 		pwTxt->ForeColor = Color::DarkGray;
+		pwTxt->isPassword = false;
 	}
 }
 };
