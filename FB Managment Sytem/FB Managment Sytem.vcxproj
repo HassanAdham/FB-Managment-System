@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Mainapp.cpp" />
+    <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Signup.cpp" />
   </ItemGroup>
@@ -95,6 +96,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Mainapp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Profile.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Search.h">
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mainapp.resx">
       <DependentUpon>Mainapp.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.h</DependentUpon>

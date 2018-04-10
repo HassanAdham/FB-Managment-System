@@ -1,5 +1,6 @@
   FBManagmentSytem.Login.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Mainapp.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.Profile.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Search.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Signup.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -32,6 +33,9 @@ Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Search: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

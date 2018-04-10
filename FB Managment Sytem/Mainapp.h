@@ -139,7 +139,7 @@ namespace FBManagmentSytem {
 			this->bunifuImageButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"bunifuImageButton1.Image")));
 			this->bunifuImageButton1->ImageActive = nullptr;
-			this->bunifuImageButton1->Location = System::Drawing::Point(315, 14);
+			this->bunifuImageButton1->Location = System::Drawing::Point(315, 17);
 			this->bunifuImageButton1->Name = L"bunifuImageButton1";
 			this->bunifuImageButton1->Size = System::Drawing::Size(30, 30);
 			this->bunifuImageButton1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;

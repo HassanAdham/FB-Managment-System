@@ -27,6 +27,9 @@
     <ClCompile Include="Search.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Profile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -41,6 +44,9 @@
     <ClInclude Include="Search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Profile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
@@ -50,6 +56,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainapp.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
