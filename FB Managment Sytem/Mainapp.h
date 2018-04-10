@@ -35,7 +35,7 @@ namespace FBManagmentSytem {
 			}
 		}
 	private: System::Windows::Forms::Splitter^  splitter1;
-	private: Bunifu::Framework::UI::BunifuTextbox^  bunifuTextbox1;
+
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
 	private: System::Windows::Forms::RadioButton^  feedsBtn;
 
@@ -62,6 +62,8 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  pplNotAct;
 	private: System::Windows::Forms::PictureBox^  notiNotAct;
 	private: System::Windows::Forms::PictureBox^  setNotAct;
+	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  searchTxt;
+	private: System::Windows::Forms::PictureBox^  pictureBox2;
 
 
 
@@ -84,7 +86,6 @@ namespace FBManagmentSytem {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Mainapp::typeid));
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
-			this->bunifuTextbox1 = (gcnew Bunifu::Framework::UI::BunifuTextbox());
 			this->bunifuImageButton1 = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->feedsBtn = (gcnew System::Windows::Forms::RadioButton());
 			this->pplBtn = (gcnew System::Windows::Forms::RadioButton());
@@ -103,21 +104,24 @@ namespace FBManagmentSytem {
 			this->pplNotAct = (gcnew System::Windows::Forms::PictureBox());
 			this->notiNotAct = (gcnew System::Windows::Forms::PictureBox());
 			this->setNotAct = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsNotAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplNotAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiNotAct))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setNotAct))->BeginInit();
+			this->searchTxt = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->feedsAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pplAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->notiAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->setAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->feedsNotAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pplNotAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->notiNotAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->setNotAct))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitter1
 			// 
-			this->splitter1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
+			this->splitter1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->splitter1->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->splitter1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -128,30 +132,12 @@ namespace FBManagmentSytem {
 			this->splitter1->TabStop = false;
 			this->splitter1->SplitterMoved += gcnew System::Windows::Forms::SplitterEventHandler(this, &Mainapp::splitter1_SplitterMoved);
 			// 
-			// bunifuTextbox1
-			// 
-			this->bunifuTextbox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(43)), static_cast<System::Int32>(static_cast<System::Byte>(56)),
-				static_cast<System::Int32>(static_cast<System::Byte>(93)));
-			this->bunifuTextbox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTextbox1.BackgroundImage")));
-			this->bunifuTextbox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->bunifuTextbox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->bunifuTextbox1->Icon = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTextbox1.Icon")));
-			this->bunifuTextbox1->Location = System::Drawing::Point(13, 12);
-			this->bunifuTextbox1->Name = L"bunifuTextbox1";
-			this->bunifuTextbox1->Size = System::Drawing::Size(290, 35);
-			this->bunifuTextbox1->TabIndex = 1;
-			this->bunifuTextbox1->text = L"Search";
-			this->bunifuTextbox1->OnTextChange += gcnew System::EventHandler(this, &Mainapp::bunifuTextbox1_OnTextChange);
-			this->bunifuTextbox1->Enter += gcnew System::EventHandler(this, &Mainapp::bunifuTextbox1_Enter);
-			this->bunifuTextbox1->Leave += gcnew System::EventHandler(this, &Mainapp::bunifuTextbox1_Leave);
-			// 
 			// bunifuImageButton1
 			// 
-			this->bunifuImageButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)),
+			this->bunifuImageButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(89)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->bunifuImageButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuImageButton1.Image")));
+			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"bunifuImageButton1.Image")));
 			this->bunifuImageButton1->ImageActive = nullptr;
 			this->bunifuImageButton1->Location = System::Drawing::Point(315, 14);
 			this->bunifuImageButton1->Name = L"bunifuImageButton1";
@@ -164,7 +150,7 @@ namespace FBManagmentSytem {
 			// feedsBtn
 			// 
 			this->feedsBtn->Appearance = System::Windows::Forms::Appearance::Button;
-			this->feedsBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"feedsBtn.BackgroundImage")));
+			this->feedsBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"feedsBtn.BackgroundImage")));
 			this->feedsBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->feedsBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->feedsBtn->FlatAppearance->BorderSize = 0;
@@ -180,7 +166,7 @@ namespace FBManagmentSytem {
 			// pplBtn
 			// 
 			this->pplBtn->Appearance = System::Windows::Forms::Appearance::Button;
-			this->pplBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pplBtn.BackgroundImage")));
+			this->pplBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pplBtn.BackgroundImage")));
 			this->pplBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->pplBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pplBtn->FlatAppearance->BorderSize = 0;
@@ -196,7 +182,7 @@ namespace FBManagmentSytem {
 			// noti
 			// 
 			this->noti->Appearance = System::Windows::Forms::Appearance::Button;
-			this->noti->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"noti.BackgroundImage")));
+			this->noti->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"noti.BackgroundImage")));
 			this->noti->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->noti->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->noti->FlatAppearance->BorderSize = 0;
@@ -212,7 +198,7 @@ namespace FBManagmentSytem {
 			// setBtn
 			// 
 			this->setBtn->Appearance = System::Windows::Forms::Appearance::Button;
-			this->setBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"setBtn.BackgroundImage")));
+			this->setBtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"setBtn.BackgroundImage")));
 			this->setBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->setBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->setBtn->FlatAppearance->BorderSize = 0;
@@ -228,30 +214,30 @@ namespace FBManagmentSytem {
 			// feedsPanel
 			// 
 			this->feedsPanel->BackColor = System::Drawing::Color::LightGray;
-			this->feedsPanel->Location = System::Drawing::Point(0, 110);
+			this->feedsPanel->Location = System::Drawing::Point(0, 105);
 			this->feedsPanel->Name = L"feedsPanel";
-			this->feedsPanel->Size = System::Drawing::Size(360, 530);
+			this->feedsPanel->Size = System::Drawing::Size(360, 535);
 			this->feedsPanel->TabIndex = 4;
 			// 
 			// pplPanel
 			// 
-			this->pplPanel->Location = System::Drawing::Point(366, 110);
+			this->pplPanel->Location = System::Drawing::Point(366, 105);
 			this->pplPanel->Name = L"pplPanel";
-			this->pplPanel->Size = System::Drawing::Size(360, 530);
+			this->pplPanel->Size = System::Drawing::Size(360, 535);
 			this->pplPanel->TabIndex = 5;
 			// 
 			// stngsPanel
 			// 
-			this->stngsPanel->Location = System::Drawing::Point(1098, 110);
+			this->stngsPanel->Location = System::Drawing::Point(1098, 105);
 			this->stngsPanel->Name = L"stngsPanel";
-			this->stngsPanel->Size = System::Drawing::Size(360, 530);
+			this->stngsPanel->Size = System::Drawing::Size(360, 535);
 			this->stngsPanel->TabIndex = 5;
 			// 
 			// notiPanel
 			// 
-			this->notiPanel->Location = System::Drawing::Point(732, 110);
+			this->notiPanel->Location = System::Drawing::Point(732, 105);
 			this->notiPanel->Name = L"notiPanel";
-			this->notiPanel->Size = System::Drawing::Size(360, 530);
+			this->notiPanel->Size = System::Drawing::Size(360, 535);
 			this->notiPanel->TabIndex = 5;
 			// 
 			// pictureBox1
@@ -265,7 +251,7 @@ namespace FBManagmentSytem {
 			// 
 			// feedsAct
 			// 
-			this->feedsAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"feedsAct.BackgroundImage")));
+			this->feedsAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"feedsAct.BackgroundImage")));
 			this->feedsAct->Location = System::Drawing::Point(13, 4);
 			this->feedsAct->Name = L"feedsAct";
 			this->feedsAct->Size = System::Drawing::Size(0, 0);
@@ -274,7 +260,7 @@ namespace FBManagmentSytem {
 			// 
 			// pplAct
 			// 
-			this->pplAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pplAct.BackgroundImage")));
+			this->pplAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pplAct.BackgroundImage")));
 			this->pplAct->Location = System::Drawing::Point(119, 4);
 			this->pplAct->Name = L"pplAct";
 			this->pplAct->Size = System::Drawing::Size(0, 0);
@@ -283,7 +269,7 @@ namespace FBManagmentSytem {
 			// 
 			// notiAct
 			// 
-			this->notiAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"notiAct.BackgroundImage")));
+			this->notiAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"notiAct.BackgroundImage")));
 			this->notiAct->Location = System::Drawing::Point(225, 4);
 			this->notiAct->Name = L"notiAct";
 			this->notiAct->Size = System::Drawing::Size(0, 0);
@@ -292,7 +278,7 @@ namespace FBManagmentSytem {
 			// 
 			// setAct
 			// 
-			this->setAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"setAct.BackgroundImage")));
+			this->setAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"setAct.BackgroundImage")));
 			this->setAct->Location = System::Drawing::Point(331, 4);
 			this->setAct->Name = L"setAct";
 			this->setAct->Size = System::Drawing::Size(0, 0);
@@ -301,7 +287,7 @@ namespace FBManagmentSytem {
 			// 
 			// feedsNotAct
 			// 
-			this->feedsNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"feedsNotAct.BackgroundImage")));
+			this->feedsNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"feedsNotAct.BackgroundImage")));
 			this->feedsNotAct->Location = System::Drawing::Point(0, 66);
 			this->feedsNotAct->Name = L"feedsNotAct";
 			this->feedsNotAct->Size = System::Drawing::Size(0, 0);
@@ -310,7 +296,7 @@ namespace FBManagmentSytem {
 			// 
 			// pplNotAct
 			// 
-			this->pplNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pplNotAct.BackgroundImage")));
+			this->pplNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pplNotAct.BackgroundImage")));
 			this->pplNotAct->Location = System::Drawing::Point(97, 60);
 			this->pplNotAct->Name = L"pplNotAct";
 			this->pplNotAct->Size = System::Drawing::Size(0, 0);
@@ -320,7 +306,7 @@ namespace FBManagmentSytem {
 			// 
 			// notiNotAct
 			// 
-			this->notiNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"notiNotAct.BackgroundImage")));
+			this->notiNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"notiNotAct.BackgroundImage")));
 			this->notiNotAct->Location = System::Drawing::Point(225, 66);
 			this->notiNotAct->Name = L"notiNotAct";
 			this->notiNotAct->Size = System::Drawing::Size(0, 0);
@@ -329,18 +315,59 @@ namespace FBManagmentSytem {
 			// 
 			// setNotAct
 			// 
-			this->setNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"setNotAct.BackgroundImage")));
+			this->setNotAct->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"setNotAct.BackgroundImage")));
 			this->setNotAct->Location = System::Drawing::Point(345, 58);
 			this->setNotAct->Name = L"setNotAct";
 			this->setNotAct->Size = System::Drawing::Size(0, 0);
 			this->setNotAct->TabIndex = 13;
 			this->setNotAct->TabStop = false;
 			// 
+			// searchTxt
+			// 
+			this->searchTxt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->searchTxt->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->searchTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->searchTxt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), static_cast<System::Int32>(static_cast<System::Byte>(157)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->searchTxt->HintForeColor = System::Drawing::Color::Empty;
+			this->searchTxt->HintText = L"";
+			this->searchTxt->isPassword = false;
+			this->searchTxt->LineFocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(157)), static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->searchTxt->LineIdleColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), static_cast<System::Int32>(static_cast<System::Byte>(157)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->searchTxt->LineMouseHoverColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(157)), static_cast<System::Int32>(static_cast<System::Byte>(195)));
+			this->searchTxt->LineThickness = 4;
+			this->searchTxt->Location = System::Drawing::Point(13, 10);
+			this->searchTxt->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
+			this->searchTxt->Name = L"searchTxt";
+			this->searchTxt->Size = System::Drawing::Size(294, 40);
+			this->searchTxt->TabIndex = 14;
+			this->searchTxt->Text = L"      Search";
+			this->searchTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(16, 21);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(20, 20);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 15;
+			this->pictureBox2->TabStop = false;
+			// 
 			// Mainapp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1386, 640);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->searchTxt);
 			this->Controls->Add(this->pplNotAct);
 			this->Controls->Add(this->setNotAct);
 			this->Controls->Add(this->notiNotAct);
@@ -359,23 +386,23 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->pplBtn);
 			this->Controls->Add(this->feedsBtn);
 			this->Controls->Add(this->bunifuImageButton1);
-			this->Controls->Add(this->bunifuTextbox1);
 			this->Controls->Add(this->splitter1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Mainapp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Mainapp";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsNotAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplNotAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiNotAct))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setNotAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->bunifuImageButton1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->feedsAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pplAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->notiAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->setAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->feedsNotAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pplNotAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->notiNotAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->setNotAct))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -412,18 +439,18 @@ private: System::Void setBtn_CheckedChanged(System::Object^  sender, System::Eve
 	noti->BackgroundImage = notiNotAct->BackgroundImage;
 	setBtn->BackgroundImage = setAct->BackgroundImage;
 }
-private: System::Void bunifuTextbox1_OnTextChange(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void searchTxt_OnTextChange(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void bunifuTextbox1_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (bunifuTextbox1->text == "Search") {
-		bunifuTextbox1->text = "";
-		bunifuTextbox1->ForeColor = Color::White;
+private: System::Void searchTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+	if (searchTxt->Text == "      Search") {
+		searchTxt->Text = "";
+		searchTxt->ForeColor = Color::White;
 	}
 }
-private: System::Void bunifuTextbox1_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (bunifuTextbox1->text == "") {
-		bunifuTextbox1->text = "Search";
-		bunifuTextbox1->ForeColor = Color::FromArgb(59,89,152);
+private: System::Void searchTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+	if (searchTxt->Text == "") {
+		searchTxt->Text = "      Search";
+		searchTxt->ForeColor = Color::FromArgb(59,89,152);
 	}
 }
 };
