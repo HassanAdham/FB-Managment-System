@@ -1,22 +1,9 @@
-﻿Build started 4/10/2018 5:31:36 PM.
-     1>Project "E:\FCIS\Projects\FB-Managment-System\FB Managment Sytem\FB Managment Sytem.vcxproj" on node 2 (Build target(s)).
-       Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FUC:\Users\Kurosawa\Downloads\Bunifu_UI_v1.5.3.dll /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.VisualBasic.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Management.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Login.cpp Profile.cpp Signup.cpp
-         Login.cpp
-         Profile.cpp
-         Signup.cpp
-         Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\FBManagmentSytem.Login.resources /ASSEMBLYRESOURCE:Debug\FBManagmentSytem.Mainapp.resources /ASSEMBLYRESOURCE:Debug\FBManagmentSytem.Profile.resources /ASSEMBLYRESOURCE:Debug\FBManagmentSytem.Search.resources /ASSEMBLYRESOURCE:Debug\FBManagmentSytem.Signup.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"Main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\Login.obj
-         Debug\Mainapp.obj
-         Debug\Profile.obj
-         Debug\Search.obj
-         Debug\Signup.obj
-         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
-         FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe
-     1>Done Building Project "E:\FCIS\Projects\FB-Managment-System\FB Managment Sytem\FB Managment Sytem.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:02.16
+﻿  Login.cpp
+  Mainapp.cpp
+  Messenger.cpp
+  Profile.cpp
+  Search.cpp
+  Signup.cpp
+  Generating Code...
+  Login.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  FB Managment Sytem.vcxproj -> E:\hazem\FB-Managment-System\Debug\FB Managment Sytem.exe
