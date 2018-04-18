@@ -9,6 +9,7 @@ namespace FBManagmentSytem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
 	/// <summary>
 	/// Summary for Login
@@ -36,7 +37,7 @@ namespace FBManagmentSytem {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	protected: 
+	protected:
 	private: System::Windows::Forms::Button^  loginBtn;
 
 	private: System::Windows::Forms::Label^  SignupLbl;
@@ -194,44 +195,65 @@ namespace FBManagmentSytem {
 			this->PerformLayout();
 
 		}
-#pragma endregion
-	private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e) {
-	 }
 
-	 
-			private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-				Mainapp ^s = gcnew Mainapp();
-				s->Show();
-		    }
-	private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e) {
-				Signup ^s = gcnew Signup();
-				s->Show();
-			 }
-private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (usernameTxt->Text == "  Email or phone number") {
-		usernameTxt->Text = "";
-		usernameTxt->ForeColor = Color::Black;
-	}
-}
-private: System::Void usernameTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (usernameTxt->Text == "") {
-		usernameTxt->Text = "  Email or phone number";
-		usernameTxt->ForeColor = Color::DarkGray;
-	}
-}
-private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "  Password") {
-		pwTxt->Text = "";
-		pwTxt->ForeColor = Color::Black;
-		pwTxt->isPassword = true;
-	}
-}
-private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "") {
-		pwTxt->Text = "  Password";
-		pwTxt->ForeColor = Color::DarkGray;
-		pwTxt->isPassword = false;
-	}
-}
-};
+	#pragma endregion
+
+		private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e)
+		{
+	
+		}
+
+		private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			String ^conString = "datasource=localhost;port=3306;username=root;password=admin";
+			MySqlConnection ^conDatabase = gcnew MySqlConnection(conString);
+			MySqlCommand ^cmdDatabase = 
+			Mainapp ^s = gcnew Mainapp();
+			s->Show();
+		}
+
+		private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Signup ^s = gcnew Signup();
+			s->Show();
+		}
+
+		private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (usernameTxt->Text == "  Email or phone number")
+			{
+				usernameTxt->Text = "";
+				usernameTxt->ForeColor = Color::Black;
+			}
+		}
+
+		private: System::Void usernameTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (usernameTxt->Text == "")
+			{
+				usernameTxt->Text = "  Email or phone number";
+				usernameTxt->ForeColor = Color::DarkGray;
+			}
+		}
+
+		private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (pwTxt->Text == "  Password")
+			{
+				pwTxt->Text = "";
+				pwTxt->ForeColor = Color::Black;
+				pwTxt->isPassword = true;
+			}
+		}
+
+		private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (pwTxt->Text == "")
+			{
+			pwTxt->Text = "  Password";
+			pwTxt->ForeColor = Color::DarkGray;
+			pwTxt->isPassword = false;
+			}
+		}
+	};
 }
