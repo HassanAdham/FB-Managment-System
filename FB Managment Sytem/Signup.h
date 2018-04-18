@@ -1,4 +1,9 @@
 #pragma once
+#include "Signup.h"
+#include "Mainapp.h"
+#include <sstream>
+#include <string>
+#include <iostream>
 
 namespace FBManagmentSytem {
 
@@ -8,6 +13,8 @@ namespace FBManagmentSytem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
+	using namespace std;
 
 	/// <summary>
 	/// Summary for Signup
@@ -231,9 +238,9 @@ namespace FBManagmentSytem {
 			this->dComboBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->dComboBox->FormattingEnabled = true;
-			this->dComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(31) {L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", 
-				L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25", L"26", 
-				L"27", L"28", L"29", L"30", L"31"});
+			this->dComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(31) {L"01", L"02", L"03", L"04", L"05", L"06", L"07", 
+				L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25", 
+				L"26", L"27", L"28", L"29", L"30", L"31"});
 			this->dComboBox->Location = System::Drawing::Point(77, 409);
 			this->dComboBox->Name = L"dComboBox";
 			this->dComboBox->Size = System::Drawing::Size(53, 27);
@@ -374,6 +381,7 @@ namespace FBManagmentSytem {
 			this->signupBtn->TabIndex = 11;
 			this->signupBtn->Text = L"Sign Up";
 			this->signupBtn->UseVisualStyleBackColor = false;
+			this->signupBtn->Click += gcnew System::EventHandler(this, &Signup::signupBtn_Click);
 			// 
 			// Signup
 			// 
@@ -408,74 +416,194 @@ namespace FBManagmentSytem {
 			this->PerformLayout();
 
 		}
-#pragma endregion
-	private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 }
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void fnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (fnTxt->Text == "  First name") {
-		fnTxt->Text = "";
-		fnTxt->ForeColor = Color::Black;
-	}
-}
-private: System::Void fnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (fnTxt->Text == "") {
-		fnTxt->Text = "  First name";
-		fnTxt->ForeColor = Color::DarkGray;
-	}
-}
-private: System::Void lnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (lnTxt->Text == "  Last name") {
-		lnTxt->Text = "";
-		lnTxt->ForeColor = Color::Black;
-	}
-}
-private: System::Void lnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (lnTxt->Text == "") {
-		lnTxt->Text = "  Last name";
-		lnTxt->ForeColor = Color::DarkGray;
-	}
-}
-private: System::Void mailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (mailTxt->Text == "  Mobile number or email address") {
-		mailTxt->Text = "";
-		mailTxt->ForeColor = Color::Black;
-	}
-}
-private: System::Void mailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (mailTxt->Text == "") {
-		mailTxt->Text = "  Mobile number or email address";
-		mailTxt->ForeColor = Color::DarkGray;
-	}
-}
-private: System::Void remailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (remailTxt->Text == "  Re-enter mobile number or email address") {
-		remailTxt->Text = "";
-		remailTxt->ForeColor = Color::Black;
-	}
-}
-private: System::Void remailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (remailTxt->Text == "") {
-		remailTxt->Text = "  Re-enter mobile number or email address";
-		remailTxt->ForeColor = Color::DarkGray;
-	}
-}
-private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "  New Password") {
-		pwTxt->Text = "";
-		pwTxt->ForeColor = Color::Black;
-		pwTxt->isPassword = true;
-	}
-}
-private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "") {
-		pwTxt->Text = "  New Password";
-		pwTxt->ForeColor = Color::DarkGray;
-		pwTxt->isPassword = false;
-	}
-}
-};
+
+	#pragma endregion
+
+		private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+		{
+
+		}
+
+		private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void fnTxt_Enter(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if (fnTxt->Text == "  First name") 
+			{
+				fnTxt->Text = "";
+				fnTxt->ForeColor = Color::Black;
+			}
+		}
+
+		private: System::Void fnTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (fnTxt->Text == "")
+			{
+				fnTxt->Text = "  First name";
+				fnTxt->ForeColor = Color::DarkGray;
+			}
+		}
+
+		private: System::Void lnTxt_Enter(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (lnTxt->Text == "  Last name") 
+			{
+				lnTxt->Text = "";
+				lnTxt->ForeColor = Color::Black;
+			}		
+		}
+
+		private: System::Void lnTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (lnTxt->Text == "") {
+				lnTxt->Text = "  Last name";
+				lnTxt->ForeColor = Color::DarkGray;
+			}
+		}
+
+		private: System::Void mailTxt_Enter(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if (mailTxt->Text == "  Mobile number or email address") {
+				mailTxt->Text = "";
+				mailTxt->ForeColor = Color::Black;
+			}
+		}
+
+		private: System::Void mailTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (mailTxt->Text == "") {
+				mailTxt->Text = "  Mobile number or email address";
+				mailTxt->ForeColor = Color::DarkGray;
+			}
+		}
+
+		private: System::Void remailTxt_Enter(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if (remailTxt->Text == "  Re-enter mobile number or email address") {
+				remailTxt->Text = "";
+				remailTxt->ForeColor = Color::Black;
+			}
+		}
+
+		private: System::Void remailTxt_Leave(System::Object^  sender, System::EventArgs^  e)
+		{
+			if (remailTxt->Text == "") {
+				remailTxt->Text = "  Re-enter mobile number or email address";
+				remailTxt->ForeColor = Color::DarkGray;
+			}
+		}
+
+		private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if (pwTxt->Text == "  New Password") {
+				pwTxt->Text = "";
+				pwTxt->ForeColor = Color::Black;
+				pwTxt->isPassword = true;
+			}
+		}
+
+		private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if (pwTxt->Text == "") {
+				pwTxt->Text = "  New Password";
+				pwTxt->ForeColor = Color::DarkGray;
+				pwTxt->isPassword = false;
+			}
+		}
+
+		private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e) 
+		{
+			if(fnTxt->Text=="  First name" || lnTxt->Text=="  Last name" || mailTxt->Text=="  Mobile number or email address" || remailTxt->Text=="  Re-enter mobile number or email address" || pwTxt->Text=="  New Password")
+			{
+				MessageBox::Show("Please complete all fields.","Sign up",MessageBoxButtons::OK,MessageBoxIcon::Error);
+			}
+			else if(mailTxt->Text!=remailTxt->Text)
+			{
+				MessageBox::Show("Please enter the same email or phone.","Sign up",MessageBoxButtons::OK,MessageBoxIcon::Error);			}
+			else
+			{
+				//check email 
+				String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
+				MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
+				conDatabase->Open();
+				MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Check_mail", conDatabase);
+				cmdDatabase->CommandType = CommandType::StoredProcedure;
+				cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", mailTxt->Text));
+				String^ emailaddress = (String^)cmdDatabase->ExecuteScalar();
+				conDatabase->Close();
+				if (emailaddress == mailTxt->Text)
+				{
+					MessageBox::Show("The Email or phone you entered is already exist please login.", "Sign up", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				}
+				else
+				{
+					//set gender
+					String^ Gender;
+					if (maleRadio->Checked)
+					{
+						Gender = "male";
+					}
+					else
+					{
+						Gender = "female";
+					}
+
+					//convert comboboxes to date data type
+					String^ month;
+					if (mComboBox->Text == "Jan")
+						month = "01";
+					else if (mComboBox->Text == "Feb")
+						month = "02";
+					else if (mComboBox->Text == "Mar")
+						month = "03";
+					else if (mComboBox->Text == "Apr")
+						month = "04";
+					else if (mComboBox->Text == "May")
+						month = "05";
+					else if (mComboBox->Text == "Jun")
+						month = "06";
+					else if (mComboBox->Text == "Jul")
+						month = "07";
+					else if (mComboBox->Text == "Aug")
+						month = "08";
+					else if (mComboBox->Text == "Sep")
+						month = "09";
+					else if (mComboBox->Text == "Oct")
+						month = "10";
+					else if (mComboBox->Text == "Nov")
+						month = "11";
+					else if (mComboBox->Text == "Dec")
+						month = "12";
+					String^ bDate = yComboBox->Text + "-" + month + "-" + dComboBox->Text;
+
+					//sign up insert info
+					String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
+					MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
+					conDatabase->Open();
+					MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Insert", conDatabase);
+					cmdDatabase->CommandType = CommandType::StoredProcedure;
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("Fname", fnTxt->Text));
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("Lname", lnTxt->Text));
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", mailTxt->Text));
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", pwTxt->Text));
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("Birth", bDate));
+					cmdDatabase->Parameters->Add(gcnew MySqlParameter("Gend", Gender));
+					cmdDatabase->ExecuteNonQuery();
+					conDatabase->Close();
+					Mainapp ^main = gcnew Mainapp();
+					this->Hide();
+					main->Show();
+					MessageBox::Show("Welcome to Facebook.", "Sign up");
+				}
+			}
+		}
+	};
 }
