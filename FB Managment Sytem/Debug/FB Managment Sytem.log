@@ -1,4 +1,11 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(2052,5): warning MSB3274: The primary reference "MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" could not be resolved because it was built against the ".NETFramework,Version=v4.5.2" framework. This is a higher version than the currently targeted framework ".NETFramework,Version=v4.5".
-  Login.cpp
+﻿  Login.cpp
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.h(237): warning C4101: 'ex': unreferenced local variable
+  Mainapp.cpp
+  Messenger.cpp
+  Profile.cpp
+  Search.cpp
+  Signup.cpp
+  Generating Code...
+  .NETFramework,Version=v4.6.AssemblyAttributes.cpp
   Login.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe
