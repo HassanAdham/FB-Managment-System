@@ -1,5 +1,6 @@
-﻿  Login.cpp
-e:\hazem\fb-managment-system\fb managment sytem\login.h(237): warning C4101: 'ex': unreferenced local variable
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MetaGen.targets(91,5): warning : Required file "E:\HAZEM\FB-MANAGMENT-SYSTEM\DEBUG\BUNIFU_UI_V1.5.3.DLL" is missing.
+  Login.cpp
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.h(237): warning C4101: 'ex': unreferenced local variable
   Mainapp.cpp
   Messenger.cpp
   Profile.cpp
@@ -8,4 +9,4 @@ e:\hazem\fb-managment-system\fb managment sytem\login.h(237): warning C4101: 'ex
   Generating Code...
   .NETFramework,Version=v4.6.AssemblyAttributes.cpp
   Login.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  FB Managment Sytem.vcxproj -> E:\hazem\FB-Managment-System\Debug\FB Managment Sytem.exe
+  FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe

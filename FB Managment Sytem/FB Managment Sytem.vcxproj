@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>FBManagmentSytem</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Facebook.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Mainapp.cpp" />
     <ClCompile Include="Messenger.cpp" />
@@ -94,6 +95,7 @@
     <ClCompile Include="Signup.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Facebook.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
