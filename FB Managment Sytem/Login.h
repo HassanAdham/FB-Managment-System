@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include "Facebook.h"
 
 namespace FBManagmentSytem {
 
@@ -210,6 +211,9 @@ namespace FBManagmentSytem {
 
 		private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e)
 		{
+			User u;
+			u.mail = usernameTxt->Text;
+			u.passw = pwTxt->Text;
 			String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
 			MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
 			MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Login_Read", conDatabase);
