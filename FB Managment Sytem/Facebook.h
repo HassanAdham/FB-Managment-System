@@ -5,45 +5,48 @@
 #include "Messenger.h"
 #include "Profile.h"
 #include "Search.h"
-#include <vector>
-#include <map>
-#include <sstream>
-#include <string>
+#include <cliext/vector>
 
-#include <iostream>
+namespace FBManagmentSytem {
 
-using namespace System;
-using namespace System::ComponentModel;
-using namespace System::Collections;
-using namespace System::Windows::Forms;
-using namespace System::Data;
-using namespace System::Drawing;
-using namespace MySql::Data::MySqlClient;
-using namespace std;
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Collections::Generic;
+	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
-ref class Facebook
-{
-public:
-	Facebook();
-};
+	ref class Facebook
+	{
+	public:
+	};
 
- class User {
- public:
-	string work, edu, address, mail, Fname, Lname, gender, day, month, year, passw;
-	/*vector<User>userList;
-	map<User, bool>regular;*/
-};
-ref  class comment
- {
-	 /*vector<reply> c;*/
- public:
-	 String ID;
-	 String text;
-	 int react;
-	 comment();
- };
-ref class reply /*: public comment*/
- {
- public:
- };
+	ref class User {
+	public:
+		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw;
+		User() {}
+		User(String^ em, String^ pw)
+		{
+			mail = em;
+			passw = pw;
+		}
+	};
 
+	ref  class comment
+	{
+		cliext::vector<Object^> repl;
+		List<reply^>^ rep = gcnew List<reply^>();
+	public:
+		String ^ ID;
+		String^ text;
+		int react;
+		comment() {}
+	};
+	ref class reply : public comment
+	{
+	public:
+	};
+
+}
