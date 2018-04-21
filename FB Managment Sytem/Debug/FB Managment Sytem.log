@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141\Toolset.targets(34,5): error MSB8036: The Windows SDK version 10.0.16299.0 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting "Retarget solution".
+=======
+﻿  Login.cpp
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.h(239): warning C4101: 'ex': unreferenced local variable
+  Signup.cpp
+  Generating Code...
+  Login.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe
+>>>>>>> parent of 3c73520... haa
