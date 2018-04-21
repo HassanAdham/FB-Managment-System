@@ -29,10 +29,10 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class FBManagmentSytem.Signup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FBManagmentSytem.Signup: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

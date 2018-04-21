@@ -31,7 +31,7 @@ CREATE TABLE `user` (
   `user_birthdate` date NOT NULL,
   `user_gender` varchar(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Hassan','Adham','hassanadham@gmail.com','12345','1998-03-19','male'),(2,'Hazem','Yousef','hazemyousef@gmail.com','12345','1998-07-18','male'),(3,'rodaina','sokkar','rodainasokkar@gmail.com','12345','1998-04-08','female');
+INSERT INTO `user` VALUES (1,'Hassan','Adham','hassanadham@gmail.com','12345','1998-03-19','male'),(2,'Hazem','Yousef','hazemyousef@gmail.com','12345','1998-07-18','male');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-18 21:55:53
+-- Dump completed on 2018-04-18 13:33:47

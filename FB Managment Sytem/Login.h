@@ -230,11 +230,11 @@ namespace FBManagmentSytem {
 				if (myreader->Read())
 				{
 					Mainapp ^main = gcnew Mainapp();
-					this->Hide();
-					main->Show();				}
+					main->Show();
+				}
 				else
 				{
-					MessageBox::Show("The e-mail or password you entered was incorrect.","Log in",MessageBoxButtons::OK,MessageBoxIcon::Error);
+					MessageBox::Show("The e-mail or password you entered was incorrect.","Log in",MessageBoxButtons::OK,MessageBoxIcon::Warning);
 				}
 
 			}
