@@ -1,12 +1,3 @@
-﻿  Facebook.cpp
-  Login.cpp
-e:\fcis\projects\fb-managment-system\fb managment sytem\login.cpp(49): warning C4101: 'ex': unreferenced local variable
-  Mainapp.cpp
-  Messenger.cpp
-  Profile.cpp
-  Search.cpp
-  Signup.cpp
-  Generating Code...
-  .NETFramework,Version=v4.6.AssemblyAttributes.cpp
+﻿  Signup.cpp
   Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe

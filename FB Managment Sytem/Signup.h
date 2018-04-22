@@ -69,7 +69,8 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Button^  signupBtn;
-	private: System::Windows::Forms::Button^  button1;
+
+	private: System::Windows::Forms::Label^  SignupLbl;
 
 	private:
 		/// <summary>
@@ -101,7 +102,7 @@ namespace FBManagmentSytem {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->signupBtn = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->SignupLbl = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -117,7 +118,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->lnTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->lnTxt->isPassword = false;
-			this->lnTxt->Location = System::Drawing::Point(188, 188);
+			this->lnTxt->Location = System::Drawing::Point(190, 175);
 			this->lnTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->lnTxt->Name = L"lnTxt";
 			this->lnTxt->Size = System::Drawing::Size(157, 35);
@@ -139,7 +140,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->mailTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->mailTxt->isPassword = false;
-			this->mailTxt->Location = System::Drawing::Point(15, 233);
+			this->mailTxt->Location = System::Drawing::Point(17, 220);
 			this->mailTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->mailTxt->Name = L"mailTxt";
 			this->mailTxt->Size = System::Drawing::Size(330, 35);
@@ -161,7 +162,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->remailTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->remailTxt->isPassword = false;
-			this->remailTxt->Location = System::Drawing::Point(15, 278);
+			this->remailTxt->Location = System::Drawing::Point(17, 265);
 			this->remailTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->remailTxt->Name = L"remailTxt";
 			this->remailTxt->Size = System::Drawing::Size(330, 35);
@@ -183,7 +184,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->pwTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->pwTxt->isPassword = false;
-			this->pwTxt->Location = System::Drawing::Point(15, 323);
+			this->pwTxt->Location = System::Drawing::Point(17, 310);
 			this->pwTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->pwTxt->Name = L"pwTxt";
 			this->pwTxt->Size = System::Drawing::Size(330, 35);
@@ -200,7 +201,7 @@ namespace FBManagmentSytem {
 			this->bdLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->bdLbl->ForeColor = System::Drawing::Color::White;
-			this->bdLbl->Location = System::Drawing::Point(129, 371);
+			this->bdLbl->Location = System::Drawing::Point(131, 358);
 			this->bdLbl->Name = L"bdLbl";
 			this->bdLbl->Size = System::Drawing::Size(95, 25);
 			this->bdLbl->TabIndex = 7;
@@ -218,7 +219,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->fnTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->fnTxt->isPassword = false;
-			this->fnTxt->Location = System::Drawing::Point(15, 188);
+			this->fnTxt->Location = System::Drawing::Point(17, 175);
 			this->fnTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->fnTxt->Name = L"fnTxt";
 			this->fnTxt->Size = System::Drawing::Size(157, 35);
@@ -239,7 +240,7 @@ namespace FBManagmentSytem {
 					L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25", L"26",
 					L"27", L"28", L"29", L"30", L"31"
 			});
-			this->dComboBox->Location = System::Drawing::Point(77, 409);
+			this->dComboBox->Location = System::Drawing::Point(84, 396);
 			this->dComboBox->Name = L"dComboBox";
 			this->dComboBox->Size = System::Drawing::Size(53, 27);
 			this->dComboBox->TabIndex = 8;
@@ -255,7 +256,7 @@ namespace FBManagmentSytem {
 				L"Jan", L"Feb", L"Mar", L"Apr", L"May", L"Jun",
 					L"Jul", L"Aug", L"Sep", L"Oct", L"Nov", L"Dec"
 			});
-			this->mComboBox->Location = System::Drawing::Point(141, 409);
+			this->mComboBox->Location = System::Drawing::Point(143, 396);
 			this->mComboBox->Name = L"mComboBox";
 			this->mComboBox->Size = System::Drawing::Size(70, 27);
 			this->mComboBox->TabIndex = 8;
@@ -278,11 +279,12 @@ namespace FBManagmentSytem {
 					L"1928", L"1927", L"1926", L"1925", L"1924", L"1923", L"1922", L"1921", L"1920", L"1919", L"1918", L"1917", L"1916", L"1915",
 					L"1914", L"1913", L"1912", L"1911", L"1910", L"1909", L"1908", L"1907", L"1906", L"1905"
 			});
-			this->yComboBox->Location = System::Drawing::Point(222, 409);
+			this->yComboBox->Location = System::Drawing::Point(219, 396);
 			this->yComboBox->Name = L"yComboBox";
 			this->yComboBox->Size = System::Drawing::Size(61, 27);
 			this->yComboBox->TabIndex = 8;
 			this->yComboBox->Text = L"Year";
+			this->yComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &Signup::yComboBox_SelectedIndexChanged);
 			// 
 			// maleRadio
 			// 
@@ -290,7 +292,7 @@ namespace FBManagmentSytem {
 			this->maleRadio->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->maleRadio->ForeColor = System::Drawing::Color::White;
-			this->maleRadio->Location = System::Drawing::Point(208, 448);
+			this->maleRadio->Location = System::Drawing::Point(208, 435);
 			this->maleRadio->Name = L"maleRadio";
 			this->maleRadio->Size = System::Drawing::Size(75, 27);
 			this->maleRadio->TabIndex = 9;
@@ -305,7 +307,7 @@ namespace FBManagmentSytem {
 			this->fmaleRadio->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->fmaleRadio->ForeColor = System::Drawing::Color::White;
-			this->fmaleRadio->Location = System::Drawing::Point(75, 448);
+			this->fmaleRadio->Location = System::Drawing::Point(75, 435);
 			this->fmaleRadio->Name = L"fmaleRadio";
 			this->fmaleRadio->Size = System::Drawing::Size(97, 27);
 			this->fmaleRadio->TabIndex = 9;
@@ -319,7 +321,7 @@ namespace FBManagmentSytem {
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox1->Location = System::Drawing::Point(57, 43);
+			this->pictureBox1->Location = System::Drawing::Point(59, 30);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(242, 46);
 			this->pictureBox1->TabIndex = 10;
@@ -332,7 +334,7 @@ namespace FBManagmentSytem {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(87, 120);
+			this->label1->Location = System::Drawing::Point(89, 107);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(185, 23);
 			this->label1->TabIndex = 7;
@@ -346,7 +348,7 @@ namespace FBManagmentSytem {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(78, 143);
+			this->label2->Location = System::Drawing::Point(80, 130);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(214, 21);
 			this->label2->TabIndex = 7;
@@ -359,7 +361,7 @@ namespace FBManagmentSytem {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(42, 497);
+			this->label3->Location = System::Drawing::Point(39, 484);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(282, 48);
 			this->label3->TabIndex = 7;
@@ -377,30 +379,27 @@ namespace FBManagmentSytem {
 			this->signupBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->signupBtn->ForeColor = System::Drawing::Color::White;
-			this->signupBtn->Location = System::Drawing::Point(12, 562);
+			this->signupBtn->Location = System::Drawing::Point(14, 549);
 			this->signupBtn->Name = L"signupBtn";
 			this->signupBtn->Size = System::Drawing::Size(330, 50);
 			this->signupBtn->TabIndex = 11;
 			this->signupBtn->Text = L"Sign Up";
 			this->signupBtn->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// SignupLbl
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(80)), static_cast<System::Int32>(static_cast<System::Byte>(104)),
-				static_cast<System::Int32>(static_cast<System::Byte>(164)));
-			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(15, 495);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(330, 50);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"Sign Up";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Signup::button1_Click);
+			this->SignupLbl->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->SignupLbl->AutoSize = true;
+			this->SignupLbl->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->SignupLbl->ForeColor = System::Drawing::Color::White;
+			this->SignupLbl->Location = System::Drawing::Point(78, 607);
+			this->SignupLbl->Name = L"SignupLbl";
+			this->SignupLbl->Size = System::Drawing::Size(204, 16);
+			this->SignupLbl->TabIndex = 12;
+			this->SignupLbl->Text = L"You have an account aleady\?";
+			this->SignupLbl->Click += gcnew System::EventHandler(this, &Signup::SignupLbl_Click);
 			// 
 			// Signup
 			// 
@@ -409,7 +408,7 @@ namespace FBManagmentSytem {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->ClientSize = System::Drawing::Size(360, 640);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->SignupLbl);
 			this->Controls->Add(this->signupBtn);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->fmaleRadio);
@@ -505,6 +504,8 @@ private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e
 		pwTxt->isPassword = false;
 	}
 }
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void yComboBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

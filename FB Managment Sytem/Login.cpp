@@ -37,6 +37,7 @@ System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, Sy
 
 		if (myreader->Read())
 		{
+			this->Hide();
 			Mainapp ^main = gcnew Mainapp();
 			main->Show();
 		}
@@ -54,6 +55,7 @@ System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, Sy
 
 System::Void FBManagmentSytem::Login::SignupLbl_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
+	this->Hide();
 	Signup^ s = gcnew Signup();
 	s->Show();
 }

@@ -81,7 +81,7 @@ namespace FBManagmentSytem {
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox1->Location = System::Drawing::Point(80, 89);
+			this->pictureBox1->Location = System::Drawing::Point(78, 89);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(200, 100);
 			this->pictureBox1->TabIndex = 0;
@@ -97,7 +97,7 @@ namespace FBManagmentSytem {
 			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->loginBtn->ForeColor = System::Drawing::Color::White;
-			this->loginBtn->Location = System::Drawing::Point(17, 333);
+			this->loginBtn->Location = System::Drawing::Point(15, 333);
 			this->loginBtn->Name = L"loginBtn";
 			this->loginBtn->Size = System::Drawing::Size(330, 50);
 			this->loginBtn->TabIndex = 4;
@@ -112,7 +112,7 @@ namespace FBManagmentSytem {
 			this->SignupLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->SignupLbl->ForeColor = System::Drawing::Color::White;
-			this->SignupLbl->Location = System::Drawing::Point(105, 557);
+			this->SignupLbl->Location = System::Drawing::Point(103, 557);
 			this->SignupLbl->Name = L"SignupLbl";
 			this->SignupLbl->Size = System::Drawing::Size(148, 16);
 			this->SignupLbl->TabIndex = 6;
@@ -126,7 +126,7 @@ namespace FBManagmentSytem {
 			this->NeedLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->NeedLbl->ForeColor = System::Drawing::Color::White;
-			this->NeedLbl->Location = System::Drawing::Point(138, 590);
+			this->NeedLbl->Location = System::Drawing::Point(136, 590);
 			this->NeedLbl->Name = L"NeedLbl";
 			this->NeedLbl->Size = System::Drawing::Size(84, 16);
 			this->NeedLbl->TabIndex = 6;
@@ -144,7 +144,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->usernameTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->usernameTxt->isPassword = false;
-			this->usernameTxt->Location = System::Drawing::Point(17, 216);
+			this->usernameTxt->Location = System::Drawing::Point(15, 216);
 			this->usernameTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->usernameTxt->Name = L"usernameTxt";
 			this->usernameTxt->Size = System::Drawing::Size(330, 48);
@@ -166,7 +166,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->pwTxt->ForeColor = System::Drawing::Color::DarkGray;
 			this->pwTxt->isPassword = false;
-			this->pwTxt->Location = System::Drawing::Point(17, 274);
+			this->pwTxt->Location = System::Drawing::Point(15, 274);
 			this->pwTxt->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->pwTxt->Name = L"pwTxt";
 			this->pwTxt->Size = System::Drawing::Size(330, 48);
