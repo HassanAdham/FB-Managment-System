@@ -64,6 +64,20 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  setNotAct;
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  searchTxt;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::Panel^  profileClkPnl;
+
+	private: System::Windows::Forms::PictureBox^  userPic;
+	private: System::Windows::Forms::Label^  userLbl;
+	private: System::Windows::Forms::Label^  label1;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  logoutBtn;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  payBtn;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  accBtn;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  reportBtn;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  termsBtn;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+
+
+
 
 
 
@@ -94,6 +108,16 @@ namespace FBManagmentSytem {
 			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
 			this->pplPanel = (gcnew System::Windows::Forms::Panel());
 			this->stngsPanel = (gcnew System::Windows::Forms::Panel());
+			this->logoutBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->payBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->accBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->reportBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->termsBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->profileClkPnl = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->userLbl = (gcnew System::Windows::Forms::Label());
+			this->userPic = (gcnew System::Windows::Forms::PictureBox());
 			this->notiPanel = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->feedsAct = (gcnew System::Windows::Forms::PictureBox());
@@ -107,6 +131,10 @@ namespace FBManagmentSytem {
 			this->searchTxt = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
+			this->stngsPanel->SuspendLayout();
+			this->profileClkPnl->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->userPic))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplAct))->BeginInit();
@@ -228,10 +256,256 @@ namespace FBManagmentSytem {
 			// 
 			// stngsPanel
 			// 
+			this->stngsPanel->Controls->Add(this->logoutBtn);
+			this->stngsPanel->Controls->Add(this->payBtn);
+			this->stngsPanel->Controls->Add(this->accBtn);
+			this->stngsPanel->Controls->Add(this->reportBtn);
+			this->stngsPanel->Controls->Add(this->termsBtn);
+			this->stngsPanel->Controls->Add(this->profileClkPnl);
 			this->stngsPanel->Location = System::Drawing::Point(1098, 105);
 			this->stngsPanel->Name = L"stngsPanel";
 			this->stngsPanel->Size = System::Drawing::Size(360, 535);
 			this->stngsPanel->TabIndex = 5;
+			// 
+			// logoutBtn
+			// 
+			this->logoutBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->logoutBtn->BackColor = System::Drawing::Color::White;
+			this->logoutBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->logoutBtn->BorderRadius = 0;
+			this->logoutBtn->ButtonText = L"Log Out";
+			this->logoutBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->logoutBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->logoutBtn->ForeColor = System::Drawing::Color::Black;
+			this->logoutBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->logoutBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"logoutBtn.Iconimage")));
+			this->logoutBtn->Iconimage_right = nullptr;
+			this->logoutBtn->Iconimage_right_Selected = nullptr;
+			this->logoutBtn->Iconimage_Selected = nullptr;
+			this->logoutBtn->IconMarginLeft = 0;
+			this->logoutBtn->IconMarginRight = 0;
+			this->logoutBtn->IconRightVisible = true;
+			this->logoutBtn->IconRightZoom = 0;
+			this->logoutBtn->IconVisible = true;
+			this->logoutBtn->IconZoom = 90;
+			this->logoutBtn->IsTab = false;
+			this->logoutBtn->Location = System::Drawing::Point(0, 484);
+			this->logoutBtn->Margin = System::Windows::Forms::Padding(4);
+			this->logoutBtn->Name = L"logoutBtn";
+			this->logoutBtn->Normalcolor = System::Drawing::Color::White;
+			this->logoutBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->logoutBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->logoutBtn->selected = false;
+			this->logoutBtn->Size = System::Drawing::Size(360, 50);
+			this->logoutBtn->TabIndex = 0;
+			this->logoutBtn->Text = L"Log Out";
+			this->logoutBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->logoutBtn->Textcolor = System::Drawing::Color::Black;
+			this->logoutBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// payBtn
+			// 
+			this->payBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->payBtn->BackColor = System::Drawing::Color::White;
+			this->payBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->payBtn->BorderRadius = 0;
+			this->payBtn->ButtonText = L"Payment Settings";
+			this->payBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->payBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->payBtn->ForeColor = System::Drawing::Color::Black;
+			this->payBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->payBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"payBtn.Iconimage")));
+			this->payBtn->Iconimage_right = nullptr;
+			this->payBtn->Iconimage_right_Selected = nullptr;
+			this->payBtn->Iconimage_Selected = nullptr;
+			this->payBtn->IconMarginLeft = 0;
+			this->payBtn->IconMarginRight = 0;
+			this->payBtn->IconRightVisible = true;
+			this->payBtn->IconRightZoom = 0;
+			this->payBtn->IconVisible = true;
+			this->payBtn->IconZoom = 90;
+			this->payBtn->IsTab = false;
+			this->payBtn->Location = System::Drawing::Point(0, 236);
+			this->payBtn->Margin = System::Windows::Forms::Padding(4);
+			this->payBtn->Name = L"payBtn";
+			this->payBtn->Normalcolor = System::Drawing::Color::White;
+			this->payBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->payBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->payBtn->selected = false;
+			this->payBtn->Size = System::Drawing::Size(360, 50);
+			this->payBtn->TabIndex = 0;
+			this->payBtn->Text = L"Payment Settings";
+			this->payBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->payBtn->Textcolor = System::Drawing::Color::Black;
+			this->payBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// accBtn
+			// 
+			this->accBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->accBtn->BackColor = System::Drawing::Color::White;
+			this->accBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->accBtn->BorderRadius = 0;
+			this->accBtn->ButtonText = L"Account Settings";
+			this->accBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->accBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->accBtn->ForeColor = System::Drawing::Color::Black;
+			this->accBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->accBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"accBtn.Iconimage")));
+			this->accBtn->Iconimage_right = nullptr;
+			this->accBtn->Iconimage_right_Selected = nullptr;
+			this->accBtn->Iconimage_Selected = nullptr;
+			this->accBtn->IconMarginLeft = 0;
+			this->accBtn->IconMarginRight = 0;
+			this->accBtn->IconRightVisible = true;
+			this->accBtn->IconRightZoom = 0;
+			this->accBtn->IconVisible = true;
+			this->accBtn->IconZoom = 90;
+			this->accBtn->IsTab = false;
+			this->accBtn->Location = System::Drawing::Point(0, 186);
+			this->accBtn->Margin = System::Windows::Forms::Padding(4);
+			this->accBtn->Name = L"accBtn";
+			this->accBtn->Normalcolor = System::Drawing::Color::White;
+			this->accBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->accBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->accBtn->selected = false;
+			this->accBtn->Size = System::Drawing::Size(360, 50);
+			this->accBtn->TabIndex = 0;
+			this->accBtn->Text = L"Account Settings";
+			this->accBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->accBtn->Textcolor = System::Drawing::Color::Black;
+			this->accBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// reportBtn
+			// 
+			this->reportBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->reportBtn->BackColor = System::Drawing::Color::White;
+			this->reportBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->reportBtn->BorderRadius = 0;
+			this->reportBtn->ButtonText = L"Report a Problem";
+			this->reportBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->reportBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->reportBtn->ForeColor = System::Drawing::Color::Black;
+			this->reportBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->reportBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"reportBtn.Iconimage")));
+			this->reportBtn->Iconimage_right = nullptr;
+			this->reportBtn->Iconimage_right_Selected = nullptr;
+			this->reportBtn->Iconimage_Selected = nullptr;
+			this->reportBtn->IconMarginLeft = 0;
+			this->reportBtn->IconMarginRight = 0;
+			this->reportBtn->IconRightVisible = true;
+			this->reportBtn->IconRightZoom = 0;
+			this->reportBtn->IconVisible = true;
+			this->reportBtn->IconZoom = 90;
+			this->reportBtn->IsTab = false;
+			this->reportBtn->Location = System::Drawing::Point(0, 136);
+			this->reportBtn->Margin = System::Windows::Forms::Padding(4);
+			this->reportBtn->Name = L"reportBtn";
+			this->reportBtn->Normalcolor = System::Drawing::Color::White;
+			this->reportBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->reportBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->reportBtn->selected = false;
+			this->reportBtn->Size = System::Drawing::Size(360, 50);
+			this->reportBtn->TabIndex = 0;
+			this->reportBtn->Text = L"Report a Problem";
+			this->reportBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->reportBtn->Textcolor = System::Drawing::Color::Black;
+			this->reportBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// termsBtn
+			// 
+			this->termsBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->termsBtn->BackColor = System::Drawing::Color::White;
+			this->termsBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->termsBtn->BorderRadius = 0;
+			this->termsBtn->ButtonText = L"Terms && Policies";
+			this->termsBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->termsBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->termsBtn->ForeColor = System::Drawing::Color::Black;
+			this->termsBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->termsBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"termsBtn.Iconimage")));
+			this->termsBtn->Iconimage_right = nullptr;
+			this->termsBtn->Iconimage_right_Selected = nullptr;
+			this->termsBtn->Iconimage_Selected = nullptr;
+			this->termsBtn->IconMarginLeft = 0;
+			this->termsBtn->IconMarginRight = 0;
+			this->termsBtn->IconRightVisible = true;
+			this->termsBtn->IconRightZoom = 0;
+			this->termsBtn->IconVisible = true;
+			this->termsBtn->IconZoom = 90;
+			this->termsBtn->IsTab = false;
+			this->termsBtn->Location = System::Drawing::Point(0, 86);
+			this->termsBtn->Margin = System::Windows::Forms::Padding(4);
+			this->termsBtn->Name = L"termsBtn";
+			this->termsBtn->Normalcolor = System::Drawing::Color::White;
+			this->termsBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->termsBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->termsBtn->selected = false;
+			this->termsBtn->Size = System::Drawing::Size(360, 50);
+			this->termsBtn->TabIndex = 0;
+			this->termsBtn->Text = L"Terms && Policies";
+			this->termsBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->termsBtn->Textcolor = System::Drawing::Color::Black;
+			this->termsBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// profileClkPnl
+			// 
+			this->profileClkPnl->Controls->Add(this->pictureBox3);
+			this->profileClkPnl->Controls->Add(this->label1);
+			this->profileClkPnl->Controls->Add(this->userLbl);
+			this->profileClkPnl->Controls->Add(this->userPic);
+			this->profileClkPnl->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->profileClkPnl->Location = System::Drawing::Point(3, 3);
+			this->profileClkPnl->Name = L"profileClkPnl";
+			this->profileClkPnl->Size = System::Drawing::Size(354, 77);
+			this->profileClkPnl->TabIndex = 0;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::LightGray;
+			this->pictureBox3->Location = System::Drawing::Point(-3, 74);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(360, 3);
+			this->pictureBox3->TabIndex = 16;
+			this->pictureBox3->TabStop = false;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::DimGray;
+			this->label1->Location = System::Drawing::Point(75, 42);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(115, 17);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"View your profile";
+			// 
+			// userLbl
+			// 
+			this->userLbl->AutoSize = true;
+			this->userLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->userLbl->Location = System::Drawing::Point(72, 21);
+			this->userLbl->Name = L"userLbl";
+			this->userLbl->Size = System::Drawing::Size(108, 22);
+			this->userLbl->TabIndex = 3;
+			this->userLbl->Text = L"User Name";
+			// 
+			// userPic
+			// 
+			this->userPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"userPic.Image")));
+			this->userPic->Location = System::Drawing::Point(16, 15);
+			this->userPic->Name = L"userPic";
+			this->userPic->Size = System::Drawing::Size(50, 50);
+			this->userPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->userPic->TabIndex = 0;
+			this->userPic->TabStop = false;
 			// 
 			// notiPanel
 			// 
@@ -242,7 +516,7 @@ namespace FBManagmentSytem {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->pictureBox1->BackColor = System::Drawing::Color::LightGray;
 			this->pictureBox1->Location = System::Drawing::Point(0, 105);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(360, 3);
@@ -388,11 +662,17 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->bunifuImageButton1);
 			this->Controls->Add(this->splitter1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Mainapp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Mainapp";
+			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
+			this->stngsPanel->ResumeLayout(false);
+			this->profileClkPnl->ResumeLayout(false);
+			this->profileClkPnl->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->userPic))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pplAct))->EndInit();

@@ -51,13 +51,17 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  usernameTxt;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  pwTxt;
 
+	private:
+
+	private: System::ComponentModel::IContainer^  components;
+
 
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -190,6 +194,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->loginBtn);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";

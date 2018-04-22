@@ -385,6 +385,7 @@ namespace FBManagmentSytem {
 			this->signupBtn->TabIndex = 11;
 			this->signupBtn->Text = L"Sign Up";
 			this->signupBtn->UseVisualStyleBackColor = false;
+			this->signupBtn->Click += gcnew System::EventHandler(this, &Signup::signupBtn_Click);
 			// 
 			// SignupLbl
 			// 
@@ -426,9 +427,10 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->fnTxt);
 			this->Controls->Add(this->lnTxt);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Signup";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Signup";
+			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Signup::Signup_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -506,6 +508,9 @@ private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e
 }
 private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void yComboBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+
 }
 };
 }

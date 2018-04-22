@@ -48,6 +48,7 @@ namespace FBManagmentSytem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Messenger::typeid));
 			this->SuspendLayout();
 			// 
 			// Messenger
@@ -56,8 +57,9 @@ namespace FBManagmentSytem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Messenger";
-			this->Text = L"Messenger";
+			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Messenger::Messenger_Load);
 			this->ResumeLayout(false);
 

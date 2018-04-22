@@ -36,6 +36,12 @@
     <ClCompile Include="Facebook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Friend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NotFriend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -59,6 +65,12 @@
     <ClInclude Include="Facebook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Friend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotFriend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
@@ -77,6 +89,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Messenger.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Friend.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

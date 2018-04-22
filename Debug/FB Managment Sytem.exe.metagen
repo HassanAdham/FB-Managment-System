@@ -1,6 +1,8 @@
+  FBManagmentSytem.Friend.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Login.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Mainapp.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Messenger.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.NotFriend.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Profile.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Search.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Signup.resources - Embedded, ContainedInManifestFile, 
@@ -40,6 +42,8 @@ Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFiel
 Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1 : Public
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -47,5 +51,11 @@ Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Search: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.Friend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.NotFriend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

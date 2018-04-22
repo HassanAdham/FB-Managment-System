@@ -90,6 +90,8 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Mainapp.cpp" />
     <ClCompile Include="Messenger.cpp" />
+    <ClCompile Include="Friend.cpp" />
+    <ClCompile Include="NotFriend.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Search.cpp" />
     <ClCompile Include="Signup.cpp" />
@@ -105,6 +107,12 @@
     <ClInclude Include="Messenger.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Friend.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NotFriend.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Profile.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -116,6 +124,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Friend.resx">
+      <DependentUpon>Friend.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Messenger.resx">
       <DependentUpon>Messenger.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotFriend.resx">
+      <DependentUpon>NotFriend.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>
