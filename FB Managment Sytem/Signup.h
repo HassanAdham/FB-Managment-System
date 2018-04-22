@@ -509,8 +509,6 @@ private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e
 private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void yComboBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-
-}
+private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

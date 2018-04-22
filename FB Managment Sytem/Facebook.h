@@ -32,6 +32,17 @@ namespace FBManagmentSytem {
 			mail = em;
 			passw = pw;
 		}
+		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y)
+		{
+			mail = em;
+			passw = pw;
+			Fname = fn;
+			Lname = ln;
+			day = d;
+			year = y;
+		}
+		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
+		Void Login();
 	};
 	/*
 	ref  class comment

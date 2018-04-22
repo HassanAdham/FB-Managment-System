@@ -1,5 +1,5 @@
 #pragma once
-
+#include"Facebook.h"
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -15,6 +15,7 @@ namespace FBManagmentSytem {
 	public ref class Mainapp : public System::Windows::Forms::Form
 	{
 	public:
+		User ^ U;
 		Mainapp(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,14 @@ namespace FBManagmentSytem {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		Mainapp(User^ u)
+		{
+			U = u;
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -155,7 +163,7 @@ namespace FBManagmentSytem {
 			this->splitter1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->splitter1->Location = System::Drawing::Point(0, 0);
 			this->splitter1->Name = L"splitter1";
-			this->splitter1->Size = System::Drawing::Size(1467, 60);
+			this->splitter1->Size = System::Drawing::Size(1386, 60);
 			this->splitter1->TabIndex = 0;
 			this->splitter1->TabStop = false;
 			this->splitter1->SplitterMoved += gcnew System::Windows::Forms::SplitterEventHandler(this, &Mainapp::splitter1_SplitterMoved);
@@ -639,7 +647,7 @@ namespace FBManagmentSytem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1467, 640);
+			this->ClientSize = System::Drawing::Size(1386, 640);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->searchTxt);
 			this->Controls->Add(this->pplNotAct);
