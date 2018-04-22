@@ -9,6 +9,8 @@ namespace FBManagmentSytem {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
+
 
 	/// <summary>
 	/// Summary for Signup
@@ -36,9 +38,9 @@ namespace FBManagmentSytem {
 			}
 		}
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  lnTxt;
-	protected: 
+	protected:
 
-	protected: 
+	protected:
 
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  mailTxt;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  remailTxt;
@@ -385,6 +387,7 @@ namespace FBManagmentSytem {
 			this->signupBtn->TabIndex = 11;
 			this->signupBtn->Text = L"Sign Up";
 			this->signupBtn->UseVisualStyleBackColor = false;
+			this->signupBtn->Click += gcnew System::EventHandler(this, &Signup::signupBtn_Click);
 			// 
 			// SignupLbl
 			// 
@@ -437,75 +440,77 @@ namespace FBManagmentSytem {
 		}
 #pragma endregion
 	private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			 }
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void fnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (fnTxt->Text == "  First name") {
-		fnTxt->Text = "";
-		fnTxt->ForeColor = Color::Black;
 	}
-}
-private: System::Void fnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (fnTxt->Text == "") {
-		fnTxt->Text = "  First name";
-		fnTxt->ForeColor = Color::DarkGray;
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-}
-private: System::Void lnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (lnTxt->Text == "  Last name") {
-		lnTxt->Text = "";
-		lnTxt->ForeColor = Color::Black;
+	private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-}
-private: System::Void lnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (lnTxt->Text == "") {
-		lnTxt->Text = "  Last name";
-		lnTxt->ForeColor = Color::DarkGray;
+	private: System::Void fnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+		if (fnTxt->Text == "  First name") {
+			fnTxt->Text = "";
+			fnTxt->ForeColor = Color::Black;
+		}
 	}
-}
-private: System::Void mailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (mailTxt->Text == "  Mobile number or email address") {
-		mailTxt->Text = "";
-		mailTxt->ForeColor = Color::Black;
+	private: System::Void fnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+		if (fnTxt->Text == "") {
+			fnTxt->Text = "  First name";
+			fnTxt->ForeColor = Color::DarkGray;
+		}
 	}
-}
-private: System::Void mailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (mailTxt->Text == "") {
-		mailTxt->Text = "  Mobile number or email address";
-		mailTxt->ForeColor = Color::DarkGray;
+	private: System::Void lnTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+		if (lnTxt->Text == "  Last name") {
+			lnTxt->Text = "";
+			lnTxt->ForeColor = Color::Black;
+		}
 	}
-}
-private: System::Void remailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (remailTxt->Text == "  Re-enter mobile number or email address") {
-		remailTxt->Text = "";
-		remailTxt->ForeColor = Color::Black;
+	private: System::Void lnTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+		if (lnTxt->Text == "") {
+			lnTxt->Text = "  Last name";
+			lnTxt->ForeColor = Color::DarkGray;
+		}
 	}
-}
-private: System::Void remailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (remailTxt->Text == "") {
-		remailTxt->Text = "  Re-enter mobile number or email address";
-		remailTxt->ForeColor = Color::DarkGray;
+	private: System::Void mailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+		if (mailTxt->Text == "  Mobile number or email address") {
+			mailTxt->Text = "";
+			mailTxt->ForeColor = Color::Black;
+		}
 	}
-}
-private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "  New Password") {
-		pwTxt->Text = "";
-		pwTxt->ForeColor = Color::Black;
-		pwTxt->isPassword = true;
+	private: System::Void mailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+		if (mailTxt->Text == "") {
+			mailTxt->Text = "  Mobile number or email address";
+			mailTxt->ForeColor = Color::DarkGray;
+		}
 	}
-}
-private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
-	if (pwTxt->Text == "") {
-		pwTxt->Text = "  New Password";
-		pwTxt->ForeColor = Color::DarkGray;
-		pwTxt->isPassword = false;
+	private: System::Void remailTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+		if (remailTxt->Text == "  Re-enter mobile number or email address") {
+			remailTxt->Text = "";
+			remailTxt->ForeColor = Color::Black;
+		}
 	}
-}
-private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void yComboBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-}
-};
+	private: System::Void remailTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+		if (remailTxt->Text == "") {
+			remailTxt->Text = "  Re-enter mobile number or email address";
+			remailTxt->ForeColor = Color::DarkGray;
+		}
+	}
+	private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e) {
+		if (pwTxt->Text == "  New Password") {
+			pwTxt->Text = "";
+			pwTxt->ForeColor = Color::Black;
+			pwTxt->isPassword = true;
+		}
+	}
+	private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e) {
+		if (pwTxt->Text == "") {
+			pwTxt->Text = "  New Password";
+			pwTxt->ForeColor = Color::DarkGray;
+			pwTxt->isPassword = false;
+		}
+	}
+	private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void yComboBox_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e);
+	};
+
 }

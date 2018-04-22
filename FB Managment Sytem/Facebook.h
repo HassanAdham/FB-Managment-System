@@ -25,13 +25,24 @@ namespace FBManagmentSytem {
 
 	ref class User {
 	public:
-		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw;
+		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw,^id;
 		User() {}
 		User(String^ em, String^ pw)
 		{
 			mail = em;
 			passw = pw;
 		}
+		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y)
+		{
+			mail = em;
+			passw = pw;
+			Fname = fn;
+			Lname = ln;
+			day = d;
+			year = y;
+		}
+		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
+		Void Login();
 	};
 	/*
 	ref  class comment

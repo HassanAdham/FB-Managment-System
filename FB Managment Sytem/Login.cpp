@@ -21,30 +21,30 @@ int Main(array<System::String ^> ^args)
 System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
 	User^ u = gcnew User(usernameTxt->Text, pwTxt->Text);
-
-	String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
-	MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
-	MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Login_Read", conDatabase);
-	cmdDatabase->CommandType = CommandType::StoredProcedure;
-	cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", usernameTxt->Text));
-	cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", pwTxt->Text));
-	MySqlDataReader^ myreader;
+	//String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
+	//MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
+	//MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Login_Read", conDatabase);
+	//cmdDatabase->CommandType = CommandType::StoredProcedure;
+	//cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", usernameTxt->Text));
+	//cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", pwTxt->Text));
+	//MySqlDataReader^ myreader;
 
 	try
 	{
-		conDatabase->Open();
-		myreader = cmdDatabase->ExecuteReader();
+		u->Login();
+		/*conDatabase->Open();
+		myreader = cmdDatabase->ExecuteReader();*/
 
-		if (myreader->Read())
-		{
+		/*if (myreader->Read())
+		{*/
 			this->Hide();
-			Mainapp ^main = gcnew Mainapp();
+			Mainapp ^main = gcnew Mainapp(/*u*/);
 			main->Show();
-		}
-		else
-		{
-			MessageBox::Show("The e-mail or password you entered was incorrect.", "Log in", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		}
+		/*}*/
+		//else
+		//{
+		//	//MessageBox::Show("The e-mail or password you entered was incorrect.", "Log in", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		//}
 
 	}
 	catch (Exception^ex)
