@@ -1,6 +1,4 @@
 #pragma once
-#include "Signup.h"
-#include "Mainapp.h"
 #include <sstream>
 #include <string>
 #include <iostream>
@@ -15,7 +13,7 @@ namespace FBManagmentSytem {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
-	using namespace std;
+	// using namespace std;
 
 	/// <summary>
 	/// Summary for Login
@@ -209,46 +207,9 @@ namespace FBManagmentSytem {
 	
 		}
 
-		private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e)
-		{
-			User u;
-			u.mail = usernameTxt->Text;
-			u.passw = pwTxt->Text;
-			String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
-			MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
-			MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Login_Read", conDatabase);
-			cmdDatabase->CommandType = CommandType::StoredProcedure;
-			cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", usernameTxt->Text));
-			cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", pwTxt->Text));
-			MySqlDataReader^ myreader;
+		private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e);
 
-			try
-			{
-				conDatabase->Open();
-				myreader = cmdDatabase->ExecuteReader();
-
-				if (myreader->Read())
-				{
-					Mainapp ^main = gcnew Mainapp();
-					main->Show();
-				}
-				else
-				{
-					MessageBox::Show("The e-mail or password you entered was incorrect.","Log in",MessageBoxButtons::OK,MessageBoxIcon::Warning);
-				}
-
-			}
-			catch (Exception^ex)
-			{
-				MessageBox::Show("The e-mail or password you entered doesn't match any account.");
-			}
-		}
-
-		private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e)
-		{
-			Signup ^s = gcnew Signup();
-			s->Show();
-		}
+		private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e)
 		{

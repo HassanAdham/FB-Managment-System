@@ -33,7 +33,7 @@ namespace FBManagmentSytem {
 			passw = pw;
 		}
 	};
-
+	/*
 	ref  class comment
 	{
 		cliext::vector<Object^> repl;
@@ -47,6 +47,6 @@ namespace FBManagmentSytem {
 	ref class reply : public comment
 	{
 	public:
-	};
+	};*/
 
 }
