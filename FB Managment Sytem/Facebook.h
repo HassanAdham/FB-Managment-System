@@ -25,7 +25,7 @@ namespace FBManagmentSytem {
 
 	ref class User {
 	public:
-		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw;
+		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw ,^ id;
 		User() {}
 		User(String^ em, String^ pw)
 		{
@@ -44,11 +44,9 @@ namespace FBManagmentSytem {
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
 		Void Login();
 	};
-	/*
+	
 	ref  class comment
 	{
-		cliext::vector<Object^> repl;
-		List<reply^>^ rep = gcnew List<reply^>();
 	public:
 		String ^ ID;
 		String^ text;
@@ -58,6 +56,6 @@ namespace FBManagmentSytem {
 	ref class reply : public comment
 	{
 	public:
-	};*/
+	};
 
 }
