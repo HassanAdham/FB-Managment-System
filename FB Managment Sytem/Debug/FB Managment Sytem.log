@@ -1,34 +1,8 @@
 ﻿  Facebook.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2143: syntax error: missing ';' before '^'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2238: unexpected token(s) preceding ';'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2061: syntax error: identifier 'User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2535: 'FBManagmentSytem::Mainapp::Mainapp(void)': member function already defined or declared
-  e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): note: see declaration of 'FBManagmentSytem::Mainapp::Mainapp'
   Login.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2143: syntax error: missing ';' before '^'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2238: unexpected token(s) preceding ';'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2061: syntax error: identifier 'User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2535: 'FBManagmentSytem::Mainapp::Mainapp(void)': member function already defined or declared
-  e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): note: see declaration of 'FBManagmentSytem::Mainapp::Mainapp'
-e:\hazem\fb-managment-system\fb managment sytem\login.cpp(28): error C3673: 'FBManagmentSytem::Mainapp': class does not have a copy-constructor
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.cpp(31): warning C4101: 'ex': unreferenced local variable
   Mainapp.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(29): note: see declaration of 'FBManagmentSytem::User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(29): note: see declaration of 'FBManagmentSytem::User'
-  Messenger.cpp
-  Friend.cpp
-  NotFriend.cpp
-  Profile.cpp
-  Search.cpp
   Signup.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2143: syntax error: missing ';' before '^'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(18): error C2238: unexpected token(s) preceding ';'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2061: syntax error: identifier 'User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(20): error C2535: 'FBManagmentSytem::Mainapp::Mainapp(void)': member function already defined or declared
-  e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): note: see declaration of 'FBManagmentSytem::Mainapp::Mainapp'
-e:\hazem\fb-managment-system\fb managment sytem\signup.cpp(37): error C3673: 'FBManagmentSytem::Mainapp': class does not have a copy-constructor
   Generating Code...
+  Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe

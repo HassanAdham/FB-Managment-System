@@ -15,9 +15,9 @@ namespace FBManagmentSytem {
 	public ref class Mainapp : public System::Windows::Forms::Form
 	{
 	public:
-		User ^ U;
+		/*User ^ U;*/
 		Mainapp(void);
-		Mainapp(User^ u);
+		/*Mainapp(User^ u);*/
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -87,21 +87,42 @@ namespace FBManagmentSytem {
 		/// </summary>
 		void InitializeComponent(void);
 #pragma endregion
-	private: System::Void Mainapp_Load(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void splitter1_SplitterMoved(System::Object^  sender, System::Windows::Forms::SplitterEventArgs^  e) {
-	}
-	private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void pictureBox7_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void feedsBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
-	private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
-	private: System::Void noti_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
-	private: System::Void setBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
-	private: System::Void searchTxt_OnTextChange(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void searchTxt_Enter(System::Object^  sender, System::EventArgs^  e);
-	private: System::Void searchTxt_Leave(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void Mainapp_Load(System::Object^  sender, System::EventArgs^  e)
+		{
+
+		}
+
+		private: System::Void splitter1_SplitterMoved(System::Object^  sender, System::Windows::Forms::SplitterEventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void pictureBox7_Click(System::Object^  sender, System::EventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void feedsBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
+
+		private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
+
+		private: System::Void noti_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
+
+		private: System::Void setBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
+
+		private: System::Void searchTxt_OnTextChange(System::Object^  sender, System::EventArgs^  e) 
+		{
+
+		}
+
+		private: System::Void searchTxt_Enter(System::Object^  sender, System::EventArgs^  e);
+
+		private: System::Void searchTxt_Leave(System::Object^  sender, System::EventArgs^  e);
+
 	};
 }

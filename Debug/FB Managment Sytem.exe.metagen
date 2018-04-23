@@ -42,8 +42,6 @@ Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFiel
 Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1 : Public
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

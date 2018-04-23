@@ -13,7 +13,6 @@ namespace FBManagmentSytem {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
-	// using namespace std;
 
 	/// <summary>
 	/// Summary for Login
@@ -216,42 +215,12 @@ namespace FBManagmentSytem {
 
 		private: System::Void SignupLbl_Click(System::Object^  sender, System::EventArgs^  e);
 
-		private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e)
-		{
-			if (usernameTxt->Text == "  Email or phone number")
-			{
-				usernameTxt->Text = "";
-				usernameTxt->ForeColor = Color::Black;
-			}
-		}
+		private: System::Void usernameTxt_Enter(System::Object^  sender, System::EventArgs^  e);
 
-		private: System::Void usernameTxt_Leave(System::Object^  sender, System::EventArgs^  e)
-		{
-			if (usernameTxt->Text == "")
-			{
-				usernameTxt->Text = "  Email or phone number";
-				usernameTxt->ForeColor = Color::DarkGray;
-			}
-		}
+		private: System::Void usernameTxt_Leave(System::Object^  sender, System::EventArgs^  e);		
 
-		private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e)
-		{
-			if (pwTxt->Text == "  Password")
-			{
-				pwTxt->Text = "";
-				pwTxt->ForeColor = Color::Black;
-				pwTxt->isPassword = true;
-			}
-		}
+		private: System::Void pwTxt_Enter(System::Object^  sender, System::EventArgs^  e);
 
-		private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e)
-		{
-			if (pwTxt->Text == "")
-			{
-			pwTxt->Text = "  Password";
-			pwTxt->ForeColor = Color::DarkGray;
-			pwTxt->isPassword = false;
-			}
-		}
+		private: System::Void pwTxt_Leave(System::Object^  sender, System::EventArgs^  e);
 	};
 }

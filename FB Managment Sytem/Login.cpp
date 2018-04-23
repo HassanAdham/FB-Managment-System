@@ -25,7 +25,7 @@ System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, Sy
 	{
 		u->Login();
 		this->Hide();
-		Mainapp ^main = gcnew Mainapp(u);
+		Mainapp ^main = gcnew Mainapp();
 		main->Show();
 	}
 	catch (Exception^ex)
@@ -39,4 +39,46 @@ System::Void FBManagmentSytem::Login::SignupLbl_Click(System::Object ^ sender, S
 	this->Hide();
 	Signup^ s = gcnew Signup();
 	s->Show();
+}
+
+System::Void FBManagmentSytem::Login::usernameTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if (usernameTxt->Text == "  Email or phone number")
+	{
+		usernameTxt->Text = "";
+		usernameTxt->ForeColor = Color::Black;
+	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Login::usernameTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if (usernameTxt->Text == "")
+	{
+		usernameTxt->Text = "  Email or phone number";
+		usernameTxt->ForeColor = Color::DarkGray;
+	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Login::pwTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if (pwTxt->Text == "  Password")
+	{
+		pwTxt->Text = "";
+		pwTxt->ForeColor = Color::Black;
+		pwTxt->isPassword = true;
+	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Login::pwTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if (pwTxt->Text == "")
+	{
+		pwTxt->Text = "  Password";
+		pwTxt->ForeColor = Color::DarkGray;
+		pwTxt->isPassword = false;
+	}
+	return System::Void();
 }

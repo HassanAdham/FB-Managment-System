@@ -8,14 +8,14 @@ FBManagmentSytem::Mainapp::Mainapp(void)
 	//
 }
 
-FBManagmentSytem::Mainapp::Mainapp(User ^ u)
-{
-	U = u;
-	InitializeComponent();
-	//
-	//TODO: Add the constructor code here
-	//
-}
+//FBManagmentSytem::Mainapp::Mainapp(User ^ u)
+//{
+//	U = u;
+//	InitializeComponent();
+//	//
+//	//TODO: Add the constructor code here
+//	//
+//}
 
 FBManagmentSytem::Mainapp::~Mainapp()
 {
