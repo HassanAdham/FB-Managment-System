@@ -1,7 +1,5 @@
 #pragma once
-
-#include <iostream>
-
+#include "Facebook.h"
 
 namespace FBManagmentSytem {
 
@@ -19,13 +17,9 @@ namespace FBManagmentSytem {
 	public ref class Login : public System::Windows::Forms::Form
 	{
 	public:
-		Login(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Facebook ^ obj;
+	public:
+		Login(void);
 
 	protected:
 		/// <summary>
@@ -38,23 +32,16 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
+
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	protected:
 	private: System::Windows::Forms::Button^  loginBtn;
-
 	private: System::Windows::Forms::Label^  SignupLbl;
-
-
 	private: System::Windows::Forms::Label^  NeedLbl;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  usernameTxt;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  pwTxt;
-
 	private:
-
 	private: System::ComponentModel::IContainer^  components;
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -205,9 +192,7 @@ namespace FBManagmentSytem {
 
 	#pragma endregion
 
-		private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e)
-		{
-		}
+		private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void loginBtn_Click(System::Object^  sender, System::EventArgs^  e);
 

@@ -10,15 +10,12 @@ namespace FBManagmentSytem {
 		//
 	}
 
-	Mainapp::Mainapp(User ^ u)
+	Mainapp::Mainapp(User ^ u, Facebook ^ fb)
 	{
+		InitializeComponent();
 		U = u;
-		throw gcnew System::NotImplementedException();
+		F = fb;
 	}
-
-
-
-
 
 	FBManagmentSytem::Mainapp::~Mainapp()
 	{

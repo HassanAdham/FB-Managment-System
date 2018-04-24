@@ -16,13 +16,9 @@ namespace FBManagmentSytem {
 	public ref class Signup : public System::Windows::Forms::Form
 	{
 	public:
-		Signup(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Facebook ^ obj;
+	public:
+		Signup(void);
 
 	protected:
 		/// <summary>
@@ -35,41 +31,24 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
+	protected:
+
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  lnTxt;
-	protected: 
-
-	protected: 
-
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  mailTxt;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  remailTxt;
-
-
-
-
-
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  pwTxt;
-
 	private: System::Windows::Forms::Label^  bdLbl;
 	private: Bunifu::Framework::UI::BunifuMetroTextbox^  fnTxt;
-
-
 	private: System::Windows::Forms::ComboBox^  dComboBox;
-
 	private: System::Windows::Forms::ComboBox^  mComboBox;
 	private: System::Windows::Forms::ComboBox^  yComboBox;
-
-
-
 	private: System::Windows::Forms::RadioButton^  maleRadio;
 	private: System::Windows::Forms::RadioButton^  fmaleRadio;
-
-
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Button^  signupBtn;
-
 	private: System::Windows::Forms::Label^  SignupLbl;
 
 	private:
@@ -449,10 +428,7 @@ namespace FBManagmentSytem {
 
 		}
 
-		private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e) 
-		{
-
-		}
+		private: System::Void Signup_Load(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void fnTxt_Enter(System::Object^  sender, System::EventArgs^  e);
 	

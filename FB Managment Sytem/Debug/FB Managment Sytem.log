@@ -1,19 +1,30 @@
 ﻿  Login.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(21): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
-e:\hazem\fb-managment-system\fb managment sytem\login.cpp(33): warning C4101: 'ex': unreferenced local variable
-  Mainapp.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(21): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.h(20): warning C4677: 'obj': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(19): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(20): warning C4677: 'F': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(22): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(22): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\signup.h(19): warning C4677: 'obj': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.cpp(47): warning C4101: 'ex': unreferenced local variable
   Signup.cpp
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(19): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
-e:\hazem\fb-managment-system\fb managment sytem\mainapp.h(21): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
-  e:\hazem\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\signup.h(19): warning C4677: 'obj': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\login.h(20): warning C4677: 'obj': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(19): warning C4677: 'U': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(20): warning C4677: 'F': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(22): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::User'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(22): note: see declaration of 'FBManagmentSytem::User'
+e:\fcis\projects\fb-managment-system\fb managment sytem\mainapp.h(22): warning C4677: 'Mainapp': signature of non-private member contains assembly private type 'FBManagmentSytem::Facebook'
+  e:\fcis\projects\fb-managment-system\fb managment sytem\facebook.h(106): note: see declaration of 'FBManagmentSytem::Facebook'
   Generating Code...
   Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
-  FB Managment Sytem.vcxproj -> E:\hazem\FB-Managment-System\Debug\FB Managment Sytem.exe
+  FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe

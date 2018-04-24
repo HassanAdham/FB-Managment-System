@@ -17,25 +17,21 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ U;
+		Facebook ^ F;
 		Mainapp(void);
-		Mainapp(User^ u);
+		Mainapp(User^ u, Facebook^ fb);
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
 		~Mainapp();
-	private: System::Windows::Forms::Splitter^  splitter1;
 
+	private: System::Windows::Forms::Splitter^  splitter1;
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
 	private: System::Windows::Forms::RadioButton^  feedsBtn;
-
 	private: System::Windows::Forms::RadioButton^  pplBtn;
 	private: System::Windows::Forms::RadioButton^  noti;
 	private: System::Windows::Forms::RadioButton^  setBtn;
-
-
-
-
 	private: System::Windows::Forms::Panel^  feedsPanel;
 	private: System::Windows::Forms::Panel^  pplPanel;
 	private: System::Windows::Forms::Panel^  stngsPanel;
@@ -45,9 +41,6 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  pplAct;
 	private: System::Windows::Forms::PictureBox^  notiAct;
 	private: System::Windows::Forms::PictureBox^  setAct;
-
-
-
 	private: System::Windows::Forms::PictureBox^  feedsNotAct;
 	private: System::Windows::Forms::PictureBox^  pplNotAct;
 	private: System::Windows::Forms::PictureBox^  notiNotAct;
@@ -55,7 +48,6 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  searchTxt;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Panel^  profileClkPnl;
-
 	private: System::Windows::Forms::PictureBox^  userPic;
 	private: System::Windows::Forms::Label^  userLbl;
 	private: System::Windows::Forms::Label^  label1;
@@ -65,13 +57,6 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuFlatButton^  reportBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  termsBtn;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
-
-
-
-
-
-
-
 
 	protected:
 

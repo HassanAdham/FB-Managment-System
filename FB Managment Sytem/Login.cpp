@@ -1,7 +1,9 @@
 #include "Login.h"
 #include "Mainapp.h"
 #include "Signup.h"
+
 namespace FBManagmentSytem {
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -20,6 +22,18 @@ namespace FBManagmentSytem {
 		return 0;
 	}
 
+	Login::Login(void)
+	{
+		InitializeComponent();
+		obj = gcnew Facebook();
+	}
+
+	System::Void Login::Login_Load(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		obj->getStruct();
+		return System::Void();
+	}
+
 	System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
 		User^ u = gcnew User(usernameTxt->Text, pwTxt->Text);
@@ -27,7 +41,7 @@ namespace FBManagmentSytem {
 		{
 			u->Login();
 			this->Hide();
-			Mainapp ^main = gcnew Mainapp(u);
+			Mainapp ^main = gcnew Mainapp(u,obj);
 			main->Show();
 		}
 		catch (Exception^ex)

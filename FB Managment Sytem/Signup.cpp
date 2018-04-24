@@ -1,7 +1,9 @@
 #include "Signup.h"
 #include "Login.h"
 #include "Mainapp.h"
+
 namespace FBManagmentSytem {
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -10,6 +12,17 @@ namespace FBManagmentSytem {
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
 
+	Signup::Signup(void)
+	{
+		InitializeComponent();
+		obj = gcnew Facebook();
+	}
+
+	System::Void Signup::Signup_Load(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		obj->getStruct();
+		return System::Void();
+	}
 
 	System::Void FBManagmentSytem::Signup::fnTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
@@ -121,7 +134,6 @@ namespace FBManagmentSytem {
 		return System::Void();
 	}
 
-
 	System::Void FBManagmentSytem::Signup::signupBtn_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		if (fnTxt->Text == "  First name" || lnTxt->Text == "  Last name" || mailTxt->Text == "  Mobile number or email address" || remailTxt->Text == "  Re-enter mobile number or email address" || pwTxt->Text == "  New Password")
@@ -138,7 +150,7 @@ namespace FBManagmentSytem {
 			bool b = u->SignUp(maleRadio, mComboBox);
 			if (b) {
 				MessageBox::Show("Welcome to Facebook.", "Sign up");
-				Mainapp ^main = gcnew Mainapp();
+				Mainapp ^main = gcnew Mainapp(u, obj);
 				this->Hide();
 				main->Show();
 			}

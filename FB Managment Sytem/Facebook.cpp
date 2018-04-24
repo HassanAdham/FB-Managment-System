@@ -36,9 +36,6 @@ namespace FBManagmentSytem {
 		conDatabase->Close();
 	}
 
-
-
-
 	User::User(String ^ em, String ^ pw)
 	{
 		mail = em;
