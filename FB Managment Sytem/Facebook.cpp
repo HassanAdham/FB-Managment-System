@@ -1,5 +1,6 @@
 #include "Facebook.h"
 
+
 namespace FBManagmentSytem {
 
 	Friends::Friends()
@@ -7,7 +8,6 @@ namespace FBManagmentSytem {
 		u = gcnew User();
 		id = "";
 		fri_stat = false;
-		fri__req = NULL;
 	}
 
 	void User::Login() {

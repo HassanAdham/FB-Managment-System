@@ -1,11 +1,7 @@
 #pragma once
-#include "Signup.h"
-#include "Mainapp.h"
-#include "Login.h"
-#include "Messenger.h"
-#include "Profile.h"
-#include "Search.h"
-#include <cliext\vector>
+
+#ifndef pp
+#define pp
 
 
 namespace FBManagmentSytem {
@@ -118,3 +114,4 @@ namespace FBManagmentSytem {
 
 
 }
+#endif pp

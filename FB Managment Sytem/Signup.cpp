@@ -1,145 +1,148 @@
 #include "Signup.h"
+#include "Login.h"
+#include "Mainapp.h"
+namespace FBManagmentSytem {
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
 
-using namespace System;
-using namespace System::ComponentModel;
-using namespace System::Collections;
-using namespace System::Windows::Forms;
-using namespace System::Data;
-using namespace System::Drawing;
-using namespace MySql::Data::MySqlClient;
 
-
-System::Void FBManagmentSytem::Signup::fnTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (fnTxt->Text == "  First name") 
+	System::Void FBManagmentSytem::Signup::fnTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		fnTxt->Text = "";
-		fnTxt->ForeColor = Color::Black;
+		if (fnTxt->Text == "  First name")
+		{
+			fnTxt->Text = "";
+			fnTxt->ForeColor = Color::Black;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::fnTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (fnTxt->Text == "") 
+	System::Void FBManagmentSytem::Signup::fnTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		fnTxt->Text = "  First name";
-		fnTxt->ForeColor = Color::DarkGray;
+		if (fnTxt->Text == "")
+		{
+			fnTxt->Text = "  First name";
+			fnTxt->ForeColor = Color::DarkGray;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::lnTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (lnTxt->Text == "  Last name")
+	System::Void FBManagmentSytem::Signup::lnTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		lnTxt->Text = "";
-		lnTxt->ForeColor = Color::Black;
+		if (lnTxt->Text == "  Last name")
+		{
+			lnTxt->Text = "";
+			lnTxt->ForeColor = Color::Black;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::lnTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (lnTxt->Text == "") 
+	System::Void FBManagmentSytem::Signup::lnTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		lnTxt->Text = "  Last name";
-		lnTxt->ForeColor = Color::DarkGray;
+		if (lnTxt->Text == "")
+		{
+			lnTxt->Text = "  Last name";
+			lnTxt->ForeColor = Color::DarkGray;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::mailTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (mailTxt->Text == "  Mobile number or email address")
+	System::Void FBManagmentSytem::Signup::mailTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		mailTxt->Text = "";
-		mailTxt->ForeColor = Color::Black;
+		if (mailTxt->Text == "  Mobile number or email address")
+		{
+			mailTxt->Text = "";
+			mailTxt->ForeColor = Color::Black;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::mailTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (mailTxt->Text == "")
+	System::Void FBManagmentSytem::Signup::mailTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		mailTxt->Text = "  Mobile number or email address";
-		mailTxt->ForeColor = Color::DarkGray;
+		if (mailTxt->Text == "")
+		{
+			mailTxt->Text = "  Mobile number or email address";
+			mailTxt->ForeColor = Color::DarkGray;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::remailTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (remailTxt->Text == "  Re-enter mobile number or email address") 
+	System::Void FBManagmentSytem::Signup::remailTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		remailTxt->Text = "";
-		remailTxt->ForeColor = Color::Black;
+		if (remailTxt->Text == "  Re-enter mobile number or email address")
+		{
+			remailTxt->Text = "";
+			remailTxt->ForeColor = Color::Black;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::remailTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (remailTxt->Text == "")
+	System::Void FBManagmentSytem::Signup::remailTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		remailTxt->Text = "  Re-enter mobile number or email address";
-		remailTxt->ForeColor = Color::DarkGray;
+		if (remailTxt->Text == "")
+		{
+			remailTxt->Text = "  Re-enter mobile number or email address";
+			remailTxt->ForeColor = Color::DarkGray;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::pwTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (pwTxt->Text == "  New Password") 
+	System::Void FBManagmentSytem::Signup::pwTxt_Enter(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		pwTxt->Text = "";
-		pwTxt->ForeColor = Color::Black;
-		pwTxt->isPassword = true;
+		if (pwTxt->Text == "  New Password")
+		{
+			pwTxt->Text = "";
+			pwTxt->ForeColor = Color::Black;
+			pwTxt->isPassword = true;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::pwTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
-{
-	if (pwTxt->Text == "") 
+	System::Void FBManagmentSytem::Signup::pwTxt_Leave(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		pwTxt->Text = "  New Password";
-		pwTxt->ForeColor = Color::DarkGray;
-		pwTxt->isPassword = false;
+		if (pwTxt->Text == "")
+		{
+			pwTxt->Text = "  New Password";
+			pwTxt->ForeColor = Color::DarkGray;
+			pwTxt->isPassword = false;
+		}
+		return System::Void();
 	}
-	return System::Void();
-}
 
-System::Void FBManagmentSytem::Signup::SignupLbl_Click(System::Object ^ sender, System::EventArgs ^ e)
-{
-	Login^ s = gcnew Login();
-	this->Hide();
-	s->Show();
-	return System::Void();
-}
-
-
-System::Void FBManagmentSytem::Signup::signupBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-
-	if (fnTxt->Text == "  First name" || lnTxt->Text == "  Last name" || mailTxt->Text == "  Mobile number or email address" || remailTxt->Text == "  Re-enter mobile number or email address" || pwTxt->Text == "  New Password")
+	System::Void FBManagmentSytem::Signup::SignupLbl_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		MessageBox::Show("Please complete all fields.", "Sign up", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		Login^ s = gcnew Login();
+		this->Hide();
+		s->Show();
+		return System::Void();
 	}
-	else if (mailTxt->Text != remailTxt->Text)
-	{
-		MessageBox::Show("Please enter the same email or phone.", "Sign up", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-	else
-	{
-		User^ u = gcnew User(mailTxt->Text, pwTxt->Text, fnTxt->Text, lnTxt->Text, dComboBox->Text, yComboBox->Text);
-		bool b = u->SignUp(maleRadio, mComboBox);
-		if (b) {
-			MessageBox::Show("Welcome to Facebook.", "Sign up");
-			Mainapp ^main = gcnew Mainapp();
-			this->Hide();
-			main->Show();
+
+
+	System::Void FBManagmentSytem::Signup::signupBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		if (fnTxt->Text == "  First name" || lnTxt->Text == "  Last name" || mailTxt->Text == "  Mobile number or email address" || remailTxt->Text == "  Re-enter mobile number or email address" || pwTxt->Text == "  New Password")
+		{
+			MessageBox::Show("Please complete all fields.", "Sign up", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (mailTxt->Text != remailTxt->Text)
+		{
+			MessageBox::Show("Please enter the same email or phone.", "Sign up", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+			User^ u = gcnew User(mailTxt->Text, pwTxt->Text, fnTxt->Text, lnTxt->Text, dComboBox->Text, yComboBox->Text);
+			bool b = u->SignUp(maleRadio, mComboBox);
+			if (b) {
+				MessageBox::Show("Welcome to Facebook.", "Sign up");
+				Mainapp ^main = gcnew Mainapp();
+				this->Hide();
+				main->Show();
+			}
 		}
 	}
-}
 
+}

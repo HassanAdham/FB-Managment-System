@@ -1,5 +1,6 @@
 #pragma once
-#include"Facebook.h"
+#include "Facebook.h"
+
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -15,9 +16,9 @@ namespace FBManagmentSytem {
 	public ref class Mainapp : public System::Windows::Forms::Form
 	{
 	public:
-		/*User ^ U;*/
+		User ^ U;
 		Mainapp(void);
-		/*Mainapp(User^ u);*/
+		Mainapp(User^ u);
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -89,7 +90,7 @@ namespace FBManagmentSytem {
 #pragma endregion
 		private: System::Void Mainapp_Load(System::Object^  sender, System::EventArgs^  e)
 		{
-
+			
 		}
 
 		private: System::Void splitter1_SplitterMoved(System::Object^  sender, System::Windows::Forms::SplitterEventArgs^  e) 
