@@ -39,6 +39,24 @@ namespace FBManagmentSytem {
 
 
 
+	User::User(String ^ em, String ^ pw)
+	{
+		mail = em;
+		passw = pw;
+		throw gcnew System::NotImplementedException();
+	}
+
+	User::User(String ^ em, String ^ pw, String ^ fn, String ^ ln, String ^ d, String ^ y)
+	{
+		mail = em;
+		passw = pw;
+		Fname = fn;
+		Lname = ln;
+		day = d;
+		year = y;
+		throw gcnew System::NotImplementedException();
+	}
+
 	bool User::SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox) {
 		//check email 
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
@@ -67,7 +85,6 @@ namespace FBManagmentSytem {
 			}
 
 			//convert comboboxes to date data type
-
 			if (mComboBox->Text == "Jan")
 				month = "01";
 			else if (mComboBox->Text == "Feb")
@@ -136,6 +153,7 @@ namespace FBManagmentSytem {
 		xs->Serialize(fs, this);
 		throw gcnew System::NotImplementedException();
 	}
+
 	PostInfo::PostInfo()
 	{
 		post = gcnew Post();
@@ -152,8 +170,6 @@ namespace FBManagmentSytem {
 		Love = gcnew List<String^>();
 		Sad = gcnew List<String^>();
 		Angry = gcnew List<String^>();
-		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<bool>();
 		comm = gcnew List<comment^>();
 		img = gcnew PictureBox();
 

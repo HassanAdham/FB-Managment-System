@@ -26,21 +26,10 @@ namespace FBManagmentSytem {
 	ref class User {
 	public:
 		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
+		PictureBox^ coverphoto, ^profilephoto;
 		User() {}
-		User(String^ em, String^ pw)
-		{
-			mail = em;
-			passw = pw;
-		}
-		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y)
-		{
-			mail = em;
-			passw = pw;
-			Fname = fn;
-			Lname = ln;
-			day = d;
-			year = y;
-		}
+		User(String^ em, String^ pw);
+		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
 		Void Login();
 	};
@@ -87,6 +76,7 @@ namespace FBManagmentSytem {
 		List<reply^>^ rep;
 		comment();
 	};
+
 	ref  class Post
 	{
 	public:
@@ -101,11 +91,10 @@ namespace FBManagmentSytem {
 		String^ text;
 		PictureBox^ img;
 		bool^ isPub;
-		List<String^>^ Tag;
-		List<bool>^ TagSeen;
 		List<comment^>^ comm;
 		Post();
 	};
+
 	ref  class PostInfo
 	{
 	public:
