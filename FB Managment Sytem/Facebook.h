@@ -55,29 +55,77 @@ namespace FBManagmentSytem {
 		Friends();
 	};
 
+	ref class reply
+	{
+	public:
+		List<String^>^ Tag;
+		List<bool>^ TagSeen;
+		String ^ ID;
+		String^ text;
+		List<String^>^ Like;
+		List<String^>^ Haha;
+		List<String^>^ Wow;
+		List<String^>^ Love;
+		List<String^>^ Sad;
+		List<String^>^ Angry;
+		reply();
+	};
+
+	ref  class comment
+	{
+	public:
+		List<String^>^ Tag;
+		List<bool>^ TagSeen;
+		List<String^>^ Like;
+		List<String^>^ Haha;
+		List<String^>^ Wow;
+		List<String^>^ Love;
+		List<String^>^ Sad;
+		List<String^>^ Angry;
+		String ^ ID;
+		String^ text;
+		List<reply^>^ rep;
+		comment();
+	};
+	ref  class Post
+	{
+	public:
+		List<String^>^ Like;
+		List<String^>^ Haha;
+		List<String^>^ Wow;
+		List<String^>^ Love;
+		List<String^>^ Sad;
+		List<String^>^ Angry;
+		String^ ID;
+		String^ UserID;
+		String^ text;
+		PictureBox^ img;
+		bool^ isPub;
+		List<String^>^ Tag;
+		List<bool>^ TagSeen;
+		List<comment^>^ comm;
+		Post();
+	};
+	ref  class PostInfo
+	{
+	public:
+		Post ^ post;
+		int^ PosrStat;
+		List<String^>^ Tag;
+		List<bool>^ TagSeen;
+		PostInfo();
+	};
+
 	[Serializable]
 	ref class Facebook
 	{
 	public:
+		List<List<PostInfo^>^>^ AllPosts;
 		List<List<Friends^>^>^ f;
 		Facebook();
 		Facebook^ getStruct();
-		void serStruct();		
+		void serStruct();
 	};
 
-	
-	
-	ref  class comment
-	{
-	public:
-		String ^ ID;
-		String^ text;
-		int react;
-		comment() {}
-	};
-	ref class reply : public comment
-	{
-	public:
-	};
 
 }

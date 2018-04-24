@@ -115,6 +115,7 @@ namespace FBManagmentSytem {
 	Facebook::Facebook()
 	{
 		f = gcnew List<List<Friends^>^>();
+		AllPosts = gcnew List<List<PostInfo^>^>();
 		throw gcnew System::NotImplementedException();
 	}
 
@@ -133,6 +134,58 @@ namespace FBManagmentSytem {
 		FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::OpenOrCreate);
 		XmlSerializer^ xs = gcnew XmlSerializer(this->GetType());
 		xs->Serialize(fs, this);
+		throw gcnew System::NotImplementedException();
+	}
+	PostInfo::PostInfo()
+	{
+		post = gcnew Post();
+		Tag = gcnew List<String^>();
+		TagSeen = gcnew List<bool>();
+		throw gcnew System::NotImplementedException();
+	}
+
+	Post::Post()
+	{
+		Like = gcnew List<String^>();
+		Haha = gcnew List<String^>();
+		Wow = gcnew List<String^>();
+		Love = gcnew List<String^>();
+		Sad = gcnew List<String^>();
+		Angry = gcnew List<String^>();
+		Tag = gcnew List<String^>();
+		TagSeen = gcnew List<bool>();
+		comm = gcnew List<comment^>();
+		img = gcnew PictureBox();
+
+		throw gcnew System::NotImplementedException();
+	}
+
+	comment::comment()
+	{
+		Like = gcnew List<String^>();
+		Haha = gcnew List<String^>();
+		Wow = gcnew List<String^>();
+		Love = gcnew List<String^>();
+		Sad = gcnew List<String^>();
+		Angry = gcnew List<String^>();
+		Tag = gcnew List<String^>();
+		TagSeen = gcnew List<bool>();
+		rep = gcnew List<reply^>();
+
+		throw gcnew System::NotImplementedException();
+	}
+
+	reply::reply()
+	{
+		Like = gcnew List<String^>();
+		Haha = gcnew List<String^>();
+		Wow = gcnew List<String^>();
+		Love = gcnew List<String^>();
+		Sad = gcnew List<String^>();
+		Angry = gcnew List<String^>();
+		Tag = gcnew List<String^>();
+		TagSeen = gcnew List<bool>();
+
 		throw gcnew System::NotImplementedException();
 	}
 
