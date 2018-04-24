@@ -5,7 +5,7 @@
 #include "Messenger.h"
 #include "Profile.h"
 #include "Search.h"
-#include <cliext/vector>
+#include <cliext\vector>
 
 
 namespace FBManagmentSytem {
@@ -18,15 +18,14 @@ namespace FBManagmentSytem {
 	using namespace System::Collections::Generic;
 	using namespace System::Drawing;
 	using namespace MySql::Data::MySqlClient;
-
-	ref class Facebook
-	{
-	public:
-	};
+	using namespace System::Xml;
+	using namespace System::Xml::Serialization;
+	using namespace System::IO;
+	using namespace System::Text;
 
 	ref class User {
 	public:
-		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw ,^ id;
+		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
 		User() {}
 		User(String^ em, String^ pw)
 		{
@@ -45,6 +44,28 @@ namespace FBManagmentSytem {
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
 		Void Login();
 	};
+
+	ref class Friends
+	{
+	public:
+		User ^ u;
+		String ^ id;
+		bool^ fri_stat;
+		int^ fri__req;
+		Friends();
+	};
+
+	[Serializable]
+	ref class Facebook
+	{
+	public:
+		List<List<Friends^>^>^ f;
+		Facebook();
+		Facebook^ getStruct();
+		void serStruct();		
+	};
+
+	
 	
 	ref  class comment
 	{

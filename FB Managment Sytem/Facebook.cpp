@@ -2,6 +2,14 @@
 
 namespace FBManagmentSytem {
 
+	Friends::Friends()
+	{
+		u = gcnew User();
+		id = "";
+		fri_stat = false;
+		fri__req = NULL;
+	}
+
 	void User::Login() {
 
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
@@ -102,6 +110,30 @@ namespace FBManagmentSytem {
 			conDatabase->Close();
 			return true;
 		}
+	}
+
+	Facebook::Facebook()
+	{
+		f = gcnew List<List<Friends^>^>();
+		throw gcnew System::NotImplementedException();
+	}
+
+	Facebook^ Facebook::getStruct()
+	{
+		Facebook^ fb;
+		FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::Open);
+		XmlSerializer^ xs = gcnew XmlSerializer(this->GetType());
+		fb = (Facebook^)xs->Deserialize(fs);
+		fs->Close();
+		return fb;
+	}
+
+	void Facebook::serStruct()
+	{
+		FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::OpenOrCreate);
+		XmlSerializer^ xs = gcnew XmlSerializer(this->GetType());
+		xs->Serialize(fs, this);
+		throw gcnew System::NotImplementedException();
 	}
 
 }
