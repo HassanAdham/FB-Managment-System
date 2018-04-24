@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Facebook.h"
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -14,14 +14,11 @@ namespace FBManagmentSytem {
 	/// </summary>
 	public ref class Search : public System::Windows::Forms::Form
 	{
+		Facebook^ F;
+		User^ U;
 	public:
-		Search(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Search(void);
+		Search(Facebook^ f, User^ u);
 
 	protected:
 		/// <summary>

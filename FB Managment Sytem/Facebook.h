@@ -34,7 +34,6 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ u;
-		String ^ id;
 		bool^ fri_stat;
 		int^ fri__req;
 		Friends();

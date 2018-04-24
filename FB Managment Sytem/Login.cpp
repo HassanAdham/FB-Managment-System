@@ -41,7 +41,7 @@ namespace FBManagmentSytem {
 		{
 			u->Login();
 			this->Hide();
-			Mainapp ^main = gcnew Mainapp(u,obj);
+			Mainapp ^main = gcnew Mainapp(obj,u);
 			main->Show();
 		}
 		catch (Exception^ex)

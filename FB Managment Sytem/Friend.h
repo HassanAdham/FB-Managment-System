@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Facebook.h"
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -14,15 +14,11 @@ namespace FBManagmentSytem {
 	/// </summary>
 	public ref class Friend : public System::Windows::Forms::Form
 	{
+		Facebook^ F;
+		User^ U1,^ U2;
 	public:
-		Friend(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
-
+		Friend(void);
+		Friend(Facebook^ f, User^ u1, User^u2);
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.

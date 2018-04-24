@@ -6,7 +6,6 @@ namespace FBManagmentSytem {
 	Friends::Friends()
 	{
 		u = gcnew User();
-		id = "";
 		fri_stat = false;
 	}
 

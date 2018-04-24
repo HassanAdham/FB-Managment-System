@@ -150,7 +150,7 @@ namespace FBManagmentSytem {
 			bool b = u->SignUp(maleRadio, mComboBox);
 			if (b) {
 				MessageBox::Show("Welcome to Facebook.", "Sign up");
-				Mainapp ^main = gcnew Mainapp(u, obj);
+				Mainapp ^main = gcnew Mainapp(obj, u);
 				this->Hide();
 				main->Show();
 			}
