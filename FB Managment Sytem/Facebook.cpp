@@ -6,8 +6,8 @@ namespace FBManagmentSytem {
 	Friends::Friends()
 	{
 		usr = gcnew User();
-		fri_stat = true;
-		fri__req = 0;
+		fri_stat = gcnew Boolean(true);
+		/*fri__req = 0;*/
 	}
 
 

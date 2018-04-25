@@ -60,7 +60,6 @@ Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializab
   Fields:
     FBManagmentSytem.User usr : Public
     System.ValueType fri_stat Boolean IsBoxed : Public
-    System.ValueType fri__req Int32 IsBoxed : Public
 Class FBManagmentSytem.reply: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:

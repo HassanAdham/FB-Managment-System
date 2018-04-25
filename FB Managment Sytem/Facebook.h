@@ -35,8 +35,8 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ usr;
-		bool^ fri_stat;
-		int^ fri__req;
+		Boolean^ fri_stat;
+	/*	Int32^ fri__req;*/
 		Friends();
 	};
 
