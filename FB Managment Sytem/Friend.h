@@ -1,5 +1,6 @@
 #pragma once
 #include "Facebook.h"
+
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -18,11 +19,14 @@ namespace FBManagmentSytem {
 		User^ U1,^ U2;
 	public:
 		Friend(void);
-		Friend(Facebook^ f, User^ u1, User^u2);
+		Friend(Facebook^ f, User^ u1, User^ u2);
+
 	protected:
+
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
+
 		~Friend()
 		{
 			if (components)
@@ -30,6 +34,7 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
+
 	private: System::Windows::Forms::Panel^  feedsPanel;
 	protected:
 	private: System::Windows::Forms::Label^  label7;

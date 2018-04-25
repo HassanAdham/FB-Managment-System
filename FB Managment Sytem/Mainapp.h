@@ -20,6 +20,7 @@ namespace FBManagmentSytem {
 		User ^ U;
 		Mainapp(void);
 		Mainapp(Facebook^ f,User^ u);
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.

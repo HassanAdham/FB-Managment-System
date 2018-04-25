@@ -3,7 +3,6 @@
 #ifndef pp
 #define pp
 
-
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -110,7 +109,6 @@ namespace FBManagmentSytem {
 		Facebook^ getStruct();
 		void serStruct();
 	};
-
 
 }
 #endif pp

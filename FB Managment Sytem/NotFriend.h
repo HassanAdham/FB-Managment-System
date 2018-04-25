@@ -1,5 +1,6 @@
 #pragma once
 #include "Facebook.h"
+
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -16,9 +17,11 @@ namespace FBManagmentSytem {
 	{
 		Facebook^ F;
 		User^ U1, ^ U2;
+
 	public:
 		NotFriend(void);
 		NotFriend(Facebook^ f, User^ u1, User^ u2);
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -30,6 +33,7 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
+
 	private: System::Windows::Forms::Panel^  feedsPanel;
 	protected:
 	private: System::Windows::Forms::Label^  label7;
@@ -349,8 +353,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
+
 #pragma endregion
 	};
 }

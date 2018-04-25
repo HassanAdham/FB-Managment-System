@@ -32,8 +32,9 @@ namespace FBManagmentSytem {
 			}
 		}
 	private: System::Windows::Forms::Splitter^  splitter1;
+	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 
-	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
+
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  bunifuMaterialTextbox1;
 
 	protected: 
@@ -53,9 +54,9 @@ namespace FBManagmentSytem {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Search::typeid));
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
-			this->bunifuImageButton1 = (gcnew Bunifu::Framework::UI::BunifuImageButton());
+			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->bunifuMaterialTextbox1 = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitter1
@@ -70,20 +71,20 @@ namespace FBManagmentSytem {
 			this->splitter1->TabIndex = 0;
 			this->splitter1->TabStop = false;
 			// 
-			// bunifuImageButton1
+			// backBtn
 			// 
-			this->bunifuImageButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)),
-				static_cast<System::Int32>(static_cast<System::Byte>(89)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->bunifuImageButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuImageButton1.Image")));
-			this->bunifuImageButton1->ImageActive = nullptr;
-			this->bunifuImageButton1->Location = System::Drawing::Point(0, 0);
-			this->bunifuImageButton1->Name = L"bunifuImageButton1";
-			this->bunifuImageButton1->Size = System::Drawing::Size(55, 60);
-			this->bunifuImageButton1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->bunifuImageButton1->TabIndex = 3;
-			this->bunifuImageButton1->TabStop = false;
-			this->bunifuImageButton1->Zoom = 10;
+			this->backBtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->backBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->backBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backBtn.Image")));
+			this->backBtn->ImageActive = nullptr;
+			this->backBtn->Location = System::Drawing::Point(0, 0);
+			this->backBtn->Name = L"backBtn";
+			this->backBtn->Size = System::Drawing::Size(55, 60);
+			this->backBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->backBtn->TabIndex = 3;
+			this->backBtn->TabStop = false;
+			this->backBtn->Zoom = 10;
 			// 
 			// bunifuMaterialTextbox1
 			// 
@@ -118,14 +119,14 @@ namespace FBManagmentSytem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->bunifuMaterialTextbox1);
-			this->Controls->Add(this->bunifuImageButton1);
+			this->Controls->Add(this->backBtn);
 			this->Controls->Add(this->splitter1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Search";
 			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Search::Search_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			this->ResumeLayout(false);
 
 		}

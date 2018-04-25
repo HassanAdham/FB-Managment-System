@@ -43,10 +43,10 @@ namespace FBManagmentSytem {
 	private:
 	private: System::ComponentModel::IContainer^  components;
 	private:
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

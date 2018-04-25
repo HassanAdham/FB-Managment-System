@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>FBManagmentSytem</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -91,6 +91,10 @@
     <ClCompile Include="Mainapp.cpp" />
     <ClCompile Include="Messenger.cpp" />
     <ClCompile Include="Friend.cpp" />
+    <ClCompile Include="FriendsOP.cpp" />
+    <ClCompile Include="EditPro.cpp" />
+    <ClCompile Include="About.cpp" />
+    <ClCompile Include="Post.cpp" />
     <ClCompile Include="NotFriend.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Search.cpp" />
@@ -110,6 +114,18 @@
     <ClInclude Include="Friend.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FriendsOP.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditPro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="About.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Post.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="NotFriend.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -124,8 +140,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPro.resx">
+      <DependentUpon>EditPro.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Friend.resx">
       <DependentUpon>Friend.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendsOP.resx">
+      <DependentUpon>FriendsOP.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
@@ -138,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NotFriend.resx">
       <DependentUpon>NotFriend.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>

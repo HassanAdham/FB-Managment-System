@@ -176,7 +176,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton2->ImagePosition = 10;
 			this->bunifuTileButton2->ImageZoom = 25;
 			this->bunifuTileButton2->LabelPosition = 16;
-			this->bunifuTileButton2->LabelText = L"Update Info";
+			this->bunifuTileButton2->LabelText = L"Edit Profile";
 			this->bunifuTileButton2->Location = System::Drawing::Point(95, 283);
 			this->bunifuTileButton2->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton2->Name = L"bunifuTileButton2";
@@ -292,7 +292,7 @@ namespace FBManagmentSytem {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(245, 33);
 			this->label5->TabIndex = 6;
-			this->label5->Text = L"Facebok";
+			this->label5->Text = L"Facebook";
 			this->label5->Click += gcnew System::EventHandler(this, &Profile::label3_Click);
 			// 
 			// pictureBox7
