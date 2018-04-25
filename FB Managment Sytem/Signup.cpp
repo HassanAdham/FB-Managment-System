@@ -153,7 +153,8 @@ namespace FBManagmentSytem {
 				
 
 				Friends^ fri = gcnew Friends();
-				if (obj->f->Count == 1) {
+				fri->usr = u;
+				if (obj->f->Count == 0) {
 					List<Friends^>^ y = gcnew List<Friends^>();
 					y->Add(fri);
 					obj->f->Add(y);
@@ -165,7 +166,7 @@ namespace FBManagmentSytem {
 						obj->f[i]->Add(fri);
 					}
 
-					List<Friends^>^ x = obj->f[0];
+					List<Friends^>^ x = gcnew List<Friends^>(obj->f[0]);
 					Friends^ tmp = x[0];
 					x[0] = x[(obj->f[0]->Count) - 1];
 					x[(obj->f[0]->Count) - 1] = tmp;

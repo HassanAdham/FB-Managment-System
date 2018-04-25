@@ -21,8 +21,26 @@ namespace FBManagmentSytem {
 	[Serializable]
 	public ref class User {
 	public:
-		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
+		//String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
 		//PictureBox^ coverphoto, ^profilephoto;
+		[XmlElement("id")]
+		String ^ id;
+		[XmlElement("mail")]
+		String ^ mail;
+		[XmlElement("passw")]
+		String ^ passw;
+		[XmlElement("Fname")]
+		String ^ Fname;
+		[XmlElement("Lname")]
+		String ^ Lname;
+		[XmlElement("gender")]
+		String ^ gender;
+		[XmlElement("day")]
+		String ^ day;
+		[XmlElement("month")]
+		String ^ month;
+		[XmlElement("year")]
+		String ^ year;
 		User();
 		User(String^ em, String^ pw);
 		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
@@ -35,8 +53,8 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ usr;
-		Boolean^ fri_stat;
-	/*	Int32^ fri__req;*/
+		String^ fri_stat;
+		String^ fri__req;
 		Friends();
 	};
 
@@ -145,10 +163,7 @@ namespace FBManagmentSytem {
 	public ref class Facebook
 	{
 	public:
-		Friends ^ a;
-		List<Friends^>^ b;
 		List<List<Friends^>^>^ f;
-
 		Facebook();
 		Facebook^ getStruct();
 		void serStruct();

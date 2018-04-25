@@ -6,8 +6,8 @@ namespace FBManagmentSytem {
 	Friends::Friends()
 	{
 		usr = gcnew User();
-		fri_stat = gcnew Boolean(true);
-		/*fri__req = 0;*/
+		fri_stat = "1";
+		fri__req = "0";
 	}
 
 
@@ -39,9 +39,9 @@ namespace FBManagmentSytem {
 
 	User::User()
 	{
-		work = "";
-		edu = "";
-		address = "";
+		//work = "";
+		//edu = "";
+		//address = "";
 		mail = "";
 		Fname = "";
 		Lname = "";
@@ -143,12 +143,7 @@ namespace FBManagmentSytem {
 
 	Facebook::Facebook()
 	{
-		a = gcnew Friends();
-		b = gcnew List<Friends^>();
-		b->Add(a);
 		f = gcnew List<List<Friends^>^>();
-		f->Add(b);
-		
 		//AllPosts = gcnew List<List<PostInfo^>^>();
 	}
 
@@ -170,6 +165,7 @@ namespace FBManagmentSytem {
 	void Facebook::serStruct()
 	{
 			Facebook^ fb = gcnew Facebook();
+			fb->f = f;
 			FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::Append);
 			if (fs->Length != 0)
 			{
