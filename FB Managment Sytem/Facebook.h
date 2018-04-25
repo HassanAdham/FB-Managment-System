@@ -18,10 +18,11 @@ namespace FBManagmentSytem {
 	using namespace System::IO;
 	using namespace System::Text;
 
-	ref class User {
+	
+	public ref class User {
 	public:
 		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
-		PictureBox^ coverphoto, ^profilephoto;
+		//PictureBox^ coverphoto, ^profilephoto;
 		User() {}
 		User(String^ em, String^ pw);
 		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
@@ -29,82 +30,129 @@ namespace FBManagmentSytem {
 		Void Login();
 	};
 
-	ref class Friends
+	[Serializable]
+	public ref class Friends
 	{
 	public:
-		User ^ u;
+		[XmlElement("User")]
+		User ^ usr;
+		[XmlElement("Fri_stat")]
 		bool^ fri_stat;
+		[XmlElement("Fri_req")]
 		int^ fri__req;
 		Friends();
 	};
 
-	ref class reply
+	[Serializable]
+	public ref class reply
 	{
 	public:
+		[XmlElement("TagR")]
 		List<String^>^ Tag;
+		[XmlElement("TagSeenR")]
 		List<bool>^ TagSeen;
+		[XmlElement("replyID")]
 		String ^ ID;
+		[XmlElement("ReplyText")]
 		String^ text;
+		[XmlElement("LrLikes")]
 		List<String^>^ Like;
+		[XmlElement("LrHaha")]
 		List<String^>^ Haha;
+		[XmlElement("LrWow")]
 		List<String^>^ Wow;
+		[XmlElement("LrLove")]
 		List<String^>^ Love;
+		[XmlElement("LrSad")]
 		List<String^>^ Sad;
+		[XmlElement("LrAngry")]
 		List<String^>^ Angry;
 		reply();
 	};
 
-	ref  class comment
+	[Serializable]
+	public ref  class comment
 	{
 	public:
+		[XmlElement("TagC")]
 		List<String^>^ Tag;
+		[XmlElement("TagSeenC")]
 		List<bool>^ TagSeen;
+		[XmlElement("LcLikes")]
 		List<String^>^ Like;
+		[XmlElement("LcHaha")]
 		List<String^>^ Haha;
+		[XmlElement("LcWow")]
 		List<String^>^ Wow;
+		[XmlElement("LcLove")]
 		List<String^>^ Love;
+		[XmlElement("LcSad")]
 		List<String^>^ Sad;
+		[XmlElement("LcAngry")]
 		List<String^>^ Angry;
+		[XmlElement("commentID")]
 		String ^ ID;
+		[XmlElement("CommentText")]
 		String^ text;
+		[XmlElement("replies")]
 		List<reply^>^ rep;
 		comment();
 	};
 
-	ref  class Post
+	[Serializable]
+	public ref  class Posts
 	{
 	public:
+		[XmlElement("LPLikes")]
 		List<String^>^ Like;
+		[XmlElement("LPHAha")]
 		List<String^>^ Haha;
+		[XmlElement("LPWow")]
 		List<String^>^ Wow;
+		[XmlElement("LPLove")]
 		List<String^>^ Love;
+		[XmlElement("LPSad")]
 		List<String^>^ Sad;
+		[XmlElement("LPAngry")]
 		List<String^>^ Angry;
+		[XmlElement("PostID")]
 		String^ ID;
+		[XmlElement("UserID")]
 		String^ UserID;
+		[XmlElement("PostText")]
 		String^ text;
-		PictureBox^ img;
+		//PictureBox^ img;
+		[XmlElement("isPub")]
 		bool^ isPub;
+		[XmlElement("Comments")]
 		List<comment^>^ comm;
-		Post();
+		Posts();
 	};
 
-	ref  class PostInfo
+	[Serializable]
+	public ref  class PostInfo
 	{
 	public:
-		Post ^ post;
+		[XmlElement("Post")]
+		Posts ^ post;
+		[XmlElement("PostStat")]
 		int^ PosrStat;
+		[XmlElement("Tag")]
 		List<String^>^ Tag;
+		[XmlElement("TagSeen")]
 		List<bool>^ TagSeen;
 		PostInfo();
 	};
 
-	[Serializable]
-	ref class Facebook
+	
+	public ref class Facebook
 	{
 	public:
-		List<List<PostInfo^>^>^ AllPosts;
+		/*[XmlElement("AllPosts")]
+		List<List<PostInfo^>^>^ AllPosts;*/
+		
 		List<List<Friends^>^>^ f;
+
 		Facebook();
 		Facebook^ getStruct();
 		void serStruct();

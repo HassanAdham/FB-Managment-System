@@ -14,13 +14,13 @@ namespace FBManagmentSytem {
 
 	Signup::Signup(void)
 	{
-		InitializeComponent();
 		obj = gcnew Facebook();
+		InitializeComponent();
 	}
 
 	System::Void Signup::Signup_Load(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		obj->getStruct();
+		obj = obj->getStruct();
 		return System::Void();
 	}
 
@@ -150,6 +150,29 @@ namespace FBManagmentSytem {
 			bool b = u->SignUp(maleRadio, mComboBox);
 			if (b) {
 				MessageBox::Show("Welcome to Facebook.", "Sign up");
+				
+
+				Friends^ fri = gcnew Friends();
+				if (obj->f->Count == 0) {
+					List<Friends^>^ y = gcnew List<Friends^>();
+					y->Add(fri);
+					obj->f->Add(y);
+				}
+				
+				else {
+					for (int i = 0; i < obj->f[0]->Count; i++)
+					{
+						obj->f[i]->Add(fri);
+					}
+
+					List<Friends^>^ x = obj->f[0];
+					Friends^ tmp = x[0];
+					x[0] = x[(obj->f[0]->Count) - 1];
+					x[(obj->f[0]->Count) - 1] = tmp;
+					obj->f->Add(x);
+				}
+				obj->serStruct();
+
 				Mainapp ^main = gcnew Mainapp(obj, u);
 				this->Hide();
 				main->Show();

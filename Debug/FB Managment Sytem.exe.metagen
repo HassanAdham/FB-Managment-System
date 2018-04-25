@@ -1,8 +1,12 @@
+  FBManagmentSytem.About.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.EditPro.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Friend.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.FriendsOP.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Login.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Mainapp.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Messenger.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.NotFriend.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.Post.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Profile.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Search.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Signup.resources - Embedded, ContainedInManifestFile, 
@@ -31,6 +35,87 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String work : Public
+    System.String edu : Public
+    System.String address : Public
+    System.String mail : Public
+    System.String Fname : Public
+    System.String Lname : Public
+    System.String gender : Public
+    System.String day : Public
+    System.String month : Public
+    System.String year : Public
+    System.String passw : Public
+    System.String id : Public
+  Methods:
+    SignUp(RadioButton, ComboBox): PrivateScope, Public, HideBySig
+    Login(): PrivateScope, Public, HideBySig
+Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.User usr : Public
+    System.ValueType fri_stat Boolean IsBoxed : Public
+    System.ValueType fri__req Int32 IsBoxed : Public
+Class FBManagmentSytem.reply: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.String] Tag : Public
+    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+    System.String ID : Public
+    System.String text : Public
+    System.Collections.Generic.List`1[System.String] Like : Public
+    System.Collections.Generic.List`1[System.String] Haha : Public
+    System.Collections.Generic.List`1[System.String] Wow : Public
+    System.Collections.Generic.List`1[System.String] Love : Public
+    System.Collections.Generic.List`1[System.String] Sad : Public
+    System.Collections.Generic.List`1[System.String] Angry : Public
+Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.String] Tag : Public
+    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+    System.Collections.Generic.List`1[System.String] Like : Public
+    System.Collections.Generic.List`1[System.String] Haha : Public
+    System.Collections.Generic.List`1[System.String] Wow : Public
+    System.Collections.Generic.List`1[System.String] Love : Public
+    System.Collections.Generic.List`1[System.String] Sad : Public
+    System.Collections.Generic.List`1[System.String] Angry : Public
+    System.String ID : Public
+    System.String text : Public
+    System.Collections.Generic.List`1[FBManagmentSytem.reply] rep : Public
+Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.String] Like : Public
+    System.Collections.Generic.List`1[System.String] Haha : Public
+    System.Collections.Generic.List`1[System.String] Wow : Public
+    System.Collections.Generic.List`1[System.String] Love : Public
+    System.Collections.Generic.List`1[System.String] Sad : Public
+    System.Collections.Generic.List`1[System.String] Angry : Public
+    System.String ID : Public
+    System.String UserID : Public
+    System.String text : Public
+    System.ValueType isPub Boolean IsBoxed : Public
+    System.Collections.Generic.List`1[FBManagmentSytem.comment] comm : Public
+Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.Posts post : Public
+    System.ValueType PosrStat Int32 IsBoxed : Public
+    System.Collections.Generic.List`1[System.String] Tag : Public
+    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[System.Collections.Generic.List`1[FBManagmentSytem.Friends]] f : Public
+  Methods:
+    getStruct(): PrivateScope, Public, HideBySig
+    serStruct(): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -54,6 +139,18 @@ Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFi
 Class FBManagmentSytem.Friend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.FriendsOP: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.EditPro: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.About: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.Post: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.NotFriend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

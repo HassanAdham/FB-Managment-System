@@ -18,7 +18,6 @@ namespace FBManagmentSytem {
 		//
 		//TODO: Add the constructor code here
 		//
-		throw gcnew System::NotImplementedException();
 	}
 
 

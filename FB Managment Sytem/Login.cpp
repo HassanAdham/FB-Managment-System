@@ -30,7 +30,7 @@ namespace FBManagmentSytem {
 
 	System::Void Login::Login_Load(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		obj->getStruct();
+		obj = obj->getStruct();
 		return System::Void();
 	}
 

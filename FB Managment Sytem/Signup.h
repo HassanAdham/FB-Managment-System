@@ -17,7 +17,6 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Facebook ^ obj;
-	public:
 		Signup(void);
 
 	protected:
