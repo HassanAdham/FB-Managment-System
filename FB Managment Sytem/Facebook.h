@@ -18,7 +18,7 @@ namespace FBManagmentSytem {
 	using namespace System::IO;
 	using namespace System::Text;
 
-	
+	[Serializable]
 	public ref class User {
 	public:
 		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
@@ -34,11 +34,8 @@ namespace FBManagmentSytem {
 	public ref class Friends
 	{
 	public:
-		[XmlElement("User")]
 		User ^ usr;
-		[XmlElement("Fri_stat")]
 		bool^ fri_stat;
-		[XmlElement("Fri_req")]
 		int^ fri__req;
 		Friends();
 	};
@@ -144,13 +141,10 @@ namespace FBManagmentSytem {
 		PostInfo();
 	};
 
-	
+	[Serializable]
 	public ref class Facebook
 	{
 	public:
-		/*[XmlElement("AllPosts")]
-		List<List<PostInfo^>^>^ AllPosts;*/
-		
 		List<List<Friends^>^>^ f;
 
 		Facebook();

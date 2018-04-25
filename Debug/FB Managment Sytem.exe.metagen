@@ -35,7 +35,7 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -109,7 +109,7 @@ Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializa
     System.ValueType PosrStat Int32 IsBoxed : Public
     System.Collections.Generic.List`1[System.String] Tag : Public
     System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
-Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Collections.Generic.List`1[System.Collections.Generic.List`1[FBManagmentSytem.Friends]] f : Public

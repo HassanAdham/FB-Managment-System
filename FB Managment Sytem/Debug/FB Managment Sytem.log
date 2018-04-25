@@ -1,3 +1,4 @@
-﻿  Signup.cpp
+﻿  Facebook.cpp
+e:\hazem\fb-managment-system\fb managment sytem\facebook.cpp(10): warning C4965: implicit box of integer 0; use nullptr or explicit cast
   Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   FB Managment Sytem.vcxproj -> E:\hazem\FB-Managment-System\Debug\FB Managment Sytem.exe

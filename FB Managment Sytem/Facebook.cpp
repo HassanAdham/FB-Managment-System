@@ -140,8 +140,8 @@ namespace FBManagmentSytem {
 			fs->Close();
 			return fb;
 		}
-		XmlSerializer^ xs = gcnew XmlSerializer(fb->GetType());
-		fb = (Facebook^)xs->Deserialize(fs);
+		XmlSerializer^ xs = gcnew XmlSerializer(fb->f->GetType());
+		fb->f = (List<List<Friends^>^>^)xs->Deserialize(fs);
 		fs->Close();
 		return fb;
 	}
@@ -149,17 +149,14 @@ namespace FBManagmentSytem {
 	void Facebook::serStruct()
 	{
 			Facebook^ fb = gcnew Facebook();
-			//fb->f = f;
-			//fb->AllPosts = AllPosts;
 			FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::Append);
 			if (fs->Length != 0)
 			{
 				fs->Close();
 				fs = gcnew FileStream("Friends.xml", FileMode::Truncate);
-				
 			}
-			XmlSerializer^ ser = gcnew XmlSerializer(fb->GetType());
-			ser->Serialize(fs, fb);
+			XmlSerializer^ ser = gcnew XmlSerializer(fb->f->GetType());
+			ser->Serialize(fs, fb->f);
 			fs->Close();
 		/*}
 		catch (Exception^ ex)
