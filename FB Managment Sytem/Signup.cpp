@@ -153,14 +153,14 @@ namespace FBManagmentSytem {
 				
 
 				Friends^ fri = gcnew Friends();
-				if (obj->f->Count == 0) {
+				if (obj->f->Count == 1) {
 					List<Friends^>^ y = gcnew List<Friends^>();
 					y->Add(fri);
 					obj->f->Add(y);
 				}
 				
 				else {
-					for (int i = 0; i < obj->f[0]->Count; i++)
+					for (int i = 0; i < obj->f->Count; i++)
 					{
 						obj->f[i]->Add(fri);
 					}

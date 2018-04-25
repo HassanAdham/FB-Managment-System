@@ -23,7 +23,7 @@ namespace FBManagmentSytem {
 	public:
 		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
 		//PictureBox^ coverphoto, ^profilephoto;
-		User() {}
+		User();
 		User(String^ em, String^ pw);
 		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
@@ -145,6 +145,8 @@ namespace FBManagmentSytem {
 	public ref class Facebook
 	{
 	public:
+		Friends ^ a;
+		List<Friends^>^ b;
 		List<List<Friends^>^>^ f;
 
 		Facebook();

@@ -112,6 +112,8 @@ Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializa
 Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    FBManagmentSytem.Friends a : Public
+    System.Collections.Generic.List`1[FBManagmentSytem.Friends] b : Public
     System.Collections.Generic.List`1[System.Collections.Generic.List`1[FBManagmentSytem.Friends]] f : Public
   Methods:
     getStruct(): PrivateScope, Public, HideBySig

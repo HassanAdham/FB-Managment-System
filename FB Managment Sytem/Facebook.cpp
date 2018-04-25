@@ -37,6 +37,22 @@ namespace FBManagmentSytem {
 		conDatabase->Close();
 	}
 
+	User::User()
+	{
+		work = "";
+		edu = "";
+		address = "";
+		mail = "";
+		Fname = "";
+		Lname = "";
+		gender = "";
+		day = "";
+		month = "";
+		year = "";
+		passw = "";
+		id = "";
+	}
+
 	User::User(String ^ em, String ^ pw)
 	{
 		mail = em;
@@ -127,7 +143,12 @@ namespace FBManagmentSytem {
 
 	Facebook::Facebook()
 	{
+		a = gcnew Friends();
+		b = gcnew List<Friends^>();
+		b->Add(a);
 		f = gcnew List<List<Friends^>^>();
+		f->Add(b);
+		
 		//AllPosts = gcnew List<List<PostInfo^>^>();
 	}
 
@@ -158,11 +179,6 @@ namespace FBManagmentSytem {
 			XmlSerializer^ ser = gcnew XmlSerializer(fb->f->GetType());
 			ser->Serialize(fs, fb->f);
 			fs->Close();
-		/*}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show(ex->Message);
-		}*/
 	}
 
 	PostInfo::PostInfo()
