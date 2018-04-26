@@ -1,4 +1,5 @@
 #include "Profile.h"
+#include "EditPro.h"
 
 FBManagmentSytem::Profile::Profile(void)
 {
@@ -18,5 +19,13 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 	pictureBox1->Controls->Add(backBtn);
 	backBtn->BackColor = Color::Transparent;
 	backBtn->Location = Point(57, -1);
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Profile::editBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	EditPro^ s = gcnew EditPro(F, U);
+	this->Hide();
+	s->Show();
 	return System::Void();
 }

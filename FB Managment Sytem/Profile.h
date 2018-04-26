@@ -15,17 +15,7 @@ namespace FBManagmentSytem {
 	public ref class Profile : public System::Windows::Forms::Form
 	{
 		Facebook^ F;
-
-	private: System::Windows::Forms::PictureBox^  pictureBox8;
-	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
-
-
-
-
-
-
-
-			 User^ U;
+		User^ U;
 	public:
 		Profile(void);
 		Profile(Facebook^ f, User^ u);
@@ -44,11 +34,12 @@ namespace FBManagmentSytem {
 	protected: 
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Label^  userLbl;
-
+	private: System::Windows::Forms::PictureBox^  pictureBox8;
+	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
 	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton1;
-	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton2;
+	private: Bunifu::Framework::UI::BunifuTileButton^  editBtn;
 	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton3;
 	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton4;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
@@ -89,7 +80,7 @@ namespace FBManagmentSytem {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->bunifuTileButton1 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
-			this->bunifuTileButton2 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+			this->editBtn = (gcnew Bunifu::Framework::UI::BunifuTileButton());
 			this->bunifuTileButton3 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
 			this->bunifuTileButton4 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
@@ -184,25 +175,26 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton1->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton1->TabIndex = 4;
 			// 
-			// bunifuTileButton2
+			// editBtn
 			// 
-			this->bunifuTileButton2->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuTileButton2->color = System::Drawing::Color::Transparent;
-			this->bunifuTileButton2->colorActive = System::Drawing::Color::LightGray;
-			this->bunifuTileButton2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuTileButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->editBtn->BackColor = System::Drawing::Color::Transparent;
+			this->editBtn->color = System::Drawing::Color::Transparent;
+			this->editBtn->colorActive = System::Drawing::Color::LightGray;
+			this->editBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->editBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->bunifuTileButton2->ForeColor = System::Drawing::Color::DarkGray;
-			this->bunifuTileButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton2.Image")));
-			this->bunifuTileButton2->ImagePosition = 10;
-			this->bunifuTileButton2->ImageZoom = 25;
-			this->bunifuTileButton2->LabelPosition = 16;
-			this->bunifuTileButton2->LabelText = L"Edit Profile";
-			this->bunifuTileButton2->Location = System::Drawing::Point(95, 282);
-			this->bunifuTileButton2->Margin = System::Windows::Forms::Padding(5);
-			this->bunifuTileButton2->Name = L"bunifuTileButton2";
-			this->bunifuTileButton2->Size = System::Drawing::Size(75, 47);
-			this->bunifuTileButton2->TabIndex = 4;
+			this->editBtn->ForeColor = System::Drawing::Color::DarkGray;
+			this->editBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"editBtn.Image")));
+			this->editBtn->ImagePosition = 10;
+			this->editBtn->ImageZoom = 25;
+			this->editBtn->LabelPosition = 16;
+			this->editBtn->LabelText = L"Edit Profile";
+			this->editBtn->Location = System::Drawing::Point(95, 282);
+			this->editBtn->Margin = System::Windows::Forms::Padding(5);
+			this->editBtn->Name = L"editBtn";
+			this->editBtn->Size = System::Drawing::Size(75, 47);
+			this->editBtn->TabIndex = 4;
+			this->editBtn->Click += gcnew System::EventHandler(this, &Profile::editBtn_Click);
 			// 
 			// bunifuTileButton3
 			// 
@@ -404,7 +396,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->bunifuTileButton4);
 			this->Controls->Add(this->bunifuTileButton3);
-			this->Controls->Add(this->bunifuTileButton2);
+			this->Controls->Add(this->editBtn);
 			this->Controls->Add(this->bunifuTileButton1);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox3);
@@ -435,7 +427,9 @@ namespace FBManagmentSytem {
 			 
 	private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+
+	private: System::Void editBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

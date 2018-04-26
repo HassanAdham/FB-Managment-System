@@ -1,4 +1,5 @@
 #pragma once
+#include "Facebook.h"
 
 namespace FBManagmentSytem {
 
@@ -15,13 +16,10 @@ namespace FBManagmentSytem {
 	public ref class EditPro : public System::Windows::Forms::Form
 	{
 	public:
-		EditPro(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Facebook ^ F;
+		User^ U;
+		EditPro(void);
+		EditPro(Facebook^ f, User^ u);
 
 	protected:
 		/// <summary>
@@ -36,23 +34,6 @@ namespace FBManagmentSytem {
 		}
 
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::Label^  label8;
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
@@ -98,32 +79,6 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::PictureBox^  pictureBox14;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -369,6 +324,7 @@ namespace FBManagmentSytem {
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
