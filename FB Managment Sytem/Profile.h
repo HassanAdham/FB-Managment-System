@@ -16,6 +16,7 @@ namespace FBManagmentSytem {
 	{
 		Facebook^ F;
 	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
+	private: System::Windows::Forms::PictureBox^  pictureBox8;
 			 User^ U;
 	public:
 		Profile(void);
@@ -94,6 +95,7 @@ namespace FBManagmentSytem {
 			this->liveLbl = (gcnew System::Windows::Forms::Label());
 			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
 			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
+			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -102,6 +104,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -154,9 +157,10 @@ namespace FBManagmentSytem {
 			// 
 			// bunifuTileButton1
 			// 
+			this->bunifuTileButton1->AccessibleRole = System::Windows::Forms::AccessibleRole::TitleBar;
 			this->bunifuTileButton1->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuTileButton1->color = System::Drawing::Color::Transparent;
-			this->bunifuTileButton1->colorActive = System::Drawing::Color::Transparent;
+			this->bunifuTileButton1->colorActive = System::Drawing::Color::LightGray;
 			this->bunifuTileButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuTileButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -169,14 +173,14 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton1->Location = System::Drawing::Point(10, 282);
 			this->bunifuTileButton1->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->bunifuTileButton1->Name = L"bunifuTileButton1";
-			this->bunifuTileButton1->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton1->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton1->TabIndex = 4;
 			// 
 			// bunifuTileButton2
 			// 
 			this->bunifuTileButton2->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuTileButton2->color = System::Drawing::Color::Transparent;
-			this->bunifuTileButton2->colorActive = System::Drawing::Color::Transparent;
+			this->bunifuTileButton2->colorActive = System::Drawing::Color::LightGray;
 			this->bunifuTileButton2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuTileButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -189,14 +193,14 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton2->Location = System::Drawing::Point(95, 282);
 			this->bunifuTileButton2->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton2->Name = L"bunifuTileButton2";
-			this->bunifuTileButton2->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton2->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton2->TabIndex = 4;
 			// 
 			// bunifuTileButton3
 			// 
 			this->bunifuTileButton3->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuTileButton3->color = System::Drawing::Color::Transparent;
-			this->bunifuTileButton3->colorActive = System::Drawing::Color::Transparent;
+			this->bunifuTileButton3->colorActive = System::Drawing::Color::LightGray;
 			this->bunifuTileButton3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuTileButton3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -209,14 +213,14 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton3->Location = System::Drawing::Point(182, 282);
 			this->bunifuTileButton3->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton3->Name = L"bunifuTileButton3";
-			this->bunifuTileButton3->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton3->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton3->TabIndex = 4;
 			// 
 			// bunifuTileButton4
 			// 
 			this->bunifuTileButton4->BackColor = System::Drawing::Color::Transparent;
 			this->bunifuTileButton4->color = System::Drawing::Color::Transparent;
-			this->bunifuTileButton4->colorActive = System::Drawing::Color::Transparent;
+			this->bunifuTileButton4->colorActive = System::Drawing::Color::LightGray;
 			this->bunifuTileButton4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuTileButton4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -229,7 +233,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton4->Location = System::Drawing::Point(267, 282);
 			this->bunifuTileButton4->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton4->Name = L"bunifuTileButton4";
-			this->bunifuTileButton4->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton4->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton4->TabIndex = 4;
 			// 
 			// pictureBox5
@@ -363,11 +367,22 @@ namespace FBManagmentSytem {
 			this->backBtn->TabStop = false;
 			this->backBtn->Zoom = 10;
 			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
+			this->pictureBox8->Location = System::Drawing::Point(133, 127);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(94, 94);
+			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox8->TabIndex = 14;
+			this->pictureBox8->TabStop = false;
+			// 
 			// Profile
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->backBtn);
 			this->Controls->Add(this->feedsPanel);
 			this->Controls->Add(this->liveLbl);
@@ -402,6 +417,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
