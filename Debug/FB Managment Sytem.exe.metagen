@@ -69,7 +69,7 @@ Class FBManagmentSytem.reply: AutoLayout, AnsiClass, Class, Public, Serializable
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Collections.Generic.List`1[System.String] Tag : Public
-    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+    System.Collections.Generic.List`1[System.String] TagSeen : Public
     System.String ID : Public
     System.String text : Public
     System.Collections.Generic.List`1[System.String] Like : Public
@@ -82,7 +82,7 @@ Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializab
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Collections.Generic.List`1[System.String] Tag : Public
-    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+    System.Collections.Generic.List`1[System.String] TagSeen : Public
     System.Collections.Generic.List`1[System.String] Like : Public
     System.Collections.Generic.List`1[System.String] Haha : Public
     System.Collections.Generic.List`1[System.String] Wow : Public
@@ -104,19 +104,21 @@ Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable
     System.String ID : Public
     System.String UserID : Public
     System.String text : Public
-    System.ValueType isPub Boolean IsBoxed : Public
+    System.Windows.Forms.PictureBox img : Public
+    System.String isPub : Public
     System.Collections.Generic.List`1[FBManagmentSytem.comment] comm : Public
 Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Posts post : Public
-    System.ValueType PosrStat Int32 IsBoxed : Public
+    System.String PosrStat : Public
     System.Collections.Generic.List`1[System.String] Tag : Public
-    System.Collections.Generic.List`1[System.Boolean] TagSeen : Public
+    System.Collections.Generic.List`1[System.String] TagSeen : Public
 Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.Collections.Generic.List`1[System.Collections.Generic.List`1[FBManagmentSytem.Friends]] f : Public
+    System.Collections.Generic.List`1[System.Collections.Generic.List`1[FBManagmentSytem.PostInfo]] AllPosts : Public
   Methods:
     getStruct(): PrivateScope, Public, HideBySig
     serStruct(): PrivateScope, Public, HideBySig

@@ -37,16 +37,15 @@ namespace FBManagmentSytem {
 	System::Void FBManagmentSytem::Login::loginBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
 		User^ u = gcnew User(usernameTxt->Text, pwTxt->Text);
-		try
-		{
-			u->Login();
+		if (u->Login()) {
 			this->Hide();
-			Mainapp ^main = gcnew Mainapp(obj,u);
+			Mainapp ^main = gcnew Mainapp(obj, u);
 			main->Show();
 		}
-		catch (Exception^ex)
+		else
 		{
 			MessageBox::Show("The e-mail or password you entered doesn't match any account.");
+
 		}
 	}
 

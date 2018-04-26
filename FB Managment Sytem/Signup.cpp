@@ -173,7 +173,22 @@ namespace FBManagmentSytem {
 					Friends^ tmp = x[0];
 					x[0] = x[(obj->f[0]->Count) - 1];
 					x[(obj->f[0]->Count) - 1] = tmp;
+					for (int i = 0; i < x->Count; i++)
+					{
+						x[i]->fri_stat = "0";
+						x[i]->fri__req = "0";
+					}
 					obj->f->Add(x);
+				}
+
+				if (obj->AllPosts->Count != 0)
+				{
+					List<PostInfo^>^z = gcnew List<PostInfo^>(obj->AllPosts[0]);
+					for (int i = 0; i < z->Count; i++)
+					{
+						z[i]->PosrStat = "0";
+					}
+					obj->AllPosts->Add(z);
 				}
 
 				obj->serStruct();

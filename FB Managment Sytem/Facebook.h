@@ -28,7 +28,7 @@ namespace FBManagmentSytem {
 		User(String^ em, String^ pw);
 		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
-		Void Login();
+		bool Login();
 		String^ username();
 	};
 
@@ -37,7 +37,7 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ usr;
-		
+
 		String^ fri_stat;
 		String^ fri__req;
 		Friends();
@@ -48,7 +48,7 @@ namespace FBManagmentSytem {
 	{
 	public:
 		List<String^>^ Tag;
-		List<bool>^ TagSeen;
+		List<String^>^ TagSeen;
 		String ^ ID;
 		String^ text;
 		List<String^>^ Like;
@@ -65,7 +65,7 @@ namespace FBManagmentSytem {
 	{
 	public:
 		List<String^>^ Tag;
-		List<bool>^ TagSeen;
+		List<String^>^ TagSeen;
 		List<String^>^ Like;
 		List<String^>^ Haha;
 		List<String^>^ Wow;
@@ -91,8 +91,9 @@ namespace FBManagmentSytem {
 		String^ ID;
 		String^ UserID;
 		String^ text;
-		//PictureBox^ img;
-		bool^ isPub;
+		[XmlIgnore]
+		PictureBox^ img;
+		String^ isPub;
 		List<comment^>^ comm;
 		Posts();
 	};
@@ -102,9 +103,9 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Posts ^ post;
-		int^ PosrStat;
+		String^ PosrStat;
 		List<String^>^ Tag;
-		List<bool>^ TagSeen;
+		List<String^>^ TagSeen;
 		PostInfo();
 	};
 
@@ -113,6 +114,7 @@ namespace FBManagmentSytem {
 	{
 	public:
 		List<List<Friends^>^>^ f;
+		List<List<PostInfo^>^>^	AllPosts;
 		Facebook();
 		Facebook^ getStruct();
 		void serStruct();

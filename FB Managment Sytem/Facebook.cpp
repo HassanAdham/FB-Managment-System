@@ -10,7 +10,7 @@ namespace FBManagmentSytem {
 	}
 
 
-	void User::Login() {
+	bool User::Login() {
 
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
 		MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
@@ -19,7 +19,7 @@ namespace FBManagmentSytem {
 		cmdDatabase->Parameters->Add(gcnew MySqlParameter("Email", mail));
 		cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", passw));
 		MySqlDataReader^ myreader;
-
+		bool a = false;
 		conDatabase->Open();
 		myreader = cmdDatabase->ExecuteReader();
 		if (myreader->Read()) {
@@ -32,8 +32,10 @@ namespace FBManagmentSytem {
 			day = arr[0];
 			month = arr[1];
 			year = arr[2][0].ToString() + arr[2][1].ToString() + arr[2][2].ToString() + arr[2][3].ToString();
+			a = true;
 		}
 		conDatabase->Close();
+		return a;
 	}
 
 	String^ User::username()
@@ -155,7 +157,7 @@ namespace FBManagmentSytem {
 	Facebook::Facebook()
 	{
 		f = gcnew List<List<Friends^>^>();
-		//AllPosts = gcnew List<List<PostInfo^>^>();
+		AllPosts = gcnew List<List<PostInfo^>^>();
 	}
 
 	Facebook^ Facebook::getStruct()
@@ -167,32 +169,34 @@ namespace FBManagmentSytem {
 			fs->Close();
 			return fb;
 		}
-		XmlSerializer^ xs = gcnew XmlSerializer(fb->f->GetType());
-		fb->f = (List<List<Friends^>^>^)xs->Deserialize(fs);
+		XmlSerializer^ xs = gcnew XmlSerializer(fb->GetType());
+		fb = (Facebook^)xs->Deserialize(fs);
 		fs->Close();
 		return fb;
 	}
 
 	void Facebook::serStruct()
 	{
-			Facebook^ fb = gcnew Facebook();
-			fb->f = f;
-			FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::Append);
-			if (fs->Length != 0)
-			{
-				fs->Close();
-				fs = gcnew FileStream("Friends.xml", FileMode::Truncate);
-			}
-			XmlSerializer^ ser = gcnew XmlSerializer(fb->f->GetType());
-			ser->Serialize(fs, fb->f);
+		Facebook^ fb = gcnew Facebook();
+		fb->f = f;
+		fb->AllPosts = AllPosts;
+		FileStream^ fs = gcnew FileStream("Friends.xml", FileMode::Append);
+		if (fs->Length != 0)
+		{
 			fs->Close();
+			fs = gcnew FileStream("Friends.xml", FileMode::Truncate);
+		}
+		XmlSerializer^ ser = gcnew XmlSerializer(fb->GetType());
+		ser->Serialize(fs, fb);
+		fs->Close();
 	}
 
 	PostInfo::PostInfo()
 	{
 		post = gcnew Posts();
 		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<bool>();
+		TagSeen = gcnew List<String^>();
+		PosrStat = "3";
 	}
 
 	Posts::Posts()
@@ -204,7 +208,8 @@ namespace FBManagmentSytem {
 		Sad = gcnew List<String^>();
 		Angry = gcnew List<String^>();
 		comm = gcnew List<comment^>();
-		//img = gcnew PictureBox();
+		img = gcnew PictureBox();
+		isPub == "1";
 	}
 
 	comment::comment()
@@ -216,7 +221,7 @@ namespace FBManagmentSytem {
 		Sad = gcnew List<String^>();
 		Angry = gcnew List<String^>();
 		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<bool>();
+		TagSeen = gcnew List<String^>();
 		rep = gcnew List<reply^>();
 	}
 
@@ -229,7 +234,7 @@ namespace FBManagmentSytem {
 		Sad = gcnew List<String^>();
 		Angry = gcnew List<String^>();
 		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<bool>();
+		TagSeen = gcnew List<String^>();
 	}
 
 }

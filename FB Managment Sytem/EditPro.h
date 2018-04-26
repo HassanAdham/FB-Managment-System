@@ -775,7 +775,7 @@ namespace FBManagmentSytem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->ClientSize = System::Drawing::Size(360, 1100);
+			this->ClientSize = System::Drawing::Size(360, 788);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
