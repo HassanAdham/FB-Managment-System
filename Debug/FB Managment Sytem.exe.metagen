@@ -10,6 +10,7 @@
   FBManagmentSytem.Profile.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Search.resources - Embedded, ContainedInManifestFile, 
   FBManagmentSytem.Signup.resources - Embedded, ContainedInManifestFile, 
+  FBManagmentSytem.WritePost.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly FB Managment Sytem, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -139,6 +140,9 @@ Class FBManagmentSytem.Signup: AutoLayout, AnsiClass, Class, Public, BeforeField
 Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FBManagmentSytem.WritePost: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

@@ -1,5 +1,5 @@
 ﻿  Mainapp.cpp
-  Profile.cpp
+  WritePost.cpp
   Generating Code...
   Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   FB Managment Sytem.vcxproj -> E:\FCIS\Projects\FB-Managment-System\Debug\FB Managment Sytem.exe

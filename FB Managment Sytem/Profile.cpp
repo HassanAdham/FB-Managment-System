@@ -15,5 +15,8 @@ FBManagmentSytem::Profile::Profile(Facebook ^ f, User ^ u)
 System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, System::EventArgs ^ e)
 {
 	userLbl->Text = U->username();
+	pictureBox1->Controls->Add(backBtn);
+	backBtn->BackColor = Color::Transparent;
+	backBtn->Location = Point(57, -1);
 	return System::Void();
 }

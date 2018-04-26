@@ -20,3 +20,11 @@ FBManagmentSytem::Friend::Friend(Facebook ^ f, User ^ u1, User ^ u2)
 	//
 	throw gcnew System::NotImplementedException();
 }
+
+System::Void FBManagmentSytem::Friend::Friend_Load(System::Object ^ sender, System::EventArgs ^ e)
+{
+	pictureBox1->Controls->Add(backBtn);
+	backBtn->BackColor = Color::Transparent;
+	backBtn->Location = Point(57, -1);
+	return System::Void();
+}

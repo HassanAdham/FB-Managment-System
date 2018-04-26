@@ -143,6 +143,12 @@ namespace FBManagmentSytem {
 			this->bunifuImageButton1 = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox16 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox15 = (gcnew System::Windows::Forms::PictureBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox14 = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->fmaleRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->maleRadio = (gcnew System::Windows::Forms::RadioButton());
 			this->yComboBox = (gcnew System::Windows::Forms::ComboBox());
@@ -177,15 +183,12 @@ namespace FBManagmentSytem {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->pictureBox14 = (gcnew System::Windows::Forms::PictureBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->pictureBox15 = (gcnew System::Windows::Forms::PictureBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->pictureBox16 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox16))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox15))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox14))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox13))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox12))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
@@ -199,15 +202,13 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox14))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox15))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox16))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::White;
+			this->label8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::Black;
@@ -219,7 +220,8 @@ namespace FBManagmentSytem {
 			// 
 			// bunifuImageButton1
 			// 
-			this->bunifuImageButton1->BackColor = System::Drawing::Color::Transparent;
+			this->bunifuImageButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)),
+				static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->bunifuImageButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuImageButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuImageButton1.Image")));
 			this->bunifuImageButton1->ImageActive = nullptr;
@@ -233,7 +235,8 @@ namespace FBManagmentSytem {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->panel1->Controls->Add(this->bunifuImageButton1);
 			this->panel1->Controls->Add(this->label8);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -244,7 +247,8 @@ namespace FBManagmentSytem {
 			// 
 			// panel2
 			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->panel2->Controls->Add(this->pictureBox16);
 			this->panel2->Controls->Add(this->pictureBox15);
 			this->panel2->Controls->Add(this->button3);
@@ -288,8 +292,94 @@ namespace FBManagmentSytem {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 60);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(360, 801);
+			this->panel2->Size = System::Drawing::Size(360, 800);
 			this->panel2->TabIndex = 35;
+			// 
+			// pictureBox16
+			// 
+			this->pictureBox16->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->pictureBox16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox16.Image")));
+			this->pictureBox16->Location = System::Drawing::Point(315, 157);
+			this->pictureBox16->Name = L"pictureBox16";
+			this->pictureBox16->Size = System::Drawing::Size(15, 15);
+			this->pictureBox16->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox16->TabIndex = 40;
+			this->pictureBox16->TabStop = false;
+			// 
+			// pictureBox15
+			// 
+			this->pictureBox15->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->pictureBox15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox15.Image")));
+			this->pictureBox15->Location = System::Drawing::Point(182, 203);
+			this->pictureBox15->Name = L"pictureBox15";
+			this->pictureBox15->Size = System::Drawing::Size(15, 15);
+			this->pictureBox15->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox15->TabIndex = 40;
+			this->pictureBox15->TabStop = false;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->ForeColor = System::Drawing::Color::DimGray;
+			this->button3->Location = System::Drawing::Point(313, 153);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(45, 22);
+			this->button3->TabIndex = 71;
+			this->button3->Text = L"Edit";
+			this->button3->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->button3->UseVisualStyleBackColor = false;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::DimGray;
+			this->button2->Location = System::Drawing::Point(181, 199);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(45, 22);
+			this->button2->TabIndex = 71;
+			this->button2->Text = L"Edit";
+			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// pictureBox14
+			// 
+			this->pictureBox14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox14.Image")));
+			this->pictureBox14->Location = System::Drawing::Point(133, 128);
+			this->pictureBox14->Name = L"pictureBox14";
+			this->pictureBox14->Size = System::Drawing::Size(94, 94);
+			this->pictureBox14->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox14->TabIndex = 70;
+			this->pictureBox14->TabStop = false;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(0, 760);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(360, 40);
+			this->button1->TabIndex = 69;
+			this->button1->Text = L"Update Info";
+			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// fmaleRadio
 			// 
@@ -534,9 +624,9 @@ namespace FBManagmentSytem {
 			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
 			this->label7->Location = System::Drawing::Point(43, 721);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(51, 15);
+			this->label7->Size = System::Drawing::Size(45, 15);
 			this->label7->TabIndex = 53;
-			this->label7->Text = L"Birthday";
+			this->label7->Text = L"Gender";
 			// 
 			// label5
 			// 
@@ -723,109 +813,28 @@ namespace FBManagmentSytem {
 			this->pictureBox1->TabIndex = 35;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(0, 760);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(360, 40);
-			this->button1->TabIndex = 69;
-			this->button1->Text = L"Update Info";
-			this->button1->UseVisualStyleBackColor = false;
-			// 
-			// pictureBox14
-			// 
-			this->pictureBox14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox14.Image")));
-			this->pictureBox14->Location = System::Drawing::Point(133, 128);
-			this->pictureBox14->Name = L"pictureBox14";
-			this->pictureBox14->Size = System::Drawing::Size(94, 94);
-			this->pictureBox14->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox14->TabIndex = 70;
-			this->pictureBox14->TabStop = false;
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::Color::DimGray;
-			this->button2->Location = System::Drawing::Point(181, 199);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(45, 22);
-			this->button2->TabIndex = 71;
-			this->button2->Text = L"Edit";
-			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->button2->UseVisualStyleBackColor = false;
-			// 
-			// pictureBox15
-			// 
-			this->pictureBox15->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->pictureBox15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox15.Image")));
-			this->pictureBox15->Location = System::Drawing::Point(182, 203);
-			this->pictureBox15->Name = L"pictureBox15";
-			this->pictureBox15->Size = System::Drawing::Size(15, 15);
-			this->pictureBox15->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox15->TabIndex = 40;
-			this->pictureBox15->TabStop = false;
-			// 
-			// button3
-			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button3->FlatAppearance->BorderSize = 0;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button3->ForeColor = System::Drawing::Color::DimGray;
-			this->button3->Location = System::Drawing::Point(313, 153);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(45, 22);
-			this->button3->TabIndex = 71;
-			this->button3->Text = L"Edit";
-			this->button3->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->button3->UseVisualStyleBackColor = false;
-			// 
-			// pictureBox16
-			// 
-			this->pictureBox16->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(223)), static_cast<System::Int32>(static_cast<System::Byte>(227)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->pictureBox16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox16.Image")));
-			this->pictureBox16->Location = System::Drawing::Point(315, 157);
-			this->pictureBox16->Name = L"pictureBox16";
-			this->pictureBox16->Size = System::Drawing::Size(15, 15);
-			this->pictureBox16->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox16->TabIndex = 40;
-			this->pictureBox16->TabStop = false;
-			// 
 			// EditPro
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->ClientSize = System::Drawing::Size(360, 640);
+			this->ClientSize = System::Drawing::Size(360, 1100);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"EditPro";
-			this->Text = L"EditPro";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Facebook";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox16))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox15))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox14))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox13))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox12))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
@@ -839,9 +848,6 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox14))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox15))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox16))->EndInit();
 			this->ResumeLayout(false);
 
 		}

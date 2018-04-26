@@ -94,6 +94,7 @@
     <ClCompile Include="FriendsOP.cpp" />
     <ClCompile Include="EditPro.cpp" />
     <ClCompile Include="About.cpp" />
+    <ClCompile Include="WritePost.cpp" />
     <ClCompile Include="Post.cpp" />
     <ClCompile Include="NotFriend.cpp" />
     <ClCompile Include="Profile.cpp" />
@@ -121,6 +122,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="About.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="WritePost.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Post.h">
@@ -175,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WritePost.resx">
+      <DependentUpon>WritePost.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

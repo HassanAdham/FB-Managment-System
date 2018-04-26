@@ -18,6 +18,7 @@ namespace FBManagmentSytem {
 	public:
 		Facebook ^ F;
 		User ^ U;
+	public:
 		Mainapp(void);
 		Mainapp(Facebook^ f,User^ u);
 
@@ -26,7 +27,8 @@ namespace FBManagmentSytem {
 		/// Clean up any resources being used.
 		/// </summary>
 		~Mainapp();
-
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Splitter^  splitter1;
 	private: Bunifu::Framework::UI::BunifuImageButton^  bunifuImageButton1;
 	private: System::Windows::Forms::RadioButton^  feedsBtn;
@@ -81,6 +83,8 @@ namespace FBManagmentSytem {
 			this->noti = (gcnew System::Windows::Forms::RadioButton());
 			this->setBtn = (gcnew System::Windows::Forms::RadioButton());
 			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pplPanel = (gcnew System::Windows::Forms::Panel());
 			this->stngsPanel = (gcnew System::Windows::Forms::Panel());
 			this->logoutBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
@@ -105,6 +109,9 @@ namespace FBManagmentSytem {
 			this->searchTxt = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
+			this->feedsPanel->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->stngsPanel->SuspendLayout();
 			this->profileClkPnl->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->userPic))->BeginInit();
@@ -215,10 +222,33 @@ namespace FBManagmentSytem {
 			// feedsPanel
 			// 
 			this->feedsPanel->BackColor = System::Drawing::Color::LightGray;
+			this->feedsPanel->Controls->Add(this->panel1);
 			this->feedsPanel->Location = System::Drawing::Point(0, 105);
 			this->feedsPanel->Name = L"feedsPanel";
 			this->feedsPanel->Size = System::Drawing::Size(360, 535);
 			this->feedsPanel->TabIndex = 4;
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
+			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(360, 77);
+			this->panel1->TabIndex = 4;
+			this->panel1->Click += gcnew System::EventHandler(this, &Mainapp::panel1_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(16, 15);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(50, 50);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 0;
+			this->pictureBox3->TabStop = false;
 			// 
 			// pplPanel
 			// 
@@ -457,11 +487,11 @@ namespace FBManagmentSytem {
 			// userLbl
 			// 
 			this->userLbl->AutoSize = true;
-			this->userLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->userLbl->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->userLbl->Location = System::Drawing::Point(72, 21);
 			this->userLbl->Name = L"userLbl";
-			this->userLbl->Size = System::Drawing::Size(108, 22);
+			this->userLbl->Size = System::Drawing::Size(105, 25);
 			this->userLbl->TabIndex = 3;
 			this->userLbl->Text = L"User Name";
 			this->userLbl->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
@@ -638,6 +668,9 @@ namespace FBManagmentSytem {
 			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
+			this->feedsPanel->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->stngsPanel->ResumeLayout(false);
 			this->profileClkPnl->ResumeLayout(false);
 			this->profileClkPnl->PerformLayout();
@@ -733,5 +766,6 @@ namespace FBManagmentSytem {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e);
 
 	private: System::Void userPic_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void panel1_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

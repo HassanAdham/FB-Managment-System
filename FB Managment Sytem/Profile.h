@@ -15,8 +15,16 @@ namespace FBManagmentSytem {
 	public ref class Profile : public System::Windows::Forms::Form
 	{
 		Facebook^ F;
-	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
+
 	private: System::Windows::Forms::PictureBox^  pictureBox8;
+	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
+
+
+
+
+
+
+
 			 User^ U;
 	public:
 		Profile(void);
@@ -94,8 +102,8 @@ namespace FBManagmentSytem {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->liveLbl = (gcnew System::Windows::Forms::Label());
 			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
-			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
+			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -103,8 +111,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -353,6 +361,16 @@ namespace FBManagmentSytem {
 			this->feedsPanel->Size = System::Drawing::Size(360, 535);
 			this->feedsPanel->TabIndex = 7;
 			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
+			this->pictureBox8->Location = System::Drawing::Point(133, 127);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(94, 94);
+			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox8->TabIndex = 14;
+			this->pictureBox8->TabStop = false;
+			// 
 			// backBtn
 			// 
 			this->backBtn->BackColor = System::Drawing::Color::Transparent;
@@ -367,23 +385,13 @@ namespace FBManagmentSytem {
 			this->backBtn->TabStop = false;
 			this->backBtn->Zoom = 10;
 			// 
-			// pictureBox8
-			// 
-			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
-			this->pictureBox8->Location = System::Drawing::Point(133, 127);
-			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(94, 94);
-			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox8->TabIndex = 14;
-			this->pictureBox8->TabStop = false;
-			// 
 			// Profile
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
-			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->backBtn);
+			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->feedsPanel);
 			this->Controls->Add(this->liveLbl);
 			this->Controls->Add(this->label6);
@@ -416,8 +424,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -1,14 +1,12 @@
 #include "Mainapp.h"
 #include "Login.h"
 #include "Profile.h"
+#include "WritePost.h"
 
 namespace FBManagmentSytem {
 	FBManagmentSytem::Mainapp::Mainapp(void)
 	{
 		InitializeComponent();
-		//
-		//TODO: Add the constructor code here
-		//
 	}
 
 	Mainapp::Mainapp(Facebook ^ f, User ^ u)
@@ -16,9 +14,6 @@ namespace FBManagmentSytem {
 		F = f;
 		U = u;
 		InitializeComponent();
-		//
-		//TODO: Add the constructor code here
-		//
 	}
 
 
@@ -66,6 +61,14 @@ namespace FBManagmentSytem {
 	System::Void Mainapp::userPic_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
 		Profile^ s = gcnew Profile(F, U);
+		this->Hide();
+		s->Show();
+		return System::Void();
+	}
+
+	System::Void Mainapp::panel1_Click(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		WritePost^ s = gcnew WritePost;
 		this->Hide();
 		s->Show();
 		return System::Void();
