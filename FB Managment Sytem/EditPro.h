@@ -197,7 +197,7 @@ namespace FBManagmentSytem {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(360, 60);
+			this->panel1->Size = System::Drawing::Size(343, 60);
 			this->panel1->TabIndex = 28;
 			// 
 			// panel2
@@ -247,7 +247,7 @@ namespace FBManagmentSytem {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 60);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(360, 800);
+			this->panel2->Size = System::Drawing::Size(343, 800);
 			this->panel2->TabIndex = 35;
 			// 
 			// pictureBox16
@@ -773,6 +773,7 @@ namespace FBManagmentSytem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->ClientSize = System::Drawing::Size(360, 788);
