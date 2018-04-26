@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfFriends xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfFriends>
+    <Friends>
+      <usr>
+        <work />
+        <edu />
+        <address />
+        <mail>a</mail>
+        <Fname>hassan</Fname>
+        <Lname>adham</Lname>
+        <gender>male</gender>
+        <day>28</day>
+        <month>02</month>
+        <year>1992</year>
+        <passw>a</passw>
+        <id>1</id>
+      </usr>
+      <fri_stat>1</fri_stat>
+      <fri__req>0</fri__req>
+    </Friends>
+  </ArrayOfFriends>
+</ArrayOfArrayOfFriends>

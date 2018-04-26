@@ -40,18 +40,24 @@ Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, Serializable,
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.String id : Public
+    System.String work : Public
+    System.String edu : Public
+    System.String address : Public
     System.String mail : Public
-    System.String passw : Public
     System.String Fname : Public
     System.String Lname : Public
     System.String gender : Public
     System.String day : Public
     System.String month : Public
     System.String year : Public
+    System.String passw : Public
+    System.String id : Public
+    System.Windows.Forms.PictureBox coverphoto : Public
+    System.Windows.Forms.PictureBox profilephoto : Public
   Methods:
     SignUp(RadioButton, ComboBox): PrivateScope, Public, HideBySig
     Login(): PrivateScope, Public, HideBySig
+    username(): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -130,6 +136,10 @@ Class FBManagmentSytem.Signup: AutoLayout, AnsiClass, Class, Public, BeforeField
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Facebook obj : Public
+Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -152,10 +162,6 @@ Class FBManagmentSytem.Post: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
 Class FBManagmentSytem.NotFriend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Search: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

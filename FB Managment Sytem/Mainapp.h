@@ -57,7 +57,7 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuFlatButton^  accBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  reportBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  termsBtn;
-	private: System::Windows::Forms::PictureBox^  pictureBox3;
+
 
 	protected:
 
@@ -89,7 +89,6 @@ namespace FBManagmentSytem {
 			this->reportBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->termsBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->profileClkPnl = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->userLbl = (gcnew System::Windows::Forms::Label());
 			this->userPic = (gcnew System::Windows::Forms::PictureBox());
@@ -108,7 +107,6 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
 			this->stngsPanel->SuspendLayout();
 			this->profileClkPnl->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->userPic))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->BeginInit();
@@ -231,6 +229,7 @@ namespace FBManagmentSytem {
 			// 
 			// stngsPanel
 			// 
+			this->stngsPanel->BackColor = System::Drawing::Color::LightGray;
 			this->stngsPanel->Controls->Add(this->logoutBtn);
 			this->stngsPanel->Controls->Add(this->payBtn);
 			this->stngsPanel->Controls->Add(this->accBtn);
@@ -278,6 +277,7 @@ namespace FBManagmentSytem {
 			this->logoutBtn->Textcolor = System::Drawing::Color::Black;
 			this->logoutBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->logoutBtn->Click += gcnew System::EventHandler(this, &Mainapp::logoutBtn_Click);
 			// 
 			// payBtn
 			// 
@@ -301,7 +301,7 @@ namespace FBManagmentSytem {
 			this->payBtn->IconVisible = true;
 			this->payBtn->IconZoom = 90;
 			this->payBtn->IsTab = false;
-			this->payBtn->Location = System::Drawing::Point(0, 236);
+			this->payBtn->Location = System::Drawing::Point(0, 232);
 			this->payBtn->Margin = System::Windows::Forms::Padding(4);
 			this->payBtn->Name = L"payBtn";
 			this->payBtn->Normalcolor = System::Drawing::Color::White;
@@ -338,7 +338,7 @@ namespace FBManagmentSytem {
 			this->accBtn->IconVisible = true;
 			this->accBtn->IconZoom = 90;
 			this->accBtn->IsTab = false;
-			this->accBtn->Location = System::Drawing::Point(0, 186);
+			this->accBtn->Location = System::Drawing::Point(0, 182);
 			this->accBtn->Margin = System::Windows::Forms::Padding(4);
 			this->accBtn->Name = L"accBtn";
 			this->accBtn->Normalcolor = System::Drawing::Color::White;
@@ -375,7 +375,7 @@ namespace FBManagmentSytem {
 			this->reportBtn->IconVisible = true;
 			this->reportBtn->IconZoom = 90;
 			this->reportBtn->IsTab = false;
-			this->reportBtn->Location = System::Drawing::Point(0, 136);
+			this->reportBtn->Location = System::Drawing::Point(0, 132);
 			this->reportBtn->Margin = System::Windows::Forms::Padding(4);
 			this->reportBtn->Name = L"reportBtn";
 			this->reportBtn->Normalcolor = System::Drawing::Color::White;
@@ -412,7 +412,7 @@ namespace FBManagmentSytem {
 			this->termsBtn->IconVisible = true;
 			this->termsBtn->IconZoom = 90;
 			this->termsBtn->IsTab = false;
-			this->termsBtn->Location = System::Drawing::Point(0, 86);
+			this->termsBtn->Location = System::Drawing::Point(0, 82);
 			this->termsBtn->Margin = System::Windows::Forms::Padding(4);
 			this->termsBtn->Name = L"termsBtn";
 			this->termsBtn->Normalcolor = System::Drawing::Color::White;
@@ -429,24 +429,16 @@ namespace FBManagmentSytem {
 			// 
 			// profileClkPnl
 			// 
-			this->profileClkPnl->Controls->Add(this->pictureBox3);
+			this->profileClkPnl->BackColor = System::Drawing::Color::White;
 			this->profileClkPnl->Controls->Add(this->label1);
 			this->profileClkPnl->Controls->Add(this->userLbl);
 			this->profileClkPnl->Controls->Add(this->userPic);
 			this->profileClkPnl->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->profileClkPnl->Location = System::Drawing::Point(3, 3);
+			this->profileClkPnl->Location = System::Drawing::Point(0, 3);
 			this->profileClkPnl->Name = L"profileClkPnl";
-			this->profileClkPnl->Size = System::Drawing::Size(354, 77);
+			this->profileClkPnl->Size = System::Drawing::Size(360, 77);
 			this->profileClkPnl->TabIndex = 0;
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackColor = System::Drawing::Color::LightGray;
-			this->pictureBox3->Location = System::Drawing::Point(-3, 74);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(360, 3);
-			this->pictureBox3->TabIndex = 16;
-			this->pictureBox3->TabStop = false;
+			this->profileClkPnl->Click += gcnew System::EventHandler(this, &Mainapp::profileClkPnl_Click);
 			// 
 			// label1
 			// 
@@ -460,6 +452,7 @@ namespace FBManagmentSytem {
 			this->label1->Size = System::Drawing::Size(115, 17);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"View your profile";
+			this->label1->Click += gcnew System::EventHandler(this, &Mainapp::label1_Click);
 			// 
 			// userLbl
 			// 
@@ -471,6 +464,7 @@ namespace FBManagmentSytem {
 			this->userLbl->Size = System::Drawing::Size(108, 22);
 			this->userLbl->TabIndex = 3;
 			this->userLbl->Text = L"User Name";
+			this->userLbl->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
 			// 
 			// userPic
 			// 
@@ -481,6 +475,7 @@ namespace FBManagmentSytem {
 			this->userPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->userPic->TabIndex = 0;
 			this->userPic->TabStop = false;
+			this->userPic->Click += gcnew System::EventHandler(this, &Mainapp::userPic_Click);
 			// 
 			// notiPanel
 			// 
@@ -646,7 +641,6 @@ namespace FBManagmentSytem {
 			this->stngsPanel->ResumeLayout(false);
 			this->profileClkPnl->ResumeLayout(false);
 			this->profileClkPnl->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->userPic))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->feedsAct))->EndInit();
@@ -659,11 +653,12 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setNotAct))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 		private: System::Void Mainapp_Load(System::Object^  sender, System::EventArgs^  e)
 		{
-			
+			userLbl->Text = U->username();
 		}
 
 		private: System::Void splitter1_SplitterMoved(System::Object^  sender, System::Windows::Forms::SplitterEventArgs^  e) 
@@ -729,5 +724,14 @@ namespace FBManagmentSytem {
 			}
 		}
 
-	};
+	private: System::Void logoutBtn_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void profileClkPnl_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void userLbl_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void userPic_Click(System::Object^  sender, System::EventArgs^  e);
+};
 }

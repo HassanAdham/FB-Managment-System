@@ -154,12 +154,15 @@ namespace FBManagmentSytem {
 
 				Friends^ fri = gcnew Friends();
 				fri->usr = u;
+				int^ ids = obj->f->Count +1;
+				fri->usr->id = ids->ToString();
 				if (obj->f->Count == 0) {
 					List<Friends^>^ y = gcnew List<Friends^>();
+					fri->usr->id = "1";
 					y->Add(fri);
 					obj->f->Add(y);
 				}
-				
+
 				else {
 					for (int i = 0; i < obj->f->Count; i++)
 					{
@@ -172,8 +175,8 @@ namespace FBManagmentSytem {
 					x[(obj->f[0]->Count) - 1] = tmp;
 					obj->f->Add(x);
 				}
-				obj->serStruct();
 
+				obj->serStruct();
 				Mainapp ^main = gcnew Mainapp(obj, u);
 				this->Hide();
 				main->Show();

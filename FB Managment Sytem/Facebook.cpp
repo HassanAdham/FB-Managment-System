@@ -1,6 +1,5 @@
 #include "Facebook.h"
 
-
 namespace FBManagmentSytem {
 
 	Friends::Friends()
@@ -37,11 +36,18 @@ namespace FBManagmentSytem {
 		conDatabase->Close();
 	}
 
+	String^ User::username()
+	{
+		String^ s;
+		s = Fname + " " + Lname;
+		return s;
+	}
+
 	User::User()
 	{
-		//work = "";
-		//edu = "";
-		//address = "";
+		work = "";
+		edu = "";
+		address = "";
 		mail = "";
 		Fname = "";
 		Lname = "";
@@ -61,12 +67,17 @@ namespace FBManagmentSytem {
 
 	User::User(String ^ em, String ^ pw, String ^ fn, String ^ ln, String ^ d, String ^ y)
 	{
+		id = "";
 		mail = em;
 		passw = pw;
 		Fname = fn;
 		Lname = ln;
 		day = d;
 		year = y;
+		work = "";
+		edu = "";
+		address = "";
+		gender = "";
 	}
 
 	bool User::SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox) {

@@ -3,19 +3,17 @@
 FBManagmentSytem::Profile::Profile(void)
 {
 	InitializeComponent();
-	//
-	//TODO: Add the constructor code here
-	//
-	throw gcnew System::NotImplementedException();
 }
 
 FBManagmentSytem::Profile::Profile(Facebook ^ f, User ^ u)
 {
+	InitializeComponent();
 	F = f;
 	U = u;
-	InitializeComponent();
-	//
-	//TODO: Add the constructor code here
-	//
-	throw gcnew System::NotImplementedException();
+}
+
+System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, System::EventArgs ^ e)
+{
+	userLbl->Text = U->username();
+	return System::Void();
 }
