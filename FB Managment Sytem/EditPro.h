@@ -776,7 +776,7 @@ namespace FBManagmentSytem {
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->ClientSize = System::Drawing::Size(360, 788);
+			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -784,6 +784,7 @@ namespace FBManagmentSytem {
 			this->Name = L"EditPro";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
+			this->Load += gcnew System::EventHandler(this, &EditPro::EditPro_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -809,5 +810,7 @@ namespace FBManagmentSytem {
 
 		}
 #pragma endregion
-	};
+	private: System::Void EditPro_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
