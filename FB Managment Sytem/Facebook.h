@@ -103,7 +103,7 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Posts ^ post;
-		String^ PosrStat;
+		String^ PostStat;
 		List<String^>^ Tag;
 		List<String^>^ TagSeen;
 		PostInfo();
