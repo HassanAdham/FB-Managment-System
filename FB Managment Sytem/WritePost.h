@@ -1,4 +1,5 @@
 #pragma once
+#include "Facebook.h"
 
 namespace FBManagmentSytem {
 
@@ -15,13 +16,10 @@ namespace FBManagmentSytem {
 	public ref class WritePost : public System::Windows::Forms::Form
 	{
 	public:
-		WritePost(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Facebook ^ F;
+		User ^ U;
+		WritePost(void);
+		WritePost(Facebook ^ f, User ^ u);
 
 	protected:
 		/// <summary>
@@ -245,6 +243,7 @@ namespace FBManagmentSytem {
 			this->unfriBtn->Textcolor = System::Drawing::Color::Black;
 			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->unfriBtn->Click += gcnew System::EventHandler(this, &WritePost::unfriBtn_Click);
 			// 
 			// bunifuFlatButton1
 			// 
@@ -348,5 +347,6 @@ namespace FBManagmentSytem {
 		}
 #pragma endregion
 private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
+private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
