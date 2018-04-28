@@ -131,6 +131,7 @@ namespace FBManagmentSytem {
 			this->postBtn->TabIndex = 13;
 			this->postBtn->Text = L"Post";
 			this->postBtn->UseVisualStyleBackColor = false;
+			this->postBtn->Click += gcnew System::EventHandler(this, &WritePost::postBtn_Click);
 			// 
 			// backBtn
 			// 
@@ -348,5 +349,6 @@ namespace FBManagmentSytem {
 #pragma endregion
 private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
 private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void postBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
