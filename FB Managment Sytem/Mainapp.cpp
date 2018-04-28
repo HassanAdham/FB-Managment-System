@@ -68,7 +68,7 @@ namespace FBManagmentSytem {
 
 	System::Void Mainapp::panel1_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		WritePost^ s = gcnew WritePost(F,U);
+		WritePost^ s = gcnew WritePost;
 		this->Hide();
 		s->Show();
 		return System::Void();

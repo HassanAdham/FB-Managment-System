@@ -269,7 +269,6 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton1->Name = L"bunifuTileButton1";
 			this->bunifuTileButton1->Size = System::Drawing::Size(75, 45);
 			this->bunifuTileButton1->TabIndex = 32;
-			this->bunifuTileButton1->Click += gcnew System::EventHandler(this, &NotFriend::bunifuTileButton1_Click);
 			// 
 			// pictureBox4
 			// 
@@ -354,20 +353,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 
 #pragma endregion
-	private: System::Void bunifuTileButton1_Click(System::Object^  sender, System::EventArgs^  e) {
-		List<Friends^>^x = F->f[Int32::Parse(U1->id)];
-		for (int i = 0; i < x->Count; i++)
-		{
-			if (x[i]->usr->id == U2->id) {
-				x[i]->fri__req = "2";
-				break;
-			}
-		}
-		F->serStruct();
-	}
-};
+	};
 }

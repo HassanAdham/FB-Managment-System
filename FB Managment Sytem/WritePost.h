@@ -1,5 +1,5 @@
 #pragma once
-#include "Facebook.h"
+
 namespace FBManagmentSytem {
 
 	using namespace System;
@@ -14,11 +14,15 @@ namespace FBManagmentSytem {
 	/// </summary>
 	public ref class WritePost : public System::Windows::Forms::Form
 	{
-		Facebook ^ F;
-		User ^ U;
 	public:
-		WritePost(void);
-		WritePost(Facebook^ f, User^ u);
+		WritePost(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -129,7 +133,6 @@ namespace FBManagmentSytem {
 			this->postBtn->TabIndex = 13;
 			this->postBtn->Text = L"Post";
 			this->postBtn->UseVisualStyleBackColor = false;
-			this->postBtn->Click += gcnew System::EventHandler(this, &WritePost::postBtn_Click);
 			// 
 			// backBtn
 			// 
@@ -331,7 +334,6 @@ namespace FBManagmentSytem {
 			this->Name = L"WritePost";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
-			this->Load += gcnew System::EventHandler(this, &WritePost::WritePost_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
@@ -346,8 +348,5 @@ namespace FBManagmentSytem {
 		}
 #pragma endregion
 private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
-private: System::Void WritePost_Load(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void postBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

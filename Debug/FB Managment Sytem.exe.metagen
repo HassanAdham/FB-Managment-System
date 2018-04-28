@@ -111,7 +111,7 @@ Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializa
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Posts post : Public
-    System.String PostStat : Public
+    System.String PosrStat : Public
     System.Collections.Generic.List`1[System.String] Tag : Public
     System.Collections.Generic.List`1[System.String] TagSeen : Public
 Class FBManagmentSytem.Facebook: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
@@ -145,7 +145,6 @@ Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFiel
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.WritePost: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
