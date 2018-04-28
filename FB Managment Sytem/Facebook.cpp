@@ -196,7 +196,7 @@ namespace FBManagmentSytem {
 		post = gcnew Posts();
 		Tag = gcnew List<String^>();
 		TagSeen = gcnew List<String^>();
-		PosrStat = "3";
+		PostStat = "3";
 	}
 
 	Posts::Posts()
