@@ -186,7 +186,7 @@ namespace FBManagmentSytem {
 					List<PostInfo^>^z = gcnew List<PostInfo^>(obj->AllPosts[0]);
 					for (int i = 0; i < z->Count; i++)
 					{
-						z[i]->PosrStat = "0";
+						z[i]->PostStat = "0";
 					}
 					obj->AllPosts->Add(z);
 				}

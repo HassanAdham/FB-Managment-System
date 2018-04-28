@@ -57,6 +57,9 @@
     <ClCompile Include="WritePost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TagForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WritePost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TagForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
