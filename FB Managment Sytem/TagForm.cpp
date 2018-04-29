@@ -26,14 +26,6 @@ System::Void FBManagmentSytem::TagForm::TagForm_Load(System::Object ^ sender, Sy
 			pnl->Location = Point(0, x);
 			pnl->BackColor = Color::LightGray;
 
-			Bunifu::Framework::UI::BunifuCheckbox^ chckBox = gcnew Bunifu::Framework::UI::BunifuCheckbox();
-			pnl->Controls->Add(chckBox);
-			chckBox->BackColor = Color::FromArgb(59, 89, 152);
-			chckBox->CheckedOnColor = Color::FromArgb(59, 89, 152);
-			chckBox->ChechedOffColor = Color::FromArgb(139, 157, 195);
-			chckBox->Checked = false;
-			chckBox->Location = Point(12, 20);
-
 			PictureBox^ img = gcnew PictureBox();
 			pnl->Controls->Add(img);
 			img->Location = Point(50,5);

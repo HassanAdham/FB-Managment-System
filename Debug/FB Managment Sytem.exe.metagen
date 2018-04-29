@@ -151,6 +151,12 @@ Class FBManagmentSytem.WritePost: AutoLayout, AnsiClass, Class, Public, BeforeFi
   Fields:
     FBManagmentSytem.Facebook F : Public
     FBManagmentSytem.User U : Public
+Class FBManagmentSytem.Search: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    searchTxt_TextChanged(Object, EventArgs): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.Messenger: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -184,8 +190,4 @@ Class FBManagmentSytem.Post: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
 Class FBManagmentSytem.NotFriend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FBManagmentSytem.Search: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

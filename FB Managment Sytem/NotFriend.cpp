@@ -15,10 +15,6 @@ FBManagmentSytem::NotFriend::NotFriend(Facebook ^ f, User ^ u1, User ^ u2)
 	U1 = u1;
 	U2 = u2;
 	InitializeComponent();
-	//
-	//TODO: Add the constructor code here
-	//
-	throw gcnew System::NotImplementedException();
 }
 
 System::Void FBManagmentSytem::NotFriend::bunifuTileButton1_Click(System::Object ^ sender, System::EventArgs ^ e)

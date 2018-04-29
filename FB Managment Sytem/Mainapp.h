@@ -600,7 +600,7 @@ namespace FBManagmentSytem {
 			// 
 			this->searchTxt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->searchTxt->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->searchTxt->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->searchTxt->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->searchTxt->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), static_cast<System::Int32>(static_cast<System::Byte>(157)),
@@ -622,6 +622,8 @@ namespace FBManagmentSytem {
 			this->searchTxt->TabIndex = 14;
 			this->searchTxt->Text = L"      Search";
 			this->searchTxt->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->searchTxt->Click += gcnew System::EventHandler(this, &Mainapp::searchTxt_Click);
+			this->searchTxt->Enter += gcnew System::EventHandler(this, &Mainapp::searchTxt_Enter_1);
 			// 
 			// pictureBox2
 			// 
@@ -766,6 +768,11 @@ namespace FBManagmentSytem {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e);
 
 	private: System::Void userPic_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void panel1_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void panel1_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void searchTxt_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void searchTxt_Enter_1(System::Object^  sender, System::EventArgs^  e);
 };
 }

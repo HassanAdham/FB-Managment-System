@@ -2,6 +2,7 @@
 #include "Login.h"
 #include "Profile.h"
 #include "WritePost.h"
+#include "Search.h"
 
 namespace FBManagmentSytem {
 	FBManagmentSytem::Mainapp::Mainapp(void)
@@ -69,6 +70,22 @@ namespace FBManagmentSytem {
 	System::Void Mainapp::panel1_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
 		WritePost^ s = gcnew WritePost(F,U);
+		this->Hide();
+		s->Show();
+		return System::Void();
+	}
+
+	System::Void Mainapp::searchTxt_Click(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		Search^ s = gcnew Search(F, U);
+		this->Hide();
+		s->Show();
+		return System::Void();
+	}
+
+	System::Void Mainapp::searchTxt_Enter_1(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		Search^ s = gcnew Search(F, U);
 		this->Hide();
 		s->Show();
 		return System::Void();

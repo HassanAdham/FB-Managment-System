@@ -7,33 +7,51 @@
           <work />
           <edu />
           <address />
-          <mail>dsadsa</mail>
-          <Fname>sddas</Fname>
-          <Lname>dsadsa</Lname>
+          <mail>a</mail>
+          <Fname>Hassan</Fname>
+          <Lname>Adham</Lname>
           <gender>male</gender>
-          <day>24</day>
-          <month>01</month>
-          <year>1967</year>
-          <passw>dsasda</passw>
+          <day>19</day>
+          <month>03</month>
+          <year>1998</year>
+          <passw>a</passw>
           <id>1</id>
         </usr>
         <fri_stat>0</fri_stat>
-        <fri__req>0</fri__req>
+        <fri__req>5</fri__req>
       </Friends>
       <Friends>
         <usr>
           <work />
           <edu />
           <address />
-          <mail>a</mail>
-          <Fname>a</Fname>
-          <Lname>a</Lname>
+          <mail>s</mail>
+          <Fname>Hazem</Fname>
+          <Lname>Yousef</Lname>
           <gender>male</gender>
-          <day>28</day>
+          <day>27</day>
           <month>02</month>
-          <year>1992</year>
-          <passw>a</passw>
+          <year>1994</year>
+          <passw>s</passw>
           <id>2</id>
+        </usr>
+        <fri_stat>0</fri_stat>
+        <fri__req>1</fri__req>
+      </Friends>
+      <Friends>
+        <usr>
+          <work />
+          <edu />
+          <address />
+          <mail>d</mail>
+          <Fname>Rodaina </Fname>
+          <Lname>Sokkar</Lname>
+          <gender>female</gender>
+          <day>27</day>
+          <month>01</month>
+          <year>1990</year>
+          <passw>d</passw>
+          <id>3</id>
         </usr>
         <fri_stat>0</fri_stat>
         <fri__req>0</fri__req>
@@ -45,14 +63,14 @@
           <work />
           <edu />
           <address />
-          <mail>a</mail>
-          <Fname>a</Fname>
-          <Lname>a</Lname>
+          <mail>s</mail>
+          <Fname>Hazem</Fname>
+          <Lname>Yousef</Lname>
           <gender>male</gender>
-          <day>28</day>
+          <day>27</day>
           <month>02</month>
-          <year>1992</year>
-          <passw>a</passw>
+          <year>1994</year>
+          <passw>s</passw>
           <id>2</id>
         </usr>
         <fri_stat>0</fri_stat>
@@ -63,14 +81,88 @@
           <work />
           <edu />
           <address />
-          <mail>dsadsa</mail>
-          <Fname>sddas</Fname>
-          <Lname>dsadsa</Lname>
+          <mail>a</mail>
+          <Fname>Hassan</Fname>
+          <Lname>Adham</Lname>
           <gender>male</gender>
-          <day>24</day>
+          <day>19</day>
+          <month>03</month>
+          <year>1998</year>
+          <passw>a</passw>
+          <id>1</id>
+        </usr>
+        <fri_stat>0</fri_stat>
+        <fri__req>2</fri__req>
+      </Friends>
+      <Friends>
+        <usr>
+          <work />
+          <edu />
+          <address />
+          <mail>d</mail>
+          <Fname>Rodaina </Fname>
+          <Lname>Sokkar</Lname>
+          <gender>female</gender>
+          <day>27</day>
           <month>01</month>
-          <year>1967</year>
-          <passw>dsasda</passw>
+          <year>1990</year>
+          <passw>d</passw>
+          <id>3</id>
+        </usr>
+        <fri_stat>0</fri_stat>
+        <fri__req>0</fri__req>
+      </Friends>
+    </ArrayOfFriends>
+    <ArrayOfFriends>
+      <Friends>
+        <usr>
+          <work />
+          <edu />
+          <address />
+          <mail>d</mail>
+          <Fname>Rodaina </Fname>
+          <Lname>Sokkar</Lname>
+          <gender>female</gender>
+          <day>27</day>
+          <month>01</month>
+          <year>1990</year>
+          <passw>d</passw>
+          <id>3</id>
+        </usr>
+        <fri_stat>0</fri_stat>
+        <fri__req>0</fri__req>
+      </Friends>
+      <Friends>
+        <usr>
+          <work />
+          <edu />
+          <address />
+          <mail>s</mail>
+          <Fname>Hazem</Fname>
+          <Lname>Yousef</Lname>
+          <gender>male</gender>
+          <day>27</day>
+          <month>02</month>
+          <year>1994</year>
+          <passw>s</passw>
+          <id>2</id>
+        </usr>
+        <fri_stat>0</fri_stat>
+        <fri__req>0</fri__req>
+      </Friends>
+      <Friends>
+        <usr>
+          <work />
+          <edu />
+          <address />
+          <mail>a</mail>
+          <Fname>Hassan</Fname>
+          <Lname>Adham</Lname>
+          <gender>male</gender>
+          <day>19</day>
+          <month>03</month>
+          <year>1998</year>
+          <passw>a</passw>
           <id>1</id>
         </usr>
         <fri_stat>0</fri_stat>
