@@ -98,8 +98,8 @@ namespace FBManagmentSytem {
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->unfriBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->unfriBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -243,7 +243,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton4->Location = System::Drawing::Point(267, 282);
 			this->bunifuTileButton4->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton4->Name = L"bunifuTileButton4";
-			this->bunifuTileButton4->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton4->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton4->TabIndex = 16;
 			// 
 			// bunifuTileButton3
@@ -263,7 +263,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton3->Location = System::Drawing::Point(182, 282);
 			this->bunifuTileButton3->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton3->Name = L"bunifuTileButton3";
-			this->bunifuTileButton3->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton3->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton3->TabIndex = 15;
 			// 
 			// bunifuTileButton2
@@ -283,7 +283,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton2->Location = System::Drawing::Point(95, 282);
 			this->bunifuTileButton2->Margin = System::Windows::Forms::Padding(5);
 			this->bunifuTileButton2->Name = L"bunifuTileButton2";
-			this->bunifuTileButton2->Size = System::Drawing::Size(75, 45);
+			this->bunifuTileButton2->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton2->TabIndex = 14;
 			// 
 			// friendBtn
@@ -304,8 +304,9 @@ namespace FBManagmentSytem {
 			this->friendBtn->Location = System::Drawing::Point(10, 282);
 			this->friendBtn->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
 			this->friendBtn->Name = L"friendBtn";
-			this->friendBtn->Size = System::Drawing::Size(75, 45);
+			this->friendBtn->Size = System::Drawing::Size(75, 47);
 			this->friendBtn->TabIndex = 13;
+			this->friendBtn->Click += gcnew System::EventHandler(this, &Friend::friendBtn_Click);
 			// 
 			// pictureBox4
 			// 
@@ -389,43 +390,7 @@ namespace FBManagmentSytem {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(360, 108);
 			this->panel1->TabIndex = 29;
-			// 
-			// unfriBtn
-			// 
-			this->unfriBtn->Activecolor = System::Drawing::Color::DarkGray;
-			this->unfriBtn->BackColor = System::Drawing::Color::White;
-			this->unfriBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->unfriBtn->BorderRadius = 0;
-			this->unfriBtn->ButtonText = L"Unfriend";
-			this->unfriBtn->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->unfriBtn->DisabledColor = System::Drawing::Color::Gray;
-			this->unfriBtn->ForeColor = System::Drawing::Color::Black;
-			this->unfriBtn->Iconcolor = System::Drawing::Color::Transparent;
-			this->unfriBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"unfriBtn.Iconimage")));
-			this->unfriBtn->Iconimage_right = nullptr;
-			this->unfriBtn->Iconimage_right_Selected = nullptr;
-			this->unfriBtn->Iconimage_Selected = nullptr;
-			this->unfriBtn->IconMarginLeft = 15;
-			this->unfriBtn->IconMarginRight = 0;
-			this->unfriBtn->IconRightVisible = true;
-			this->unfriBtn->IconRightZoom = 55;
-			this->unfriBtn->IconVisible = true;
-			this->unfriBtn->IconZoom = 60;
-			this->unfriBtn->IsTab = false;
-			this->unfriBtn->Location = System::Drawing::Point(0, 54);
-			this->unfriBtn->Margin = System::Windows::Forms::Padding(4);
-			this->unfriBtn->Name = L"unfriBtn";
-			this->unfriBtn->Normalcolor = System::Drawing::Color::White;
-			this->unfriBtn->OnHovercolor = System::Drawing::Color::DarkGray;
-			this->unfriBtn->OnHoverTextColor = System::Drawing::Color::Black;
-			this->unfriBtn->selected = false;
-			this->unfriBtn->Size = System::Drawing::Size(360, 50);
-			this->unfriBtn->TabIndex = 1;
-			this->unfriBtn->Text = L"Unfriend";
-			this->unfriBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->unfriBtn->Textcolor = System::Drawing::Color::Black;
-			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->panel1->Visible = false;
 			// 
 			// bunifuFlatButton1
 			// 
@@ -433,7 +398,7 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->BackColor = System::Drawing::Color::White;
 			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->bunifuFlatButton1->BorderRadius = 0;
-			this->bunifuFlatButton1->ButtonText = L"Ristrected";
+			this->bunifuFlatButton1->ButtonText = L"            Ristrected";
 			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
 			this->bunifuFlatButton1->ForeColor = System::Drawing::Color::Black;
@@ -443,7 +408,7 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->Iconimage_right_Selected = nullptr;
 			this->bunifuFlatButton1->Iconimage_Selected = nullptr;
 			this->bunifuFlatButton1->IconMarginLeft = 15;
-			this->bunifuFlatButton1->IconMarginRight = 0;
+			this->bunifuFlatButton1->IconMarginRight = 500;
 			this->bunifuFlatButton1->IconRightVisible = true;
 			this->bunifuFlatButton1->IconRightZoom = 55;
 			this->bunifuFlatButton1->IconVisible = true;
@@ -458,10 +423,47 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->selected = false;
 			this->bunifuFlatButton1->Size = System::Drawing::Size(360, 50);
 			this->bunifuFlatButton1->TabIndex = 1;
-			this->bunifuFlatButton1->Text = L"Ristrected";
+			this->bunifuFlatButton1->Text = L"            Ristrected";
 			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::Black;
 			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			// 
+			// unfriBtn
+			// 
+			this->unfriBtn->Activecolor = System::Drawing::Color::DarkGray;
+			this->unfriBtn->BackColor = System::Drawing::Color::White;
+			this->unfriBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->unfriBtn->BorderRadius = 0;
+			this->unfriBtn->ButtonText = L"           Unfriend";
+			this->unfriBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->unfriBtn->DisabledColor = System::Drawing::Color::Gray;
+			this->unfriBtn->ForeColor = System::Drawing::Color::Black;
+			this->unfriBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->unfriBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"unfriBtn.Iconimage")));
+			this->unfriBtn->Iconimage_right = nullptr;
+			this->unfriBtn->Iconimage_right_Selected = nullptr;
+			this->unfriBtn->Iconimage_Selected = nullptr;
+			this->unfriBtn->IconMarginLeft = 15;
+			this->unfriBtn->IconMarginRight = 500;
+			this->unfriBtn->IconRightVisible = true;
+			this->unfriBtn->IconRightZoom = 55;
+			this->unfriBtn->IconVisible = true;
+			this->unfriBtn->IconZoom = 60;
+			this->unfriBtn->IsTab = false;
+			this->unfriBtn->Location = System::Drawing::Point(0, 54);
+			this->unfriBtn->Margin = System::Windows::Forms::Padding(4);
+			this->unfriBtn->Name = L"unfriBtn";
+			this->unfriBtn->Normalcolor = System::Drawing::Color::White;
+			this->unfriBtn->OnHovercolor = System::Drawing::Color::DarkGray;
+			this->unfriBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->unfriBtn->selected = false;
+			this->unfriBtn->Size = System::Drawing::Size(360, 50);
+			this->unfriBtn->TabIndex = 1;
+			this->unfriBtn->Text = L"           Unfriend";
+			this->unfriBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->unfriBtn->Textcolor = System::Drawing::Color::Black;
+			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			// 
 			// Friend
@@ -516,5 +518,6 @@ namespace FBManagmentSytem {
 #pragma endregion
 	private: System::Void Friend_Load(System::Object^  sender, System::EventArgs^  e);
 	
+	private: System::Void friendBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

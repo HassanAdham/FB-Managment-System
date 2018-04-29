@@ -18,7 +18,6 @@ namespace FBManagmentSytem {
 		Application::SetCompatibleTextRenderingDefault(false);
 		FBManagmentSytem::Login mainForm;
 		Application::Run(%mainForm);
-
 		return 0;
 	}
 

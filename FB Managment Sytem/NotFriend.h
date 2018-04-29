@@ -17,6 +17,8 @@ namespace FBManagmentSytem {
 	{
 		Facebook^ F;
 		User^ U1, ^ U2;
+	private: System::Windows::Forms::PictureBox^  addPic;
+	private: System::Windows::Forms::PictureBox^  pendingPic;
 
 	public:
 		NotFriend(void);
@@ -87,6 +89,8 @@ namespace FBManagmentSytem {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->addPic = (gcnew System::Windows::Forms::PictureBox());
+			this->pendingPic = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -94,6 +98,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->addPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pendingPic))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// feedsPanel
@@ -318,11 +324,33 @@ namespace FBManagmentSytem {
 			this->pictureBox1->TabIndex = 27;
 			this->pictureBox1->TabStop = false;
 			// 
+			// addPic
+			// 
+			this->addPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addPic.Image")));
+			this->addPic->Location = System::Drawing::Point(37, 197);
+			this->addPic->Name = L"addPic";
+			this->addPic->Size = System::Drawing::Size(0, 0);
+			this->addPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->addPic->TabIndex = 46;
+			this->addPic->TabStop = false;
+			// 
+			// pendingPic
+			// 
+			this->pendingPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pendingPic.Image")));
+			this->pendingPic->Location = System::Drawing::Point(46, 219);
+			this->pendingPic->Name = L"pendingPic";
+			this->pendingPic->Size = System::Drawing::Size(0, 0);
+			this->pendingPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pendingPic->TabIndex = 46;
+			this->pendingPic->TabStop = false;
+			// 
 			// NotFriend
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->pendingPic);
+			this->Controls->Add(this->addPic);
 			this->Controls->Add(this->feedsPanel);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -346,6 +374,7 @@ namespace FBManagmentSytem {
 			this->Name = L"NotFriend";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
+			this->Load += gcnew System::EventHandler(this, &NotFriend::NotFriend_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -353,6 +382,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->addPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pendingPic))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -360,5 +391,7 @@ namespace FBManagmentSytem {
 
 #pragma endregion
 	private: System::Void bunifuTileButton1_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void NotFriend_Load(System::Object^  sender, System::EventArgs^  e);
 };
 }

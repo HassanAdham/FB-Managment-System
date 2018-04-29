@@ -31,53 +31,71 @@ namespace FBManagmentSytem {
 
 	System::Void Mainapp::pplBtn_CheckedChanged(System::Object ^ sender, System::EventArgs ^ e)
 	{
-		feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
-		pplBtn->BackgroundImage = pplAct->BackgroundImage;
-		noti->BackgroundImage = notiNotAct->BackgroundImage;
-		setBtn->BackgroundImage = setNotAct->BackgroundImage;
-		List<Friends^>^ friendlist = F->f[Int32::Parse(U->id) - 1];
-		int y = 0;
-		for (int i = 1; i < friendlist->Count; i++)
+		if (pplBtn->Checked == true)
 		{
-			if (friendlist[i]->fri__req == "2")
+			feedsPanel->Visible = false;
+			notiPanel->Visible = false;
+			stngsPanel->Visible = false;
+			pplPanel->Visible = true;
+			feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
+			pplBtn->BackgroundImage = pplAct->BackgroundImage;
+			noti->BackgroundImage = notiNotAct->BackgroundImage;
+			setBtn->BackgroundImage = setNotAct->BackgroundImage;
+			List<Friends^>^ friendlist = F->f[Int32::Parse(U->id) - 1];
+			int y = 0;
+			for (int i = 1; i < friendlist->Count; i++)
 			{
-				Panel^ pnl = gcnew Panel();
-				pplPanel->Controls->Add(pnl);
-				pnl->Size = System::Drawing::Size(360, 60);
-				pnl->Location = Point(0, y);
-				pnl->BackColor = Color::LightGray;
+				if (friendlist[i]->fri__req == "2")
+				{
+					Panel^ pnl = gcnew Panel();
+					pplPanel->Controls->Add(pnl);
+					pnl->Size = System::Drawing::Size(360, 60);
+					pnl->Location = Point(0, y);
+					pnl->BackColor = Color::LightGray;
 
-				PictureBox^ img = gcnew PictureBox();
-				pnl->Controls->Add(img);
-				img->Location = Point(10, 5);
-				img->Size = System::Drawing::Size(50, 50);
-				img->SizeMode = PictureBoxSizeMode::StretchImage;
+					PictureBox^ img = gcnew PictureBox();
+					pnl->Controls->Add(img);
+					img->Location = Point(10, 5);
+					img->Size = System::Drawing::Size(50, 50);
+					img->SizeMode = PictureBoxSizeMode::StretchImage;
 
-				Label^ nameLbl = gcnew Label();
-				pnl->Controls->Add(nameLbl);
-				nameLbl->Font = gcnew System::Drawing::Font("Segoe UI", 14, FontStyle::Regular);
-				nameLbl->Text = friendlist[i]->usr->username();
-				nameLbl->Location = Point(70, 15);
-				nameLbl->BackColor = Color::LightGray;
-				nameLbl->Click += gcnew EventHandler(this, &Mainapp::lblClk_Click);
+					Label^ nameLbl = gcnew Label();
+					pnl->Controls->Add(nameLbl);
+					nameLbl->Font = gcnew System::Drawing::Font("Segoe UI", 14, FontStyle::Regular);
+					nameLbl->Text = friendlist[i]->usr->username();
+					nameLbl->Location = Point(70, 15);
+					nameLbl->BackColor = Color::LightGray;
+					nameLbl->Cursor = Cursors::Hand;
+					nameLbl->Click += gcnew EventHandler(this, &Mainapp::lblClk_Click);
 
-				Button^ accept = gcnew Button;
-				pnl->Controls->Add(accept);
-				accept->Location = Point(228, 17);
-				accept->Size = System::Drawing::Size(84, 29);
-				accept->Text = friendlist[i]->usr->id;
-				accept->Click += gcnew EventHandler(this, &Mainapp::accept_Click);
+					Button^ accept = gcnew Button;
+					pnl->Controls->Add(accept);
+					accept->Location = Point(240, 20);
+					accept->AutoSize = false;
+					accept->Font = gcnew System::Drawing::Font("Segoe UI", 1, FontStyle::Regular);
+					accept->Image = acceptImg->Image;
+					accept->Size = System::Drawing::Size(71, 24);
+					accept->Text = friendlist[i]->usr->id;
+					accept->Cursor = Cursors::Hand;
+					accept->FlatStyle = FlatStyle::Flat;
+					accept->FlatAppearance->BorderSize = 0;
+					accept->Click += gcnew EventHandler(this, &Mainapp::accept_Click);
 
 
-				Button^ X = gcnew Button();
-				pnl->Controls->Add(X);
-				X->Location = Point(318, 17);
-				X->Size = System::Drawing::Size(30, 29);
-				X->Text = "X";
-				X->Click += gcnew EventHandler(this, &Mainapp::accept_Click);
-
-				y += 63;
-
+					Button^ X = gcnew Button();
+					pnl->Controls->Add(X);
+					X->Location = Point(318, 20);
+					X->AutoSize = false;
+					X->Font = gcnew System::Drawing::Font("Segoe UI", 1, FontStyle::Regular);
+					X->Image = rejectImg->Image;
+					X->FlatAppearance->BorderSize = 0;
+					X->FlatStyle = FlatStyle::Flat;
+					X->Cursor = Cursors::Hand;
+					X->Size = System::Drawing::Size(24, 24);
+					X->Text = "X";
+					X->Click += gcnew EventHandler(this, &Mainapp::accept_Click);
+					y += 63;
+				}
 			}
 		}
 		return System::Void();

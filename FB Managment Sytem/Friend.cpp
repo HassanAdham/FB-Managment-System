@@ -20,3 +20,12 @@ System::Void FBManagmentSytem::Friend::Friend_Load(System::Object ^ sender, Syst
 	backBtn->Location = Point(57, -1);
 	return System::Void();
 }
+
+System::Void FBManagmentSytem::Friend::friendBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if(panel1->Visible == false)
+		panel1->Visible = true;
+	else
+		panel1->Visible = false;
+	return System::Void();
+}

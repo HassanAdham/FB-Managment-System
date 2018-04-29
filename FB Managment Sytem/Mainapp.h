@@ -17,6 +17,10 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Facebook ^ F;
+
+	private: System::Windows::Forms::PictureBox^  acceptImg;
+	private: System::Windows::Forms::PictureBox^  rejectImg;
+	public:
 		User ^ U;
 	public:
 		Mainapp(void);
@@ -108,6 +112,8 @@ namespace FBManagmentSytem {
 			this->setNotAct = (gcnew System::Windows::Forms::PictureBox());
 			this->searchTxt = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->acceptImg = (gcnew System::Windows::Forms::PictureBox());
+			this->rejectImg = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
 			this->feedsPanel->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -125,6 +131,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiNotAct))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setNotAct))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->acceptImg))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->rejectImg))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitter1
@@ -637,11 +645,31 @@ namespace FBManagmentSytem {
 			this->pictureBox2->TabIndex = 15;
 			this->pictureBox2->TabStop = false;
 			// 
+			// acceptImg
+			// 
+			this->acceptImg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"acceptImg.Image")));
+			this->acceptImg->Location = System::Drawing::Point(478, 25);
+			this->acceptImg->Name = L"acceptImg";
+			this->acceptImg->Size = System::Drawing::Size(0, 0);
+			this->acceptImg->TabIndex = 1;
+			this->acceptImg->TabStop = false;
+			// 
+			// rejectImg
+			// 
+			this->rejectImg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"rejectImg.Image")));
+			this->rejectImg->Location = System::Drawing::Point(465, 20);
+			this->rejectImg->Name = L"rejectImg";
+			this->rejectImg->Size = System::Drawing::Size(0, 0);
+			this->rejectImg->TabIndex = 16;
+			this->rejectImg->TabStop = false;
+			// 
 			// Mainapp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1386, 640);
+			this->Controls->Add(this->rejectImg);
+			this->Controls->Add(this->acceptImg);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->searchTxt);
 			this->Controls->Add(this->pplNotAct);
@@ -687,6 +715,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->notiNotAct))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->setNotAct))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->acceptImg))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->rejectImg))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -712,6 +742,11 @@ namespace FBManagmentSytem {
 		}
 
 		private: System::Void feedsBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+
+			feedsPanel->Visible = true;
+			notiPanel->Visible = false;
+			stngsPanel->Visible = false;
+			pplPanel->Visible = false;
 			feedsBtn->BackgroundImage = feedsAct->BackgroundImage;
 			pplBtn->BackgroundImage = pplNotAct->BackgroundImage;
 			noti->BackgroundImage = notiNotAct->BackgroundImage;
@@ -721,6 +756,10 @@ namespace FBManagmentSytem {
 		private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void noti_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			feedsPanel->Visible = false;
+			notiPanel->Visible = true;
+			stngsPanel->Visible = false;
+			pplPanel->Visible = false;
 			feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
 			pplBtn->BackgroundImage = pplNotAct->BackgroundImage;
 			noti->BackgroundImage = notiAct->BackgroundImage;
@@ -728,6 +767,10 @@ namespace FBManagmentSytem {
 		}
 
 		private: System::Void setBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			feedsPanel->Visible = false;
+			notiPanel->Visible = false;
+			stngsPanel->Visible = true;
+			pplPanel->Visible = false;
 			feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
 			pplBtn->BackgroundImage = pplNotAct->BackgroundImage;
 			noti->BackgroundImage = notiNotAct->BackgroundImage;
