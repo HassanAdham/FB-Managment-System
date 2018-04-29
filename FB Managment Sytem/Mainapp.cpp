@@ -92,8 +92,8 @@ namespace FBManagmentSytem {
 					X->FlatStyle = FlatStyle::Flat;
 					X->Cursor = Cursors::Hand;
 					X->Size = System::Drawing::Size(24, 24);
-					X->Text = "X";
-					X->Click += gcnew EventHandler(this, &Mainapp::accept_Click);
+					X->Text = friendlist[i]->usr->id;
+					X->Click += gcnew EventHandler(this, &Mainapp::X_Click);
 					y += 63;
 				}
 			}
@@ -229,24 +229,9 @@ namespace FBManagmentSytem {
 		{
 			if (friendlist[i]->usr->Fname == fn)
 			{
-				if (friendlist[i]->fri__req == "0")
-				{
 					NotFriend^ s = gcnew NotFriend(F, U, friendlist[i]->usr);
 					this->Hide();
 					s->Show();
-				}
-				else if (friendlist[i]->fri__req == "1")
-				{
-					Friend^ s = gcnew Friend(F, U, friendlist[i]->usr);
-					this->Hide();
-					s->Show();
-				}
-				else
-				{
-					Profile^ s = gcnew Profile(F, U);
-					this->Hide();
-					s->Show();
-				}
 			}
 		}
 		return System::Void();

@@ -54,9 +54,9 @@ System::Void FBManagmentSytem::Search::lblClk_Click(System::Object ^ sender, Sys
 		{
 			if (friendlist[i]->usr->Fname == fn)
 			{
-				if (friendlist[i]->fri__req == "0")
+				if (friendlist[i]->usr->Fname==U->Fname)
 				{
-					NotFriend^ s = gcnew NotFriend(F, U, friendlist[i]->usr);
+					Profile^ s = gcnew Profile(F, U);
 					this->Hide();
 					s->Show();
 				}
@@ -66,12 +66,13 @@ System::Void FBManagmentSytem::Search::lblClk_Click(System::Object ^ sender, Sys
 					this->Hide();
 					s->Show();
 				}
-				else
+				else 
 				{
-					Profile^ s = gcnew Profile(F, U);
+					NotFriend^ s = gcnew NotFriend(F, U, friendlist[i]->usr);
 					this->Hide();
 					s->Show();
 				}
+			
 			}
 		}
 	}

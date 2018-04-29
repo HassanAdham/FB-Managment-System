@@ -19,14 +19,14 @@ FBManagmentSytem::NotFriend::NotFriend(Facebook ^ f, User ^ u1, User ^ u2)
 
 System::Void FBManagmentSytem::NotFriend::bunifuTileButton1_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-	if (bunifuTileButton1->Image == addPic->Image)
+	if (bunifuTileButton1->LabelText == "Add Friend")
 	{
 		bunifuTileButton1->Image = pendingPic->Image;
-		bunifuTileButton1->Text = "Add Friend";
-		List<Friends^>^x = F->f[Int32::Parse(U1->id) - 1];
+		bunifuTileButton1->LabelText = "Pending Request";
+		List<Friends^>^x = F->f[Int32::Parse(U2->id) - 1];
 		for (int i = 0; i < x->Count; i++)
 		{
-			if (x[i]->usr->id == U2->id) {
+			if (x[i]->usr->id == U1->id) {
 				x[i]->fri__req = "2";
 				break;
 			}
@@ -35,8 +35,8 @@ System::Void FBManagmentSytem::NotFriend::bunifuTileButton1_Click(System::Object
 	}
 	else
 	{
-		bunifuTileButton1->Image = pendingPic->Image;
-		bunifuTileButton1->Text = "Penfing Request";
+		bunifuTileButton1->Image = addPic->Image;
+		bunifuTileButton1->Text = "Add Friend";
 		List<Friends^>^x = F->f[Int32::Parse(U1->id) - 1];
 		for (int i = 0; i < x->Count; i++)
 		{
