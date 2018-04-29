@@ -197,7 +197,7 @@ namespace FBManagmentSytem {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(343, 60);
+			this->panel1->Size = System::Drawing::Size(376, 60);
 			this->panel1->TabIndex = 28;
 			// 
 			// panel2
@@ -247,7 +247,7 @@ namespace FBManagmentSytem {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 60);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(343, 800);
+			this->panel2->Size = System::Drawing::Size(376, 800);
 			this->panel2->TabIndex = 35;
 			// 
 			// pictureBox16
@@ -291,6 +291,7 @@ namespace FBManagmentSytem {
 			this->button3->Text = L"Edit";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &EditPro::button3_Click);
 			// 
 			// button2
 			// 
@@ -309,9 +310,11 @@ namespace FBManagmentSytem {
 			this->button2->Text = L"Edit";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &EditPro::button2_Click);
 			// 
 			// pictureBox14
 			// 
+			this->pictureBox14->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox14.Image")));
 			this->pictureBox14->Location = System::Drawing::Point(133, 128);
 			this->pictureBox14->Name = L"pictureBox14";
@@ -336,6 +339,7 @@ namespace FBManagmentSytem {
 			this->button1->TabIndex = 69;
 			this->button1->Text = L"Update Info";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &EditPro::button1_Click);
 			// 
 			// fmaleRadio
 			// 
@@ -420,9 +424,9 @@ namespace FBManagmentSytem {
 			this->dComboBox->ForeColor = System::Drawing::Color::DimGray;
 			this->dComboBox->FormattingEnabled = true;
 			this->dComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(31) {
-				L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8",
-					L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25", L"26",
-					L"27", L"28", L"29", L"30", L"31"
+				L"01", L"02", L"03", L"04", L"05", L"06", L"07",
+					L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25",
+					L"26", L"27", L"28", L"29", L"30", L"31"
 			});
 			this->dComboBox->Location = System::Drawing::Point(135, 667);
 			this->dComboBox->Name = L"dComboBox";
@@ -488,6 +492,8 @@ namespace FBManagmentSytem {
 			this->textBox6->Size = System::Drawing::Size(239, 40);
 			this->textBox6->TabIndex = 63;
 			this->textBox6->Text = L"Add phone number";
+			this->textBox6->Enter += gcnew System::EventHandler(this, &EditPro::textBox6_Enter);
+			this->textBox6->Leave += gcnew System::EventHandler(this, &EditPro::textBox6_Leave);
 			// 
 			// textBox5
 			// 
@@ -503,6 +509,8 @@ namespace FBManagmentSytem {
 			this->textBox5->Size = System::Drawing::Size(239, 40);
 			this->textBox5->TabIndex = 59;
 			this->textBox5->Text = L"Add your current job";
+			this->textBox5->Enter += gcnew System::EventHandler(this, &EditPro::textBox5_Enter);
+			this->textBox5->Leave += gcnew System::EventHandler(this, &EditPro::textBox5_Leave);
 			// 
 			// textBox4
 			// 
@@ -518,6 +526,8 @@ namespace FBManagmentSytem {
 			this->textBox4->Size = System::Drawing::Size(239, 40);
 			this->textBox4->TabIndex = 60;
 			this->textBox4->Text = L"Add your current city";
+			this->textBox4->Enter += gcnew System::EventHandler(this, &EditPro::textBox4_Enter);
+			this->textBox4->Leave += gcnew System::EventHandler(this, &EditPro::textBox4_Leave);
 			// 
 			// textBox3
 			// 
@@ -533,6 +543,8 @@ namespace FBManagmentSytem {
 			this->textBox3->Size = System::Drawing::Size(239, 40);
 			this->textBox3->TabIndex = 61;
 			this->textBox3->Text = L"Add a high school/college";
+			this->textBox3->Enter += gcnew System::EventHandler(this, &EditPro::textBox3_Enter);
+			this->textBox3->Leave += gcnew System::EventHandler(this, &EditPro::textBox3_Leave);
 			// 
 			// textBox1
 			// 
@@ -761,6 +773,7 @@ namespace FBManagmentSytem {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(-57, 0);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -776,7 +789,7 @@ namespace FBManagmentSytem {
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->ClientSize = System::Drawing::Size(360, 640);
+			this->ClientSize = System::Drawing::Size(393, 640);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -810,7 +823,28 @@ namespace FBManagmentSytem {
 
 		}
 #pragma endregion
-	private: System::Void EditPro_Load(System::Object^  sender, System::EventArgs^  e) {
-	}
+	private: System::Void EditPro_Load(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e);
+	
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox3_Enter(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox3_Leave(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox4_Enter(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox4_Leave(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox5_Enter(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox5_Leave(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox6_Enter(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void textBox6_Leave(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

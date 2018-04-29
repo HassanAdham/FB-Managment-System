@@ -49,6 +49,9 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Button^  signupBtn;
 	private: System::Windows::Forms::Label^  SignupLbl;
+	private: System::Windows::Forms::PictureBox^  malePic;
+	private: System::Windows::Forms::PictureBox^  fmalePic;
+	private: System::Windows::Forms::PictureBox^  coverPic;
 
 	private:
 		/// <summary>
@@ -81,7 +84,13 @@ namespace FBManagmentSytem {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->signupBtn = (gcnew System::Windows::Forms::Button());
 			this->SignupLbl = (gcnew System::Windows::Forms::Label());
+			this->malePic = (gcnew System::Windows::Forms::PictureBox());
+			this->fmalePic = (gcnew System::Windows::Forms::PictureBox());
+			this->coverPic = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->malePic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->fmalePic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coverPic))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lnTxt
@@ -214,9 +223,9 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->dComboBox->FormattingEnabled = true;
 			this->dComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(31) {
-				L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8",
-					L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25", L"26",
-					L"27", L"28", L"29", L"30", L"31"
+				L"01", L"02", L"03", L"04", L"05", L"06", L"07",
+					L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24", L"25",
+					L"26", L"27", L"28", L"29", L"30", L"31"
 			});
 			this->dComboBox->Location = System::Drawing::Point(84, 396);
 			this->dComboBox->Name = L"dComboBox";
@@ -380,6 +389,36 @@ namespace FBManagmentSytem {
 			this->SignupLbl->Text = L"You have an account aleady\?";
 			this->SignupLbl->Click += gcnew System::EventHandler(this, &Signup::SignupLbl_Click);
 			// 
+			// malePic
+			// 
+			this->malePic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"malePic.Image")));
+			this->malePic->Location = System::Drawing::Point(40, 40);
+			this->malePic->Name = L"malePic";
+			this->malePic->Size = System::Drawing::Size(0, 0);
+			this->malePic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->malePic->TabIndex = 13;
+			this->malePic->TabStop = false;
+			// 
+			// fmalePic
+			// 
+			this->fmalePic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fmalePic.Image")));
+			this->fmalePic->Location = System::Drawing::Point(40, 40);
+			this->fmalePic->Name = L"fmalePic";
+			this->fmalePic->Size = System::Drawing::Size(0, 0);
+			this->fmalePic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->fmalePic->TabIndex = 13;
+			this->fmalePic->TabStop = false;
+			// 
+			// coverPic
+			// 
+			this->coverPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"coverPic.Image")));
+			this->coverPic->Location = System::Drawing::Point(40, 40);
+			this->coverPic->Name = L"coverPic";
+			this->coverPic->Size = System::Drawing::Size(0, 0);
+			this->coverPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->coverPic->TabIndex = 13;
+			this->coverPic->TabStop = false;
+			// 
 			// Signup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -387,6 +426,9 @@ namespace FBManagmentSytem {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->coverPic);
+			this->Controls->Add(this->fmalePic);
+			this->Controls->Add(this->malePic);
 			this->Controls->Add(this->SignupLbl);
 			this->Controls->Add(this->signupBtn);
 			this->Controls->Add(this->pictureBox1);
@@ -411,6 +453,9 @@ namespace FBManagmentSytem {
 			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Signup::Signup_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->malePic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->fmalePic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->coverPic))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -457,5 +502,6 @@ namespace FBManagmentSytem {
 		}
 
 		private: System::Void signupBtn_Click(System::Object^  sender, System::EventArgs^  e);
-	};
+
+};
 }

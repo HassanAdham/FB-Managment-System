@@ -130,6 +130,8 @@ namespace FBManagmentSytem {
 			// 
 			// searchTxt
 			// 
+			this->searchTxt->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->searchTxt->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
 			this->searchTxt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->searchTxt->BorderStyle = System::Windows::Forms::BorderStyle::None;

@@ -38,7 +38,7 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
-    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String, Byte[], Byte[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -54,10 +54,11 @@ Class FBManagmentSytem.User: AutoLayout, AnsiClass, Class, Public, Serializable,
     System.String year : Public
     System.String passw : Public
     System.String id : Public
-    System.Windows.Forms.PictureBox coverphoto : Public
-    System.Windows.Forms.PictureBox profilephoto : Public
+    System.String phone : Public
+    Byte[] coverphoto : Public
+    Byte[] profilephoto : Public
   Methods:
-    SignUp(RadioButton, ComboBox): PrivateScope, Public, HideBySig
+    SignUp(RadioButton, ComboBox, Byte[], Byte[]): PrivateScope, Public, HideBySig
     Login(): PrivateScope, Public, HideBySig
     username(): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit

@@ -43,35 +43,43 @@ System::Void FBManagmentSytem::Search::searchTxt_Leave(System::Object ^ sender, 
 
 System::Void FBManagmentSytem::Search::lblClk_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-	Label^ clickedlabel = safe_cast<Label^>(sender);
-	String^ s = clickedlabel->Text;
-	array<String^>^ arr = s->Split(' ');
-	String^ fn = arr[0];
-	List<Friends^>^ friendlist = F->f[Int32::Parse(U->id)-1];
-	for (int i = 0; i < friendlist->Count; i++)
+	try
 	{
-		if (friendlist[i]->usr->Fname == fn)
+		Label^ clickedlabel = safe_cast<Label^>(sender);
+		String^ s = clickedlabel->Text;
+		array<String^>^ arr = s->Split(' ');
+		String^ fn = arr[0];
+		List<Friends^>^ friendlist = F->f[Int32::Parse(U->id) - 1];
+		for (int i = 0; i < friendlist->Count; i++)
 		{
-			if (friendlist[i]->fri__req == "0")
+			if (friendlist[i]->usr->Fname == fn)
 			{
-				NotFriend^ s = gcnew NotFriend(F, U, friendlist[i]->usr);
-				this->Hide();
-				s->Show();
-			}
-			else if (friendlist[i]->fri__req == "1")
-			{
-				Friend^ s = gcnew Friend(F, U, friendlist[i]->usr);
-				this->Hide();
-				s->Show();
-			}
-			else
-			{
-				Profile^ s = gcnew Profile(F, U);
-				this->Hide();
-				s->Show();
+				if (friendlist[i]->fri__req == "0")
+				{
+					NotFriend^ s = gcnew NotFriend(F, U, friendlist[i]->usr);
+					this->Hide();
+					s->Show();
+				}
+				else if (friendlist[i]->fri__req == "1")
+				{
+					Friend^ s = gcnew Friend(F, U, friendlist[i]->usr);
+					this->Hide();
+					s->Show();
+				}
+				else
+				{
+					Profile^ s = gcnew Profile(F, U);
+					this->Hide();
+					s->Show();
+				}
 			}
 		}
 	}
+	catch(Exception^ ex)
+	{ 
+		MessageBox::Show(ex->Message);
+	}
+
 	return System::Void();
 }
 
@@ -79,6 +87,7 @@ System::Void FBManagmentSytem::Search::searchTxt_TextChanged(System::Object ^ se
 {
 	//List<Friends^>^ friendlist = F->f[Int32::Parse(U->id) - 1];
 	panel3->Controls->Clear();
+	searchTxt->AutoCompleteCustomSource->Clear();
 	List<User^>^ userlist = gcnew List<User^>();
 	String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
 	MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
@@ -104,6 +113,7 @@ System::Void FBManagmentSytem::Search::searchTxt_TextChanged(System::Object ^ se
 			use->month = arr[1];
 			use->year = arr[2][0].ToString() + arr[2][1].ToString() + arr[2][2].ToString() + arr[2][3].ToString();
 			userlist->Add(use);
+			searchTxt->AutoCompleteCustomSource->Add(use->username());
 		}
 		conDatabase->Close();
 		int x = 0;

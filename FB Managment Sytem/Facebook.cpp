@@ -27,6 +27,8 @@ namespace FBManagmentSytem {
 			Fname = myreader["user_firstname"]->ToString();
 			Lname = myreader["user_lastname"]->ToString();
 			gender = myreader["user_gender"]->ToString();
+			profilephoto = safe_cast<array<Byte>^>(myreader["user_profilepic"]);
+			coverphoto = safe_cast<array<Byte>^>(myreader["user_coverpic"]);
 			String^ BD = myreader["user_birthdate"]->ToString();
 			array<String^>^ arr = BD->Split('/');
 			day = arr[0];
@@ -47,6 +49,7 @@ namespace FBManagmentSytem {
 
 	User::User()
 	{
+		phone = "";
 		work = "";
 		edu = "";
 		address = "";
@@ -59,6 +62,8 @@ namespace FBManagmentSytem {
 		year = "";
 		passw = "";
 		id = "";
+		coverphoto = nullptr;
+		profilephoto = nullptr;
 	}
 
 	User::User(String ^ em, String ^ pw)
@@ -67,9 +72,11 @@ namespace FBManagmentSytem {
 		passw = pw;
 	}
 
-	User::User(String ^ em, String ^ pw, String ^ fn, String ^ ln, String ^ d, String ^ y)
+	User::User(String ^ em, String ^ pw, String ^ fn, String ^ ln, String ^ d, String ^ y, array<Byte>^ profPic, array<Byte>^ covePic)
 	{
 		id = "";
+		profilephoto = profPic;
+		coverphoto = covePic;
 		mail = em;
 		passw = pw;
 		Fname = fn;
@@ -77,12 +84,13 @@ namespace FBManagmentSytem {
 		day = d;
 		year = y;
 		work = "";
+		phone = "";
 		edu = "";
 		address = "";
 		gender = "";
 	}
 
-	bool User::SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox) {
+	bool User::SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox, array<Byte>^ proPic, array<Byte>^ coverPic) {
 		//check email 
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
 		MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
@@ -148,6 +156,8 @@ namespace FBManagmentSytem {
 			cmdDatabase->Parameters->Add(gcnew MySqlParameter("PW", passw));
 			cmdDatabase->Parameters->Add(gcnew MySqlParameter("Birth", bDate));
 			cmdDatabase->Parameters->Add(gcnew MySqlParameter("Gend", gender));
+			cmdDatabase->Parameters->Add(gcnew MySqlParameter("proPic", proPic));
+			cmdDatabase->Parameters->Add(gcnew MySqlParameter("coverPic", coverPic));
 			cmdDatabase->ExecuteNonQuery();
 			conDatabase->Close();
 			return true;

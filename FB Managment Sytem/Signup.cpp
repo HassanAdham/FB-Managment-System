@@ -146,12 +146,33 @@ namespace FBManagmentSytem {
 		}
 		else
 		{
-			User^ u = gcnew User(mailTxt->Text, pwTxt->Text, fnTxt->Text, lnTxt->Text, dComboBox->Text, yComboBox->Text);
-			bool b = u->SignUp(maleRadio, mComboBox);
+
+			array<Byte>^ proimg = nullptr;
+			array<Byte>^ covrimg = nullptr;
+			MemoryStream^ ms = gcnew MemoryStream();
+			User^ u;
+			bool b;
+			coverPic->Image->Save(ms, coverPic->Image->RawFormat);
+			covrimg = ms->ToArray();
+			if (maleRadio->Checked)
+			{
+				MemoryStream^ ns = gcnew MemoryStream();
+				malePic->Image->Save(ns, malePic->Image->RawFormat);
+				proimg = ns->ToArray();
+				u = gcnew User(mailTxt->Text, pwTxt->Text, fnTxt->Text, lnTxt->Text, dComboBox->Text, yComboBox->Text, proimg, covrimg);
+				b = u->SignUp(maleRadio, mComboBox, proimg, covrimg);
+			}
+			else
+			{
+				MemoryStream^ ns = gcnew MemoryStream();
+				fmalePic->Image->Save(ns, fmalePic->Image->RawFormat);
+				proimg = ns->ToArray();
+				u = gcnew User(mailTxt->Text, pwTxt->Text, fnTxt->Text, lnTxt->Text, dComboBox->Text, yComboBox->Text, proimg, covrimg);
+				b = u->SignUp(maleRadio, mComboBox, proimg, covrimg);
+			}
 			if (b) {
 				MessageBox::Show("Welcome to Facebook.", "Sign up");
-				
-
+			
 				Friends^ fri = gcnew Friends();
 				fri->usr = u;
 				int^ ids = obj->f->Count +1;

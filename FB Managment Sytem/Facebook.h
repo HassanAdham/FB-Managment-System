@@ -21,13 +21,12 @@ namespace FBManagmentSytem {
 	[Serializable]
 	public ref class User {
 	public:
-		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id;
-		[XmlIgnore]
-		PictureBox^ coverphoto, ^profilephoto;
+		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id, ^ phone;
+		array<Byte>^ coverphoto, ^profilephoto;
 		User();
 		User(String^ em, String^ pw);
-		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y);
-		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox);
+		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y, array<Byte>^ profPic, array<Byte>^ covePic);
+		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox, array<Byte>^ proPic, array<Byte>^ coverPic);
 		bool Login();
 		String^ username();
 	};
@@ -37,7 +36,6 @@ namespace FBManagmentSytem {
 	{
 	public:
 		User ^ usr;
-
 		String^ fri_stat;
 		String^ fri__req;
 		Friends();
