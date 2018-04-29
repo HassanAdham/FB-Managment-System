@@ -29,3 +29,18 @@ System::Void FBManagmentSytem::Friend::friendBtn_Click(System::Object ^ sender, 
 		panel1->Visible = false;
 	return System::Void();
 }
+
+System::Void FBManagmentSytem::Friend::bunifuFlatButton1_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	if (bunifuFlatButton1->Text == " Ristrected")
+	{
+		bunifuFlatButton1->Iconimage = yPic->Image;
+		bunifuFlatButton1->Text = " Regular Friend";
+	}
+	else
+	{
+		bunifuFlatButton1->Iconimage = xPic->Image;
+		bunifuFlatButton1->Text = " Ristrected";
+	}
+	return System::Void();
+}

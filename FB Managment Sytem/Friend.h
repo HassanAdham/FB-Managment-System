@@ -21,6 +21,8 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Panel^  panel1;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton1;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  unfriBtn;
+	private: System::Windows::Forms::PictureBox^  xPic;
+	private: System::Windows::Forms::PictureBox^  yPic;
 	private: System::Windows::Forms::PictureBox^  pictureBox8;
 	public:
 		Friend(void);
@@ -100,6 +102,8 @@ namespace FBManagmentSytem {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->unfriBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->xPic = (gcnew System::Windows::Forms::PictureBox());
+			this->yPic = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -110,6 +114,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->xPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yPic))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// feedsPanel
@@ -398,7 +404,7 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->BackColor = System::Drawing::Color::White;
 			this->bunifuFlatButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->bunifuFlatButton1->BorderRadius = 0;
-			this->bunifuFlatButton1->ButtonText = L"            Ristrected";
+			this->bunifuFlatButton1->ButtonText = L"            Regular Friend";
 			this->bunifuFlatButton1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->bunifuFlatButton1->DisabledColor = System::Drawing::Color::Gray;
 			this->bunifuFlatButton1->ForeColor = System::Drawing::Color::Black;
@@ -423,11 +429,12 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->selected = false;
 			this->bunifuFlatButton1->Size = System::Drawing::Size(360, 50);
 			this->bunifuFlatButton1->TabIndex = 1;
-			this->bunifuFlatButton1->Text = L"            Ristrected";
+			this->bunifuFlatButton1->Text = L"            Regular Friend";
 			this->bunifuFlatButton1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::Black;
 			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->Click += gcnew System::EventHandler(this, &Friend::bunifuFlatButton1_Click);
 			// 
 			// unfriBtn
 			// 
@@ -466,6 +473,26 @@ namespace FBManagmentSytem {
 			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			// 
+			// xPic
+			// 
+			this->xPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"xPic.Image")));
+			this->xPic->Location = System::Drawing::Point(26, 184);
+			this->xPic->Name = L"xPic";
+			this->xPic->Size = System::Drawing::Size(0, 0);
+			this->xPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->xPic->TabIndex = 30;
+			this->xPic->TabStop = false;
+			// 
+			// yPic
+			// 
+			this->yPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"yPic.Image")));
+			this->yPic->Location = System::Drawing::Point(46, 200);
+			this->yPic->Name = L"yPic";
+			this->yPic->Size = System::Drawing::Size(0, 0);
+			this->yPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->yPic->TabIndex = 30;
+			this->yPic->TabStop = false;
+			// 
 			// Friend
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -473,6 +500,8 @@ namespace FBManagmentSytem {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->yPic);
+			this->Controls->Add(this->xPic);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->backBtn);
 			this->Controls->Add(this->pictureBox8);
@@ -511,6 +540,8 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->xPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yPic))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -519,5 +550,7 @@ namespace FBManagmentSytem {
 	private: System::Void Friend_Load(System::Object^  sender, System::EventArgs^  e);
 	
 	private: System::Void friendBtn_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
