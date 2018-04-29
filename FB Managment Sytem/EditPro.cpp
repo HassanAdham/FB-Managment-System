@@ -43,30 +43,30 @@ System::Void FBManagmentSytem::EditPro::EditPro_Load(System::Object ^ sender, Sy
 		U->coverphoto = safe_cast<array<Byte>^>(myreader["user_coverpic"]);
 		String^ BD = myreader["user_birthdate"]->ToString();
 		array<String^>^ arr = BD->Split('/');
-		U->day = arr[0];
-		if (arr[1] == "1")
+		U->day = arr[1];
+		if (arr[0] == "1")
 			U->month = "Jan";
-		else if (arr[1] == "2")
+		else if (arr[0] == "2")
 			U->month = "Feb";
-		else if (arr[1] == "3")
+		else if (arr[0] == "3")
 			U->month = "Mar";
-		else if (arr[1] == "4")
+		else if (arr[0] == "4")
 			U->month = "Apr";
-		else if (arr[1] == "5")
+		else if (arr[0] == "5")
 			U->month = "May";
-		else if (arr[1] == "6")
+		else if (arr[0] == "6")
 			U->month = "Jun";
-		else if (arr[1] == "7")
-			U->month = "Ju;";
-		else if (arr[1] == "8")
+		else if (arr[0] == "7")
+			U->month = "Jul";
+		else if (arr[0] == "8")
 			U->month = "Aug";
-		else if (arr[1] == "9")
+		else if (arr[0] == "9")
 			U->month = "Sep";
-		else if (arr[1] == "10")
+		else if (arr[0] == "10")
 			U->month = "Oct";
-		else if (arr[1] == "11")
+		else if (arr[0] == "11")
 			U->month = "Nov";
-		else if (arr[1] == "12")
+		else if (arr[0] == "12")
 			U->month = "Dec";
 		U->year = arr[2][0].ToString() + arr[2][1].ToString() + arr[2][2].ToString() + arr[2][3].ToString();
 		a = true;
@@ -322,6 +322,18 @@ System::Void FBManagmentSytem::EditPro::button1_Click(System::Object ^ sender, S
 		cmdDatabase->Parameters->Add(gcnew MySqlParameter("ID", U->id));
 		cmdDatabase->ExecuteNonQuery();
 		conDatabase->Close();
+		for (int i = 0;i < F->f->Count;i++)
+		{
+			List<Friends^>^x = F->f[i];
+			for (int j = 0;j < x->Count;j++)
+			{
+				
+				if (x[j]->usr->id == U->id) {
+					x[j]->usr=gcnew User(U);
+				}
+			}
+		}
+		F->serStruct();
 		MessageBox::Show("Information updated successfully", "Update", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		Profile^ s = gcnew Profile(F, U);
 		this->Hide();

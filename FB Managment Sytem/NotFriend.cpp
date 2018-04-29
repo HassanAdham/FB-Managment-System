@@ -19,7 +19,7 @@ FBManagmentSytem::NotFriend::NotFriend(Facebook ^ f, User ^ u1, User ^ u2)
 
 System::Void FBManagmentSytem::NotFriend::bunifuTileButton1_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-	List<Friends^>^x = F->f[Int32::Parse(U1->id)];
+	List<Friends^>^x = F->f[Int32::Parse(U1->id)-1];
 	for (int i = 0; i < x->Count; i++)
 	{
 		if (x[i]->usr->id == U2->id) {

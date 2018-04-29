@@ -24,6 +24,7 @@ namespace FBManagmentSytem {
 		String ^ work, ^ edu, ^ address, ^ mail, ^ Fname, ^ Lname, ^ gender, ^ day, ^ month, ^ year, ^ passw, ^ id, ^ phone;
 		array<Byte>^ coverphoto, ^profilephoto;
 		User();
+		User(User^ U);
 		User(String^ em, String^ pw);
 		User(String^ em, String^ pw, String^ fn, String^ ln, String^ d, String^ y, array<Byte>^ profPic, array<Byte>^ covePic);
 		bool SignUp(RadioButton^ maleRadio, ComboBox^ mComboBox, array<Byte>^ proPic, array<Byte>^ coverPic);

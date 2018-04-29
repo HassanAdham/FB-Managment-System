@@ -718,12 +718,7 @@ namespace FBManagmentSytem {
 			setBtn->BackgroundImage = setNotAct->BackgroundImage;
 		}
 
-		private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
-			pplBtn->BackgroundImage = pplAct->BackgroundImage;
-			noti->BackgroundImage = notiNotAct->BackgroundImage;
-			setBtn->BackgroundImage = setNotAct->BackgroundImage;
-		}
+		private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void noti_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			feedsBtn->BackgroundImage = feedsNotAct->BackgroundImage;
@@ -759,20 +754,26 @@ namespace FBManagmentSytem {
 			}
 		}
 
-	private: System::Void logoutBtn_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void logoutBtn_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void profileClkPnl_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void profileClkPnl_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void userLbl_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void userLbl_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void userPic_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void userPic_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void panel1_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void panel1_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void searchTxt_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void searchTxt_Click(System::Object^  sender, System::EventArgs^  e);
 
-	private: System::Void searchTxt_Enter_1(System::Object^  sender, System::EventArgs^  e);
-};
+		private: System::Void searchTxt_Enter_1(System::Object^  sender, System::EventArgs^  e);
+
+		 private: System::Void lblClk_Click(System::Object^  sender, System::EventArgs^  e);
+
+		 private: System::Void accept_Click(System::Object^  sender, System::EventArgs^  e);
+
+		 private: System::Void X_Click(System::Object^  sender, System::EventArgs^  e);
+	};
 }

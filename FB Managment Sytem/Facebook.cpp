@@ -66,6 +66,25 @@ namespace FBManagmentSytem {
 		profilephoto = nullptr;
 	}
 
+	User::User(User ^ U)
+	{
+		work = U->work;
+		edu = U->edu;
+		address = U->address;
+		mail = U->mail;
+		Fname = U->Fname;
+		Lname = U->Lname;
+		gender = U->gender;
+		day = U->day;
+		month = U->month;
+		year = U->year;
+		passw = U->passw;
+		id = U->id;
+		phone = U->phone;
+		coverphoto = U->coverphoto;
+		profilephoto = U->profilephoto;
+	}
+
 	User::User(String ^ em, String ^ pw)
 	{
 		mail = em;
