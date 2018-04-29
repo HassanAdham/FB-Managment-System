@@ -1,0 +1,52 @@
+//check mail
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_mail`(in Email varchar(45))
+BEGIN
+	select user_email from facebook.user where user_email = Email;
+END
+
+//insert
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Insert`(IN Fname varchar(45), Lname varchar(45), Email varchar(45), PW varchar(45), Birth date, Gend varchar(6), proPic longblob, coverPic longblob)
+BEGIN
+insert into facebook.user (user_firstname, user_lastname, user_email, user_password, user_birthdate, user_gender, user_profilepic, user_coverpic)
+values (Fname, Lname, Email, PW, Birth, Gend, proPic, coverPic);
+END
+
+//login
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Login_Read`(IN Email varchar(45), PW varchar(45))
+BEGIN
+Select *
+From facebook.user
+where user_email = Email AND user_password = PW;
+END
+
+//search
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Search`(IN str varchar(50))
+BEGIN
+select *
+from facebook.user
+where concat(user_firstname, ' ', user_lastname) like concat(str,'%') or user_email like concat(str,'%');
+END
+
+//update profile
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Update_PROFILE`(IN ID varchar(50), Fname varchar(45), Lname varchar(45), Email varchar(45), PW varchar(45), Birth date, Gend varchar(6), Works varchar(50), Edu varchar(100), Address varchar(50), PhoneNo varchar(50), proPic longblob, coverPic longblob)
+BEGIN
+UPDATE `facebook`.`user` 
+SET `user_firstname`= (Fname), 
+`user_lastname`= (Lname),
+`user_email`= (Email),
+`user_password`= (PW),
+`user_birthdate`= (Birth),
+`user_gender`= (Gend),
+`user_work`= (Works),
+`user_education`= (Edu),
+`user_address`= (Address),
+`user_phone`= (PhoneNo),
+`user_profilepic`= (proPic),
+`user_coverpic`= (coverPic)
+ WHERE `id`=(ID);
+END
+
+
+
+
+
