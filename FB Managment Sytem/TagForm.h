@@ -22,21 +22,18 @@ namespace FBManagmentSytem {
 		String^ postText;
 		array<Byte>^ postImage;
 		String^ privacySelect;
-		List<String^>^ tagged_userss;
+		List<String^>^ tagged_users;
 
 		TagForm(void);
-		TagForm(Facebook ^ f, User ^ u);
 		TagForm(Facebook ^ f, User ^ u, String^ pstTxt, array<Byte>^ pstImge, String^ privacySlct, List<String^>^ tagged_usrs)
 		{
-
 			InitializeComponent();
 			F = f;
 			U = u;
 			postText = pstTxt;
 			postImage = pstImge;
 			privacySelect = privacySlct;
-			tagged_userss = tagged_usrs;
-
+			tagged_users = tagged_usrs;
 		}
 
 	protected:
@@ -63,7 +60,6 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Panel^  panel4;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::Label^  label3;
-	public:  List<String^>^ tagged_users = gcnew List<String^>();
 	private:
 		/// <summary>
 		/// Required designer variable.

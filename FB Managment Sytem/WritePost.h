@@ -22,6 +22,10 @@ namespace FBManagmentSytem {
 		String^ postText;
 		array<Byte>^ postImage;
 		String^ privacySelect;
+	private: System::Windows::Forms::Label^  label1;
+	public:
+
+	public:
 		List<String^>^ tagged_userss;
 		WritePost(void);
 		WritePost(Facebook ^ f, User ^ u);
@@ -31,10 +35,40 @@ namespace FBManagmentSytem {
 			F = f;
 			U = u;
 			postText = pstTxt;
+			postTxt->Text = pstTxt;
 			postImage = pstImge;
+			if (pstImge != nullptr)
+			{
+				MemoryStream^ ms = gcnew MemoryStream(pstImge);
+				postIMG->Image = Image::FromStream(ms);
+			}
 			privacySelect = privacySlct;
+			privacyCmbo->Text = privacySlct;
 			tagged_userss = tagged_usrs;
-
+			if (tagged_usrs->Count == 1)
+			{
+				label1->AutoSize = true;
+				label1->Font = gcnew System::Drawing::Font("Segoe UI", 10, FontStyle::Regular);
+				label1->BackColor = Color::White;
+				label1->ForeColor = Color::Black;
+				array<String^>^ arr = tagged_usrs[0]->Split(' ');
+				label1->Text = "with " + arr[0];
+				userLbl->Text = U->username();
+				label1->Location = Point(userLbl->Width + 55 , 71);
+				label1->Visible = true;
+			}
+			else if(tagged_usrs->Count > 1)
+			{
+				label1->AutoSize = true;
+				label1->BackColor = Color::White;
+				label1->ForeColor = Color::Black;
+				userLbl->Text = U->username();
+				label1->Location = Point(userLbl->Width + 55, 71);
+				label1->Font = gcnew System::Drawing::Font("Segoe UI", 10, FontStyle::Regular);
+				array<String^>^ arr = tagged_usrs[0]->Split(' ');
+				label1->Text = "with " + arr[0] + " and " + (tagged_usrs->Count - 1) + " others";
+				label1->Visible = true;
+			}
 		}
 
 	protected:
@@ -95,6 +129,7 @@ namespace FBManagmentSytem {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->postIMG = (gcnew System::Windows::Forms::PictureBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -182,21 +217,22 @@ namespace FBManagmentSytem {
 			this->userLbl->AutoSize = true;
 			this->userLbl->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->userLbl->Location = System::Drawing::Point(67, 66);
+			this->userLbl->Location = System::Drawing::Point(62, 66);
 			this->userLbl->Name = L"userLbl";
-			this->userLbl->Size = System::Drawing::Size(107, 25);
+			this->userLbl->Size = System::Drawing::Size(102, 25);
 			this->userLbl->TabIndex = 16;
-			this->userLbl->Text = L"User Name";
+			this->userLbl->Text = L"UserName";
 			// 
 			// privacyCmbo
 			// 
+			this->privacyCmbo->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->privacyCmbo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->privacyCmbo->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->privacyCmbo->ForeColor = System::Drawing::Color::DimGray;
 			this->privacyCmbo->FormattingEnabled = true;
 			this->privacyCmbo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Public", L"Only me " });
-			this->privacyCmbo->Location = System::Drawing::Point(72, 92);
+			this->privacyCmbo->Location = System::Drawing::Point(68, 92);
 			this->privacyCmbo->Name = L"privacyCmbo";
 			this->privacyCmbo->Size = System::Drawing::Size(72, 23);
 			this->privacyCmbo->TabIndex = 17;
@@ -339,6 +375,18 @@ namespace FBManagmentSytem {
 			this->postIMG->TabIndex = 24;
 			this->postIMG->TabStop = false;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(196, 66);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(102, 25);
+			this->label1->TabIndex = 16;
+			this->label1->Text = L"UserName";
+			this->label1->Visible = false;
+			// 
 			// WritePost
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -354,6 +402,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->postTxt);
 			this->Controls->Add(this->privacyCmbo);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->userLbl);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->panel1);
@@ -364,6 +413,7 @@ namespace FBManagmentSytem {
 			this->Name = L"WritePost";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
+			this->Load += gcnew System::EventHandler(this, &WritePost::WritePost_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
@@ -378,10 +428,18 @@ namespace FBManagmentSytem {
 
 		}
 #pragma endregion
-private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
-private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
-private: System::Void postBtn_Click(System::Object^  sender, System::EventArgs^  e);
 
-private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void postBtn_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void WritePost_Load(System::Object^  sender, System::EventArgs^  e);
+
+private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

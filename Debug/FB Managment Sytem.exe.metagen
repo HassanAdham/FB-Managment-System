@@ -149,7 +149,6 @@ Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFiel
 Class FBManagmentSytem.TagForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User, System.String, Byte[], System.String, System.Collections.Generic.List`1[System.String]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Facebook F : Public
@@ -157,7 +156,6 @@ Class FBManagmentSytem.TagForm: AutoLayout, AnsiClass, Class, Public, BeforeFiel
     System.String postText : Public
     Byte[] postImage : Public
     System.String privacySelect : Public
-    System.Collections.Generic.List`1[System.String] tagged_userss : Public
     System.Collections.Generic.List`1[System.String] tagged_users : Public
 Class FBManagmentSytem.WritePost: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

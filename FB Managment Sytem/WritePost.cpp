@@ -10,6 +10,10 @@ FBManagmentSytem::WritePost::WritePost(Facebook ^ f, User ^ u)
 	InitializeComponent();
 	F = f;
 	U = u;
+	postText = "";
+	postImage = nullptr;
+	privacySelect = "";
+	tagged_userss = gcnew List<String^>();
 }
 
 
@@ -31,15 +35,13 @@ System::Void FBManagmentSytem::WritePost::postTxt_TextChanged(System::Object ^ s
 
 System::Void FBManagmentSytem::WritePost::unfriBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-	array<Byte>^ postByte = nullptr;
-	MemoryStream^ ms = gcnew MemoryStream();
-	postIMG->Image->Save(ms, postIMG->Image->RawFormat);
-	postByte = ms->ToArray();
-	if (tagged_userss == nullptr || tagged_userss->Count == 0)
+	if (postIMG->Image != nullptr)
 	{
-		tagged_userss = gcnew List<String^>();
+		MemoryStream^ ms = gcnew MemoryStream();
+		postIMG->Image->Save(ms, postIMG->Image->RawFormat);
+		postImage = ms->ToArray();
 	}
-	TagForm^ s = gcnew TagForm(F, U, postTxt->Text, postByte ,privacyCmbo->Text, tagged_userss);
+	TagForm^ s = gcnew TagForm(F, U, postTxt->Text, postImage, privacyCmbo->Text, tagged_userss);
 	this->Hide();
 	s->Show();
 	return System::Void();
@@ -129,5 +131,14 @@ System::Void FBManagmentSytem::WritePost::bunifuFlatButton1_Click(System::Object
 		postIMG->Image = Image::FromFile(dlg->FileName);
 		postIMG->BackgroundImageLayout = ImageLayout::Stretch;
 	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::WritePost::WritePost_Load(System::Object ^ sender, System::EventArgs ^ e)
+{
+	userLbl->Text = U->username();
+	userLbl->AutoSize = true;
+	MemoryStream^ ms = gcnew MemoryStream(U->profilephoto);
+	pictureBox3->Image = Image::FromStream(ms);
 	return System::Void();
 }

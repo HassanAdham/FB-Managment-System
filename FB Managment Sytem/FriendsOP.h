@@ -91,9 +91,9 @@ namespace FBManagmentSytem {
 				this->label2->ForeColor = System::Drawing::Color::White;
 				this->label2->Location = System::Drawing::Point(66, 15);
 				this->label2->Name = L"label2";
-				this->label2->Size = System::Drawing::Size(143, 30);
+				this->label2->Size = System::Drawing::Size(95, 30);
 				this->label2->TabIndex = 11;
-				this->label2->Text = L"User Name";
+				this->label2->Text = L"Friends";
 				this->label2->Click += gcnew System::EventHandler(this, &FriendsOP::label2_Click);
 				// 
 				// panel1
@@ -140,7 +140,9 @@ namespace FBManagmentSytem {
 				this->Controls->Add(this->panel1);
 				this->Controls->Add(this->backBtn);
 				this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+				this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 				this->Name = L"FriendsOP";
+				this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				this->Text = L"Facebook";
 				this->Load += gcnew System::EventHandler(this, &FriendsOP::FriendsOP_Load);
 				(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();

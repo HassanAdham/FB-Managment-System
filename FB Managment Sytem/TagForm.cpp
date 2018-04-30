@@ -7,15 +7,6 @@ FBManagmentSytem::TagForm::TagForm(void)
 	InitializeComponent();
 }
 
-FBManagmentSytem::TagForm::TagForm(Facebook ^ f, User ^ u)
-{
-	InitializeComponent();
-	F = f;
-	U = u;
-}
-
-
-
 System::Void FBManagmentSytem::TagForm::TagForm_Load(System::Object ^ sender, System::EventArgs ^ e)
 {
 	List<Friends^>^ friendlist = F->f[Int32::Parse(U->id) - 1];
