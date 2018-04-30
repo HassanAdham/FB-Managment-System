@@ -17,10 +17,6 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Facebook ^ F;
-
-	private: System::Windows::Forms::PictureBox^  acceptImg;
-	private: System::Windows::Forms::PictureBox^  rejectImg;
-	public:
 		User ^ U;
 	public:
 		Mainapp(void);
@@ -54,6 +50,8 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  setNotAct;
 	private: Bunifu::Framework::UI::BunifuMaterialTextbox^  searchTxt;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::PictureBox^  acceptImg;
+	private: System::Windows::Forms::PictureBox^  rejectImg;
 	private: System::Windows::Forms::Panel^  profileClkPnl;
 	private: System::Windows::Forms::PictureBox^  userPic;
 	private: System::Windows::Forms::Label^  userLbl;
@@ -63,7 +61,6 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuFlatButton^  accBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  reportBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  termsBtn;
-
 
 	protected:
 

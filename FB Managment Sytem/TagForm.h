@@ -17,10 +17,8 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Facebook ^ F;
-	private: System::Windows::Forms::Panel^  panel3;
-	private: System::Windows::Forms::Label^  label4;
-	public:
 		User ^ U;
+
 		TagForm(void);
 		TagForm(Facebook ^ f, User ^ u);
 		
@@ -35,20 +33,26 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^  panel1;
 	protected:
+	private: System::Windows::Forms::Panel^  panel1;
 	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  postBtn;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
-	private: System::Windows::Forms::Panel^  panel2;
-	private: Bunifu::Framework::UI::BunifuCheckbox^  bunifuCheckbox1;
-	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	private: System::Windows::Forms::Label^  label1;
+
+
+
+
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::Panel^  panel3;
+
+
+	private: System::Windows::Forms::PictureBox^  checkedPic;
+	private: System::Windows::Forms::PictureBox^  uncheckedPic;
+	private: System::Windows::Forms::Panel^  panel4;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::Label^  label3;
-
+	public:  List<String^>^ tagged_users = gcnew List<String^>();
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -64,33 +68,32 @@ namespace FBManagmentSytem {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(TagForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->checkedPic = (gcnew System::Windows::Forms::PictureBox());
+			this->uncheckedPic = (gcnew System::Windows::Forms::PictureBox());
 			this->postBtn = (gcnew System::Windows::Forms::Button());
 			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->bunifuCheckbox1 = (gcnew Bunifu::Framework::UI::BunifuCheckbox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->checkedPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->uncheckedPic))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
+			this->panel1->Controls->Add(this->checkedPic);
+			this->panel1->Controls->Add(this->uncheckedPic);
 			this->panel1->Controls->Add(this->postBtn);
 			this->panel1->Controls->Add(this->backBtn);
 			this->panel1->Controls->Add(this->label2);
@@ -99,6 +102,24 @@ namespace FBManagmentSytem {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(360, 60);
 			this->panel1->TabIndex = 15;
+			// 
+			// checkedPic
+			// 
+			this->checkedPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"checkedPic.Image")));
+			this->checkedPic->Location = System::Drawing::Point(244, 19);
+			this->checkedPic->Name = L"checkedPic";
+			this->checkedPic->Size = System::Drawing::Size(0, 0);
+			this->checkedPic->TabIndex = 17;
+			this->checkedPic->TabStop = false;
+			// 
+			// uncheckedPic
+			// 
+			this->uncheckedPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"uncheckedPic.Image")));
+			this->uncheckedPic->Location = System::Drawing::Point(231, 7);
+			this->uncheckedPic->Name = L"uncheckedPic";
+			this->uncheckedPic->Size = System::Drawing::Size(0, 0);
+			this->uncheckedPic->TabIndex = 17;
+			this->uncheckedPic->TabStop = false;
 			// 
 			// postBtn
 			// 
@@ -155,56 +176,6 @@ namespace FBManagmentSytem {
 			this->pictureBox5->TabIndex = 24;
 			this->pictureBox5->TabStop = false;
 			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::LightGray;
-			this->panel2->Controls->Add(this->bunifuCheckbox1);
-			this->panel2->Controls->Add(this->pictureBox1);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Location = System::Drawing::Point(0, 0);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(360, 60);
-			this->panel2->TabIndex = 25;
-			// 
-			// bunifuCheckbox1
-			// 
-			this->bunifuCheckbox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)), static_cast<System::Int32>(static_cast<System::Byte>(89)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->bunifuCheckbox1->ChechedOffColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)),
-				static_cast<System::Int32>(static_cast<System::Byte>(157)), static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			this->bunifuCheckbox1->Checked = true;
-			this->bunifuCheckbox1->CheckedOnColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(59)),
-				static_cast<System::Int32>(static_cast<System::Byte>(89)), static_cast<System::Int32>(static_cast<System::Byte>(152)));
-			this->bunifuCheckbox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->bunifuCheckbox1->ForeColor = System::Drawing::Color::White;
-			this->bunifuCheckbox1->Location = System::Drawing::Point(12, 20);
-			this->bunifuCheckbox1->Name = L"bunifuCheckbox1";
-			this->bunifuCheckbox1->Size = System::Drawing::Size(20, 20);
-			this->bunifuCheckbox1->TabIndex = 26;
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(50, 5);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(50, 50);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::LightGray;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(108, 15);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(97, 25);
-			this->label1->TabIndex = 11;
-			this->label1->Text = L"Username";
-			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::DarkGray;
@@ -239,25 +210,19 @@ namespace FBManagmentSytem {
 			// 
 			// panel3
 			// 
-			this->panel3->Controls->Add(this->panel2);
+			this->panel3->AutoScroll = true;
 			this->panel3->Location = System::Drawing::Point(0, 147);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(360, 2000);
+			this->panel3->Size = System::Drawing::Size(360, 427);
 			this->panel3->TabIndex = 28;
 			// 
-			// label4
+			// panel4
 			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(139)), static_cast<System::Int32>(static_cast<System::Byte>(157)),
-				static_cast<System::Int32>(static_cast<System::Byte>(195)));
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(6, 66);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(97, 25);
-			this->label4->TabIndex = 11;
-			this->label4->Text = L"Username";
+			this->panel4->AutoScroll = true;
+			this->panel4->Location = System::Drawing::Point(0, 60);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(360, 61);
+			this->panel4->TabIndex = 29;
 			// 
 			// TagForm
 			// 
@@ -266,9 +231,9 @@ namespace FBManagmentSytem {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox5);
@@ -280,19 +245,21 @@ namespace FBManagmentSytem {
 			this->Load += gcnew System::EventHandler(this, &TagForm::TagForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->checkedPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->uncheckedPic))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void TagForm_Load(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void TagChecked_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

@@ -190,6 +190,7 @@ Class FBManagmentSytem.TagForm: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   Fields:
     FBManagmentSytem.Facebook F : Public
     FBManagmentSytem.User U : Public
+    System.Collections.Generic.List`1[System.String] tagged_users : Public
 Class FBManagmentSytem.Post: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
