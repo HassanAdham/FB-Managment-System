@@ -1,5 +1,6 @@
 #pragma once
 #include "Facebook.h"
+#include "TagForm.h"
 
 namespace FBManagmentSytem {
 
@@ -18,8 +19,23 @@ namespace FBManagmentSytem {
 	public:
 		Facebook ^ F;
 		User ^ U;
+		String^ postText;
+		array<Byte>^ postImage;
+		String^ privacySelect;
+		List<String^>^ tagged_userss;
 		WritePost(void);
 		WritePost(Facebook ^ f, User ^ u);
+		WritePost(Facebook ^ f, User ^ u, String^ pstTxt, array<Byte>^ pstImge, String^ privacySlct, List<String^>^ tagged_usrs)
+		{
+			InitializeComponent();
+			F = f;
+			U = u;
+			postText = pstTxt;
+			postImage = pstImge;
+			privacySelect = privacySlct;
+			tagged_userss = tagged_usrs;
+
+		}
 
 	protected:
 		/// <summary>
@@ -38,11 +54,12 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
 	private: System::Windows::Forms::Label^  userLbl;
-	private: System::Windows::Forms::ComboBox^  dComboBox;
+	private: System::Windows::Forms::ComboBox^  privacyCmbo;
+	private: System::Windows::Forms::PictureBox^  postIMG;
 	private: System::Windows::Forms::TextBox^  postTxt;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Button^  postBtn;
-	private: Bunifu::Framework::UI::BunifuFlatButton^  unfriBtn;
+	private: Bunifu::Framework::UI::BunifuFlatButton^  tagBtn;
 	private: Bunifu::Framework::UI::BunifuFlatButton^  bunifuFlatButton1;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
@@ -69,14 +86,15 @@ namespace FBManagmentSytem {
 			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->userLbl = (gcnew System::Windows::Forms::Label());
-			this->dComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->privacyCmbo = (gcnew System::Windows::Forms::ComboBox());
 			this->postTxt = (gcnew System::Windows::Forms::TextBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->unfriBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
+			this->tagBtn = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->bunifuFlatButton1 = (gcnew Bunifu::Framework::UI::BunifuFlatButton());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->postIMG = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -84,6 +102,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->postIMG))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label2
@@ -169,19 +188,19 @@ namespace FBManagmentSytem {
 			this->userLbl->TabIndex = 16;
 			this->userLbl->Text = L"User Name";
 			// 
-			// dComboBox
+			// privacyCmbo
 			// 
-			this->dComboBox->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->dComboBox->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->privacyCmbo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->privacyCmbo->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dComboBox->ForeColor = System::Drawing::Color::DimGray;
-			this->dComboBox->FormattingEnabled = true;
-			this->dComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Public", L"Only me " });
-			this->dComboBox->Location = System::Drawing::Point(72, 92);
-			this->dComboBox->Name = L"dComboBox";
-			this->dComboBox->Size = System::Drawing::Size(72, 23);
-			this->dComboBox->TabIndex = 17;
-			this->dComboBox->Text = L"Public";
+			this->privacyCmbo->ForeColor = System::Drawing::Color::DimGray;
+			this->privacyCmbo->FormattingEnabled = true;
+			this->privacyCmbo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Public", L"Only me " });
+			this->privacyCmbo->Location = System::Drawing::Point(72, 92);
+			this->privacyCmbo->Name = L"privacyCmbo";
+			this->privacyCmbo->Size = System::Drawing::Size(72, 23);
+			this->privacyCmbo->TabIndex = 17;
+			this->privacyCmbo->Text = L"Public";
 			// 
 			// postTxt
 			// 
@@ -192,7 +211,7 @@ namespace FBManagmentSytem {
 			this->postTxt->Location = System::Drawing::Point(12, 132);
 			this->postTxt->Multiline = true;
 			this->postTxt->Name = L"postTxt";
-			this->postTxt->Size = System::Drawing::Size(336, 399);
+			this->postTxt->Size = System::Drawing::Size(336, 293);
 			this->postTxt->TabIndex = 18;
 			this->postTxt->TextChanged += gcnew System::EventHandler(this, &WritePost::postTxt_TextChanged);
 			// 
@@ -208,43 +227,43 @@ namespace FBManagmentSytem {
 			this->pictureBox1->TabIndex = 19;
 			this->pictureBox1->TabStop = false;
 			// 
-			// unfriBtn
+			// tagBtn
 			// 
-			this->unfriBtn->Activecolor = System::Drawing::Color::White;
-			this->unfriBtn->BackColor = System::Drawing::Color::White;
-			this->unfriBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->unfriBtn->BorderRadius = 0;
-			this->unfriBtn->ButtonText = L"Tag Friends";
-			this->unfriBtn->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->unfriBtn->DisabledColor = System::Drawing::Color::White;
-			this->unfriBtn->ForeColor = System::Drawing::Color::Black;
-			this->unfriBtn->Iconcolor = System::Drawing::Color::Transparent;
-			this->unfriBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"unfriBtn.Iconimage")));
-			this->unfriBtn->Iconimage_right = nullptr;
-			this->unfriBtn->Iconimage_right_Selected = nullptr;
-			this->unfriBtn->Iconimage_Selected = nullptr;
-			this->unfriBtn->IconMarginLeft = 15;
-			this->unfriBtn->IconMarginRight = 0;
-			this->unfriBtn->IconRightVisible = true;
-			this->unfriBtn->IconRightZoom = 55;
-			this->unfriBtn->IconVisible = true;
-			this->unfriBtn->IconZoom = 70;
-			this->unfriBtn->IsTab = false;
-			this->unfriBtn->Location = System::Drawing::Point(0, 591);
-			this->unfriBtn->Margin = System::Windows::Forms::Padding(4);
-			this->unfriBtn->Name = L"unfriBtn";
-			this->unfriBtn->Normalcolor = System::Drawing::Color::White;
-			this->unfriBtn->OnHovercolor = System::Drawing::Color::White;
-			this->unfriBtn->OnHoverTextColor = System::Drawing::Color::Black;
-			this->unfriBtn->selected = false;
-			this->unfriBtn->Size = System::Drawing::Size(360, 50);
-			this->unfriBtn->TabIndex = 20;
-			this->unfriBtn->Text = L"Tag Friends";
-			this->unfriBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->unfriBtn->Textcolor = System::Drawing::Color::Black;
-			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->tagBtn->Activecolor = System::Drawing::Color::White;
+			this->tagBtn->BackColor = System::Drawing::Color::White;
+			this->tagBtn->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->tagBtn->BorderRadius = 0;
+			this->tagBtn->ButtonText = L"Tag Friends";
+			this->tagBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->tagBtn->DisabledColor = System::Drawing::Color::White;
+			this->tagBtn->ForeColor = System::Drawing::Color::Black;
+			this->tagBtn->Iconcolor = System::Drawing::Color::Transparent;
+			this->tagBtn->Iconimage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tagBtn.Iconimage")));
+			this->tagBtn->Iconimage_right = nullptr;
+			this->tagBtn->Iconimage_right_Selected = nullptr;
+			this->tagBtn->Iconimage_Selected = nullptr;
+			this->tagBtn->IconMarginLeft = 15;
+			this->tagBtn->IconMarginRight = 0;
+			this->tagBtn->IconRightVisible = true;
+			this->tagBtn->IconRightZoom = 55;
+			this->tagBtn->IconVisible = true;
+			this->tagBtn->IconZoom = 70;
+			this->tagBtn->IsTab = false;
+			this->tagBtn->Location = System::Drawing::Point(0, 591);
+			this->tagBtn->Margin = System::Windows::Forms::Padding(4);
+			this->tagBtn->Name = L"tagBtn";
+			this->tagBtn->Normalcolor = System::Drawing::Color::White;
+			this->tagBtn->OnHovercolor = System::Drawing::Color::White;
+			this->tagBtn->OnHoverTextColor = System::Drawing::Color::Black;
+			this->tagBtn->selected = false;
+			this->tagBtn->Size = System::Drawing::Size(360, 50);
+			this->tagBtn->TabIndex = 20;
+			this->tagBtn->Text = L"Tag Friends";
+			this->tagBtn->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->tagBtn->Textcolor = System::Drawing::Color::Black;
+			this->tagBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->unfriBtn->Click += gcnew System::EventHandler(this, &WritePost::unfriBtn_Click);
+			this->tagBtn->Click += gcnew System::EventHandler(this, &WritePost::unfriBtn_Click);
 			// 
 			// bunifuFlatButton1
 			// 
@@ -282,6 +301,7 @@ namespace FBManagmentSytem {
 			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::Black;
 			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->Click += gcnew System::EventHandler(this, &WritePost::bunifuFlatButton1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -310,20 +330,30 @@ namespace FBManagmentSytem {
 			this->pictureBox5->TabIndex = 23;
 			this->pictureBox5->TabStop = false;
 			// 
+			// postIMG
+			// 
+			this->postIMG->Location = System::Drawing::Point(17, 431);
+			this->postIMG->Name = L"postIMG";
+			this->postIMG->Size = System::Drawing::Size(100, 100);
+			this->postIMG->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->postIMG->TabIndex = 24;
+			this->postIMG->TabStop = false;
+			// 
 			// WritePost
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(360, 640);
+			this->Controls->Add(this->postIMG);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->bunifuFlatButton1);
-			this->Controls->Add(this->unfriBtn);
+			this->Controls->Add(this->tagBtn);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->postTxt);
-			this->Controls->Add(this->dComboBox);
+			this->Controls->Add(this->privacyCmbo);
 			this->Controls->Add(this->userLbl);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->panel1);
@@ -342,6 +372,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->postIMG))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -350,5 +381,7 @@ namespace FBManagmentSytem {
 private: System::Void postTxt_TextChanged(System::Object^  sender, System::EventArgs^  e);
 private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void postBtn_Click(System::Object^  sender, System::EventArgs^  e);
+
+private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

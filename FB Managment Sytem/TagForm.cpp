@@ -1,5 +1,5 @@
 #include "TagForm.h"
-#include <string>
+
 
 
 FBManagmentSytem::TagForm::TagForm(void)
@@ -13,6 +13,8 @@ FBManagmentSytem::TagForm::TagForm(Facebook ^ f, User ^ u)
 	F = f;
 	U = u;
 }
+
+
 
 System::Void FBManagmentSytem::TagForm::TagForm_Load(System::Object ^ sender, System::EventArgs ^ e)
 {
@@ -113,5 +115,13 @@ System::Void FBManagmentSytem::TagForm::TagChecked_CheckedChanged(System::Object
 			x += 31;
 		}
 	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::TagForm::doneBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	WritePost^ s = gcnew WritePost(F, U, postText, postImage, privacySelect, tagged_users);
+	this->Hide();
+	s->Show();
 	return System::Void();
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Facebook.h"
+#include "WritePost.h"
 
 namespace FBManagmentSytem {
 
@@ -18,10 +19,26 @@ namespace FBManagmentSytem {
 	public:
 		Facebook ^ F;
 		User ^ U;
+		String^ postText;
+		array<Byte>^ postImage;
+		String^ privacySelect;
+		List<String^>^ tagged_userss;
 
 		TagForm(void);
 		TagForm(Facebook ^ f, User ^ u);
-		
+		TagForm(Facebook ^ f, User ^ u, String^ pstTxt, array<Byte>^ pstImge, String^ privacySlct, List<String^>^ tagged_usrs)
+		{
+
+			InitializeComponent();
+			F = f;
+			U = u;
+			postText = pstTxt;
+			postImage = pstImge;
+			privacySelect = privacySlct;
+			tagged_userss = tagged_usrs;
+
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -37,16 +54,10 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Panel^  panel1;
 	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Button^  postBtn;
+	private: System::Windows::Forms::Button^  doneBtn;
 	private: System::Windows::Forms::PictureBox^  pictureBox5;
-
-
-
-
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Panel^  panel3;
-
-
 	private: System::Windows::Forms::PictureBox^  checkedPic;
 	private: System::Windows::Forms::PictureBox^  uncheckedPic;
 	private: System::Windows::Forms::Panel^  panel4;
@@ -70,7 +81,7 @@ namespace FBManagmentSytem {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->checkedPic = (gcnew System::Windows::Forms::PictureBox());
 			this->uncheckedPic = (gcnew System::Windows::Forms::PictureBox());
-			this->postBtn = (gcnew System::Windows::Forms::Button());
+			this->doneBtn = (gcnew System::Windows::Forms::Button());
 			this->backBtn = (gcnew Bunifu::Framework::UI::BunifuImageButton());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
@@ -94,7 +105,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->panel1->Controls->Add(this->checkedPic);
 			this->panel1->Controls->Add(this->uncheckedPic);
-			this->panel1->Controls->Add(this->postBtn);
+			this->panel1->Controls->Add(this->doneBtn);
 			this->panel1->Controls->Add(this->backBtn);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
@@ -121,22 +132,22 @@ namespace FBManagmentSytem {
 			this->uncheckedPic->TabIndex = 17;
 			this->uncheckedPic->TabStop = false;
 			// 
-			// postBtn
+			// doneBtn
 			// 
-			this->postBtn->BackColor = System::Drawing::Color::Transparent;
-			this->postBtn->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->postBtn->Enabled = false;
-			this->postBtn->FlatAppearance->BorderSize = 0;
-			this->postBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->postBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->doneBtn->BackColor = System::Drawing::Color::Transparent;
+			this->doneBtn->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->doneBtn->FlatAppearance->BorderSize = 0;
+			this->doneBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->doneBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->postBtn->ForeColor = System::Drawing::Color::White;
-			this->postBtn->Location = System::Drawing::Point(285, 0);
-			this->postBtn->Name = L"postBtn";
-			this->postBtn->Size = System::Drawing::Size(75, 60);
-			this->postBtn->TabIndex = 16;
-			this->postBtn->Text = L"Post";
-			this->postBtn->UseVisualStyleBackColor = false;
+			this->doneBtn->ForeColor = System::Drawing::Color::White;
+			this->doneBtn->Location = System::Drawing::Point(285, 0);
+			this->doneBtn->Name = L"doneBtn";
+			this->doneBtn->Size = System::Drawing::Size(75, 60);
+			this->doneBtn->TabIndex = 16;
+			this->doneBtn->Text = L"Done";
+			this->doneBtn->UseVisualStyleBackColor = false;
+			this->doneBtn->Click += gcnew System::EventHandler(this, &TagForm::doneBtn_Click);
 			// 
 			// backBtn
 			// 
@@ -261,5 +272,6 @@ namespace FBManagmentSytem {
 	private: System::Void TagChecked_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
 private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 }
+private: System::Void doneBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

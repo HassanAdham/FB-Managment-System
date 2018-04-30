@@ -1,5 +1,4 @@
 #include "WritePost.h"
-#include "TagForm.h"
 
 FBManagmentSytem::WritePost::WritePost(void)
 {
@@ -12,6 +11,8 @@ FBManagmentSytem::WritePost::WritePost(Facebook ^ f, User ^ u)
 	F = f;
 	U = u;
 }
+
+
 
 System::Void FBManagmentSytem::WritePost::postTxt_TextChanged(System::Object ^ sender, System::EventArgs ^ e)
 {
@@ -30,7 +31,15 @@ System::Void FBManagmentSytem::WritePost::postTxt_TextChanged(System::Object ^ s
 
 System::Void FBManagmentSytem::WritePost::unfriBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-	TagForm^ s = gcnew TagForm(F, U);
+	array<Byte>^ postByte = nullptr;
+	MemoryStream^ ms = gcnew MemoryStream();
+	postIMG->Image->Save(ms, postIMG->Image->RawFormat);
+	postByte = ms->ToArray();
+	if (tagged_userss == nullptr || tagged_userss->Count == 0)
+	{
+		tagged_userss = gcnew List<String^>();
+	}
+	TagForm^ s = gcnew TagForm(F, U, postTxt->Text, postByte ,privacyCmbo->Text, tagged_userss);
 	this->Hide();
 	s->Show();
 	return System::Void();
@@ -108,5 +117,17 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 		}
 	}
 	F->serStruct();
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::WritePost::bunifuFlatButton1_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	OpenFileDialog^ dlg = gcnew OpenFileDialog();
+	dlg->Filter = "Choose Image(.jpg; *.png; *.gif)|.jpg; *.png; *.gif";
+	if (dlg->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+	{
+		postIMG->Image = Image::FromFile(dlg->FileName);
+		postIMG->BackgroundImageLayout = ImageLayout::Stretch;
+	}
 	return System::Void();
 }
