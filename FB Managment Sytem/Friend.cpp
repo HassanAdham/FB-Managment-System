@@ -1,4 +1,5 @@
 #include "Friend.h"
+#include "FriendsOP.h"
 
 FBManagmentSytem::Friend::Friend(void)
 {
@@ -42,5 +43,13 @@ System::Void FBManagmentSytem::Friend::bunifuFlatButton1_Click(System::Object ^ 
 		bunifuFlatButton1->Iconimage = xPic->Image;
 		bunifuFlatButton1->Text = " Ristrected";
 	}
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Friend::bunifuTileButton3_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	FriendsOP^ s = gcnew FriendsOP(F,U1,U2);
+	this->Hide();
+	s->Show();
 	return System::Void();
 }

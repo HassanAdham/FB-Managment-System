@@ -271,6 +271,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton3->Name = L"bunifuTileButton3";
 			this->bunifuTileButton3->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton3->TabIndex = 15;
+			this->bunifuTileButton3->Click += gcnew System::EventHandler(this, &Friend::bunifuTileButton3_Click);
 			// 
 			// bunifuTileButton2
 			// 
@@ -552,5 +553,7 @@ namespace FBManagmentSytem {
 	private: System::Void friendBtn_Click(System::Object^  sender, System::EventArgs^  e);
 
 	private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void bunifuTileButton3_Click(System::Object^  sender, System::EventArgs^  e);
+
 };
 }

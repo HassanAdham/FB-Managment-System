@@ -52,15 +52,15 @@ System::Void FBManagmentSytem::NotFriend::bunifuTileButton1_Click(System::Object
 
 System::Void FBManagmentSytem::NotFriend::NotFriend_Load(System::Object ^ sender, System::EventArgs ^ e)
 {
-	List<Friends^>^x = F->f[Int32::Parse(U2->id) - 1];
-	for (int i = 0; i < x->Count; i++)
+	List<Friends^>^y = F->f[Int32::Parse(U2->id) - 1];
+	for (int i = 1; i < y->Count; i++)
 	{
-		if (x[i]->usr->id == U1->id) {
-			if (x[i]->fri__req = "2") {
+		if (y[i]->usr->id == U1->id) {
+			if (y[i]->fri__req == "2") {
 				bunifuTileButton1->Image = pendingPic->Image;
 				bunifuTileButton1->LabelText = "Pending Request";
 			}
-			if (x[i]->fri__req == "0") {
+			 if (y[i]->fri__req == "0") {
 				bunifuTileButton1->Image = addPic->Image;
 				bunifuTileButton1->LabelText = "Add Friend";
 			}

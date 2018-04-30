@@ -179,9 +179,9 @@ namespace FBManagmentSytem {
 		List<Friends^>^y = F->f[Int32::Parse(s)-1];
 		for (int i = 0; i < y->Count; i++)
 		{
-			if (x[i]->usr->id == U->id) {
-				x[i]->fri__req = "1";
-				break;
+			if (y[i]->usr->id == U->id) {
+				y[i]->fri__req = "1";
+				
 			}
 		}
 		F->serStruct();
@@ -206,8 +206,8 @@ namespace FBManagmentSytem {
 		List<Friends^>^y = F->f[Int32::Parse(s)-1];
 		for (int i = 0; i < y->Count; i++)
 		{
-			if (x[i]->usr->id == U->id) {
-				x[i]->fri__req = "0";
+			if (y[i]->usr->id == U->id) {
+				y[i]->fri__req = "0";
 				break;
 			}
 		}

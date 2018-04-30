@@ -216,6 +216,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton3->Name = L"bunifuTileButton3";
 			this->bunifuTileButton3->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton3->TabIndex = 4;
+			this->bunifuTileButton3->Click += gcnew System::EventHandler(this, &Profile::bunifuTileButton3_Click);
 			// 
 			// bunifuTileButton4
 			// 
@@ -432,5 +433,6 @@ namespace FBManagmentSytem {
 	}
 
 	private: System::Void editBtn_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void bunifuTileButton3_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

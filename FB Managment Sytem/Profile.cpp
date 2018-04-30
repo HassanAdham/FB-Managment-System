@@ -1,6 +1,6 @@
 #include "Profile.h"
 #include "EditPro.h"
-
+#include "FriendsOP.h"
 FBManagmentSytem::Profile::Profile(void)
 {
 	InitializeComponent();
@@ -29,6 +29,14 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 System::Void FBManagmentSytem::Profile::editBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
 	EditPro^ s = gcnew EditPro(F, U);
+	this->Hide();
+	s->Show();
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Profile::bunifuTileButton3_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	FriendsOP^ s = gcnew FriendsOP(F,U, U);
 	this->Hide();
 	s->Show();
 	return System::Void();
