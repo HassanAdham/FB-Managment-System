@@ -52,7 +52,7 @@ namespace FBManagmentSytem {
 					feedssPanel->BackColor = System::Drawing::Color::White;
 					feedssPanel->Cursor = System::Windows::Forms::Cursors::Hand;
 					feedssPanel->Location = System::Drawing::Point(0, y);
-					feedssPanel->Size = System::Drawing::Size(360, 240);
+					feedssPanel->Size = System::Drawing::Size(360, 380);
 
 					PictureBox^ propic = gcnew PictureBox();
 					feedssPanel->Controls->Add(propic);
@@ -133,7 +133,7 @@ namespace FBManagmentSytem {
 						commBtn->Size = System::Drawing::Size(100, 25);
 						commBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 
-						y += 235;
+						y += 228;
 						feedsPanel->Size = System::Drawing::Size(360, feedsPanel->Height + 228);
 					}
 					else

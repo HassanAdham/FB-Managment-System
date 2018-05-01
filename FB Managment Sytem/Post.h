@@ -1,4 +1,5 @@
 #pragma once
+#include "Facebook.h"
 
 namespace FBManagmentSytem {
 
@@ -15,7 +16,11 @@ namespace FBManagmentSytem {
 	public ref class Post : public System::Windows::Forms::Form
 	{
 	public:
+		Facebook ^ F;
+		User^ U;
+		Posts^ P;
 		Post(void);
+		Post(Facebook^ f, User^ u, Posts^ p);
 
 	protected:
 		/// <summary>

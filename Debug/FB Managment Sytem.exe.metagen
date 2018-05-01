@@ -107,7 +107,6 @@ Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable
   Methods:
     Insert_post(Posts): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
-    Void .ctor(FBManagmentSytem.PostInfo): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Posts post : Public
@@ -129,7 +128,12 @@ Class FBManagmentSytem.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
     FBManagmentSytem.Facebook obj : Public
 Class FBManagmentSytem.Post: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User, FBManagmentSytem.Posts): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.Facebook F : Public
+    FBManagmentSytem.User U : Public
+    FBManagmentSytem.Posts P : Public
 Class FBManagmentSytem.Mainapp: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -142,6 +146,13 @@ Class FBManagmentSytem.Signup: AutoLayout, AnsiClass, Class, Public, BeforeField
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Facebook obj : Public
+Class FBManagmentSytem.About: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.Facebook F : Public
+    FBManagmentSytem.User U : Public
 Class FBManagmentSytem.Profile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(FBManagmentSytem.Facebook, FBManagmentSytem.User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -197,9 +208,6 @@ Class FBManagmentSytem.EditPro: AutoLayout, AnsiClass, Class, Public, BeforeFiel
   Fields:
     FBManagmentSytem.Facebook F : Public
     FBManagmentSytem.User U : Public
-Class FBManagmentSytem.About: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FBManagmentSytem.Comments: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

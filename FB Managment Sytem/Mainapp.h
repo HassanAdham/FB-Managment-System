@@ -243,6 +243,7 @@ namespace FBManagmentSytem {
 			// 
 			// homePanel
 			// 
+			this->homePanel->AutoScroll = true;
 			this->homePanel->BackColor = System::Drawing::Color::LightGray;
 			this->homePanel->Controls->Add(this->feedsPanel);
 			this->homePanel->Controls->Add(this->panel1);

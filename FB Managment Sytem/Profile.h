@@ -1,6 +1,8 @@
 #pragma once
 #include "Facebook.h"
 #include "Mainapp.h"
+#include "About.h"
+#include "Post.h"
 
 namespace FBManagmentSytem {
 
@@ -18,44 +20,6 @@ namespace FBManagmentSytem {
 	public ref class Profile : public System::Windows::Forms::Form
 	{
 		Facebook^ F;
-	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::PictureBox^  pictureBox9;
-	private: System::Windows::Forms::PictureBox^  pictureBox10;
-	private: System::Windows::Forms::PictureBox^  pictureBox11;
-	private: System::Windows::Forms::Panel^  panel2;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			 User^ U;
 
 	public:
@@ -80,12 +44,11 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  userLbl;
 	private: System::Windows::Forms::Label^  eduLbl;
-
-
-
-
-
-
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::PictureBox^  pictureBox9;
+	private: System::Windows::Forms::PictureBox^  pictureBox10;
+	private: System::Windows::Forms::PictureBox^  pictureBox11;
+	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  workLbl;
 	private: System::Windows::Forms::Label^  label6;
@@ -94,12 +57,6 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::PictureBox^  pictureBox8;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^  pictureBox6;
 	private: System::Windows::Forms::PictureBox^  pictureBox7;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
@@ -109,6 +66,7 @@ namespace FBManagmentSytem {
 	private: Bunifu::Framework::UI::BunifuTileButton^  editBtn;
 	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton3;
 	private: Bunifu::Framework::UI::BunifuTileButton^  bunifuTileButton4;
+	private: Posts ^ passedPost;
 
 	protected: 
 
@@ -229,6 +187,7 @@ namespace FBManagmentSytem {
 			this->bunifuTileButton1->Name = L"bunifuTileButton1";
 			this->bunifuTileButton1->Size = System::Drawing::Size(75, 47);
 			this->bunifuTileButton1->TabIndex = 4;
+			this->bunifuTileButton1->Click += gcnew System::EventHandler(this, &Profile::bunifuTileButton1_Click);
 			// 
 			// editBtn
 			// 
@@ -552,5 +511,10 @@ namespace FBManagmentSytem {
 	private: System::Void backBtn_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void label3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 }
+private: System::Void bunifuTileButton1_Click(System::Object^  sender, System::EventArgs^  e);
+
+		 private: System::Void postPanel_Click(System::Object^  sender, System::EventArgs^  e);
+
 };
+
 }

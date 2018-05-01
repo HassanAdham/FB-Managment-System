@@ -47,7 +47,10 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 				feedssPanel->BackColor = System::Drawing::Color::White;
 				feedssPanel->Cursor = System::Windows::Forms::Cursors::Hand;
 				feedssPanel->Location = System::Drawing::Point(0, y);
-				feedssPanel->Size = System::Drawing::Size(360, 230);
+				feedssPanel->Size = System::Drawing::Size(360, 380);
+				passedPost = gcnew Posts();
+				passedPost = postlist[i]->post;
+				feedssPanel->Click += gcnew EventHandler(this, &Profile::postPanel_Click);
 
 				PictureBox^ propic = gcnew PictureBox();
 				feedssPanel->Controls->Add(propic);
@@ -128,7 +131,7 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 					commBtn->Size = System::Drawing::Size(100, 25);
 					commBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 
-					y += 235;
+					y += 228;
 					feedsPanel->Size = System::Drawing::Size(360, feedsPanel->Height+228);
 				}
 				else
@@ -221,5 +224,29 @@ System::Void FBManagmentSytem::Profile::backBtn_Click(System::Object ^ sender, S
 	Mainapp ^main = gcnew Mainapp(F, U);
 	this->Hide();
 	main->Show();
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Profile::bunifuTileButton1_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	About^ s = gcnew About(F, U);
+	this->Hide();
+	s->Show();
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::Profile::postPanel_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	try
+	{
+		Panel^ clickedPanel = safe_cast<Panel^>(sender);
+		Post^ s = gcnew Post(F,U,passedPost);
+		this->Hide();
+		s->Show();
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show(ex->Message);
+	}
 	return System::Void();
 }

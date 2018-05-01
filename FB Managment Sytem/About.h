@@ -1,4 +1,6 @@
 #pragma once
+#include "Facebook.h"
+#include "Profile.h"
 
 namespace FBManagmentSytem {
 
@@ -15,13 +17,11 @@ namespace FBManagmentSytem {
 	public ref class About : public System::Windows::Forms::Form
 	{
 	public:
-		About(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+
+		Facebook ^ F;
+		User^ U;
+		About(void);
+		About(Facebook^ f, User^ u);
 
 	protected:
 		/// <summary>
@@ -34,63 +34,48 @@ namespace FBManagmentSytem {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^  panel1;
-	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
 	protected:
 
 	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Panel^  feedsPanel;
-
-
-	private: System::Windows::Forms::PictureBox^  pictureBox7;
-
-
-	private: System::Windows::Forms::PictureBox^  pictureBox5;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Panel^  panel6;
+	private: System::Windows::Forms::Label^  label21;
 	private: System::Windows::Forms::Panel^  panel2;
 	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::PictureBox^  pictureBox3;
-	private: System::Windows::Forms::PictureBox^  pictureBox6;
+	private: System::Windows::Forms::Label^  label22;
+	private: System::Windows::Forms::Label^  label16;
+	private: System::Windows::Forms::Label^  label17;
+	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Panel^  panel4;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Panel^  panel3;
 	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label19;
+	private: System::Windows::Forms::Label^  label20;
+	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::Panel^  panel5;
 	private: System::Windows::Forms::Label^  label14;
 	private: System::Windows::Forms::Label^  label15;
 	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Panel^  feedsPanel;
+	private: Bunifu::Framework::UI::BunifuImageButton^  backBtn;
+	private: System::Windows::Forms::PictureBox^  pictureBox7;
+	private: System::Windows::Forms::PictureBox^  pictureBox5;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+	private: System::Windows::Forms::PictureBox^  pictureBox6;
+	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::PictureBox^  pictureBox4;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::PictureBox^  pictureBox8;
-	private: System::Windows::Forms::Panel^  panel6;
-	private: System::Windows::Forms::Label^  label21;
-	private: System::Windows::Forms::Label^  label22;
-	private: System::Windows::Forms::Label^  label16;
-	private: System::Windows::Forms::Label^  label17;
-	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::PictureBox^  pictureBox9;
-	private: System::Windows::Forms::Label^  label19;
-	private: System::Windows::Forms::Label^  label20;
 	private: System::Windows::Forms::PictureBox^  pictureBox10;
-
-
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -175,9 +160,8 @@ namespace FBManagmentSytem {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(360, 60);
+			this->panel1->Size = System::Drawing::Size(394, 60);
 			this->panel1->TabIndex = 14;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &About::panel1_Paint);
 			// 
 			// backBtn
 			// 
@@ -209,7 +193,6 @@ namespace FBManagmentSytem {
 			this->label2->Size = System::Drawing::Size(80, 32);
 			this->label2->TabIndex = 11;
 			this->label2->Text = L"About";
-			this->label2->Click += gcnew System::EventHandler(this, &About::label2_Click);
 			// 
 			// feedsPanel
 			// 
@@ -222,9 +205,8 @@ namespace FBManagmentSytem {
 			this->feedsPanel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->feedsPanel->Location = System::Drawing::Point(0, 60);
 			this->feedsPanel->Name = L"feedsPanel";
-			this->feedsPanel->Size = System::Drawing::Size(360, 689);
+			this->feedsPanel->Size = System::Drawing::Size(394, 677);
 			this->feedsPanel->TabIndex = 26;
-			this->feedsPanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &About::feedsPanel_Paint);
 			// 
 			// panel6
 			// 
@@ -362,7 +344,6 @@ namespace FBManagmentSytem {
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(360, 115);
 			this->panel5->TabIndex = 49;
-			this->panel5->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &About::panel5_Paint);
 			// 
 			// label14
 			// 
@@ -431,7 +412,7 @@ namespace FBManagmentSytem {
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(254, 20);
 			this->label13->TabIndex = 42;
-			this->label13->Text = L"+201089042759";
+			this->label13->Text = L"No mobile no. added";
 			// 
 			// pictureBox8
 			// 
@@ -468,7 +449,6 @@ namespace FBManagmentSytem {
 			this->label1->Size = System::Drawing::Size(62, 21);
 			this->label1->TabIndex = 47;
 			this->label1->Text = L"Lives in";
-			this->label1->Click += gcnew System::EventHandler(this, &About::label9_Click);
 			// 
 			// pictureBox2
 			// 
@@ -478,7 +458,6 @@ namespace FBManagmentSytem {
 			this->pictureBox2->Size = System::Drawing::Size(360, 3);
 			this->pictureBox2->TabIndex = 46;
 			this->pictureBox2->TabStop = false;
-			this->pictureBox2->Click += gcnew System::EventHandler(this, &About::pictureBox1_Click);
 			// 
 			// label3
 			// 
@@ -491,7 +470,6 @@ namespace FBManagmentSytem {
 			this->label3->Size = System::Drawing::Size(127, 17);
 			this->label3->TabIndex = 43;
 			this->label3->Text = L"Places You\'ve Lived";
-			this->label3->Click += gcnew System::EventHandler(this, &About::label10_Click);
 			// 
 			// label12
 			// 
@@ -503,8 +481,7 @@ namespace FBManagmentSytem {
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(254, 54);
 			this->label12->TabIndex = 42;
-			this->label12->Text = L"Cairo,Egypt";
-			this->label12->Click += gcnew System::EventHandler(this, &About::label11_Click);
+			this->label12->Text = L"No place added";
 			// 
 			// pictureBox7
 			// 
@@ -515,7 +492,6 @@ namespace FBManagmentSytem {
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox7->TabIndex = 37;
 			this->pictureBox7->TabStop = false;
-			this->pictureBox7->Click += gcnew System::EventHandler(this, &About::pictureBox7_Click);
 			// 
 			// panel3
 			// 
@@ -542,7 +518,6 @@ namespace FBManagmentSytem {
 			this->label9->Size = System::Drawing::Size(79, 21);
 			this->label9->TabIndex = 47;
 			this->label9->Text = L"Studied at";
-			this->label9->Click += gcnew System::EventHandler(this, &About::label9_Click);
 			// 
 			// pictureBox1
 			// 
@@ -552,7 +527,6 @@ namespace FBManagmentSytem {
 			this->pictureBox1->Size = System::Drawing::Size(360, 3);
 			this->pictureBox1->TabIndex = 46;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &About::pictureBox1_Click);
 			// 
 			// label10
 			// 
@@ -565,7 +539,6 @@ namespace FBManagmentSytem {
 			this->label10->Size = System::Drawing::Size(69, 17);
 			this->label10->TabIndex = 43;
 			this->label10->Text = L"Education";
-			this->label10->Click += gcnew System::EventHandler(this, &About::label10_Click);
 			// 
 			// label11
 			// 
@@ -577,8 +550,7 @@ namespace FBManagmentSytem {
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(254, 71);
 			this->label11->TabIndex = 42;
-			this->label11->Text = L"Faculty of Computer and Information Science Ain Shams Univesity\r\n";
-			this->label11->Click += gcnew System::EventHandler(this, &About::label11_Click);
+			this->label11->Text = L"No School/College added";
 			// 
 			// pictureBox5
 			// 
@@ -589,7 +561,6 @@ namespace FBManagmentSytem {
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox5->TabIndex = 39;
 			this->pictureBox5->TabStop = false;
-			this->pictureBox5->Click += gcnew System::EventHandler(this, &About::pictureBox5_Click);
 			// 
 			// panel2
 			// 
@@ -604,7 +575,6 @@ namespace FBManagmentSytem {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(360, 125);
 			this->panel2->TabIndex = 0;
-			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &About::panel2_Paint);
 			// 
 			// label8
 			// 
@@ -617,7 +587,6 @@ namespace FBManagmentSytem {
 			this->label8->Size = System::Drawing::Size(71, 21);
 			this->label8->TabIndex = 47;
 			this->label8->Text = L"Works at";
-			this->label8->Click += gcnew System::EventHandler(this, &About::label8_Click);
 			// 
 			// pictureBox3
 			// 
@@ -627,7 +596,6 @@ namespace FBManagmentSytem {
 			this->pictureBox3->Size = System::Drawing::Size(360, 3);
 			this->pictureBox3->TabIndex = 46;
 			this->pictureBox3->TabStop = false;
-			this->pictureBox3->Click += gcnew System::EventHandler(this, &About::pictureBox3_Click);
 			// 
 			// pictureBox6
 			// 
@@ -638,7 +606,6 @@ namespace FBManagmentSytem {
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox6->TabIndex = 38;
 			this->pictureBox6->TabStop = false;
-			this->pictureBox6->Click += gcnew System::EventHandler(this, &About::pictureBox6_Click);
 			// 
 			// label4
 			// 
@@ -651,7 +618,6 @@ namespace FBManagmentSytem {
 			this->label4->Size = System::Drawing::Size(41, 17);
 			this->label4->TabIndex = 43;
 			this->label4->Text = L"Work";
-			this->label4->Click += gcnew System::EventHandler(this, &About::label4_Click);
 			// 
 			// label5
 			// 
@@ -663,16 +629,16 @@ namespace FBManagmentSytem {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(245, 33);
 			this->label5->TabIndex = 42;
-			this->label5->Text = L"Facebook";
-			this->label5->Click += gcnew System::EventHandler(this, &About::label5_Click);
+			this->label5->Text = L"No work added";
 			// 
 			// About
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(247)), static_cast<System::Int32>(static_cast<System::Byte>(247)),
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->ClientSize = System::Drawing::Size(360, 1100);
+			this->ClientSize = System::Drawing::Size(411, 640);
 			this->Controls->Add(this->feedsPanel);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -680,6 +646,7 @@ namespace FBManagmentSytem {
 			this->Name = L"About";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Facebook";
+			this->Load += gcnew System::EventHandler(this, &About::About_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
@@ -708,43 +675,9 @@ namespace FBManagmentSytem {
 
 		}
 #pragma endregion
-	private: System::Void panel2_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-	}
-private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-}
-private: System::Void backBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void feedsPanel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-}
-private: System::Void label8_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void pictureBox3_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void pictureBox7_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void pictureBox6_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void pictureBox5_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label11_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void label10_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void panel5_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-}
+
+	private: System::Void About_Load(System::Object^  sender, System::EventArgs^  e);
+
+	private: System::Void backBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
