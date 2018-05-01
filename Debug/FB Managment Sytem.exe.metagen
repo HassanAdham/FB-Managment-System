@@ -107,6 +107,7 @@ Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable
   Methods:
     Insert_post(Posts): PrivateScope, Public, HideBySig
 Class FBManagmentSytem.PostInfo: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(FBManagmentSytem.PostInfo): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     FBManagmentSytem.Posts post : Public

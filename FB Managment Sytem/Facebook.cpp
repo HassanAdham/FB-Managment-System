@@ -228,6 +228,8 @@ namespace FBManagmentSytem {
 		PostStat = "3";
 	}
 
+
+
 	void Posts::Insert_post(Posts^ p)
 	{
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";

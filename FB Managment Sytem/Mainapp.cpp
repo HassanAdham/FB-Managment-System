@@ -360,6 +360,22 @@ namespace FBManagmentSytem {
 				
 			}
 		}
+		List<PostInfo^>^ postlist1 = F->AllPosts[Int32::Parse(U->id) - 1];
+		for (int i = 0; i < postlist1->Count; i++)
+		{
+			if (postlist1[i]->post->userr->id == s) {
+				postlist1[i]->PostStat = "2";
+
+			}
+		}
+		List<PostInfo^>^ postlist2 = F->AllPosts[Int32::Parse(s) - 1];
+		for (int i = 0; i < postlist2->Count; i++)
+		{
+			if (postlist2[i]->post->userr->id == U->id) {
+				postlist2[i]->PostStat = "2";
+
+			}
+		}
 		F->serStruct();
 		pplPanel->Controls->Clear();
 		pplBtn->Checked = false;

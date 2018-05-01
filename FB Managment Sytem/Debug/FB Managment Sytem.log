@@ -1,3 +1,15 @@
-﻿  Mainapp.cpp
+﻿  EditPro.cpp
+  Facebook.cpp
+  Friend.cpp
+  FriendsOP.cpp
+  Login.cpp
+  Mainapp.cpp
+  NotFriend.cpp
+  Profile.cpp
+  Search.cpp
+  Signup.cpp
+  TagForm.cpp
+  WritePost.cpp
+  Generating Code...
   Facebook.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
   FB Managment Sytem.vcxproj -> E:\hazem\FB-Managment-System\Debug\FB Managment Sytem.exe
