@@ -231,7 +231,7 @@ namespace FBManagmentSytem {
 				static_cast<System::Byte>(0)));
 			this->privacyCmbo->ForeColor = System::Drawing::Color::DimGray;
 			this->privacyCmbo->FormattingEnabled = true;
-			this->privacyCmbo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Public", L"Only me " });
+			this->privacyCmbo->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Public", L"Private" });
 			this->privacyCmbo->Location = System::Drawing::Point(68, 92);
 			this->privacyCmbo->Name = L"privacyCmbo";
 			this->privacyCmbo->Size = System::Drawing::Size(72, 23);

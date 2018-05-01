@@ -237,8 +237,31 @@ namespace FBManagmentSytem {
 		Sad = gcnew List<String^>();
 		Angry = gcnew List<String^>();
 		comm = gcnew List<comment^>();
-		img = gcnew PictureBox();
+		img = nullptr;
 		isPub == "1";
+	}
+
+	void Posts::Insert_post(Posts^ p)
+	{
+		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";
+		MySqlConnection^ conDatabase = gcnew MySqlConnection(constring);
+		conDatabase->Open();
+		MySqlCommand^ cmdDatabase = gcnew MySqlCommand("facebook.Insert_post", conDatabase);
+		cmdDatabase->CommandType = CommandType::StoredProcedure;
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("id", p->ID));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("usrID", p->UserID));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("postText", p->text));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("postIMG", p->img));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("priv", p->isPub));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("likes", p->Like->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("loves", p->Love->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("hahas", p->Haha->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("wows", p->Wow->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("sads", p->Sad->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("angrys", p->Angry->Count));
+		cmdDatabase->Parameters->Add(gcnew MySqlParameter("comments", p->comm->Count));
+		cmdDatabase->ExecuteNonQuery();
+		conDatabase->Close();
 	}
 
 	comment::comment()

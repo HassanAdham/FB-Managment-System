@@ -82,11 +82,11 @@ namespace FBManagmentSytem {
 		String^ date;
 		String^ UserID;
 		String^ text;
-		[XmlIgnore]
-		PictureBox^ img;
+		array<Byte>^ img;
 		String^ isPub;
 		List<comment^>^ comm;
 		Posts();
+		void Insert_post(Posts^ p);
 	};
 
 	[Serializable]

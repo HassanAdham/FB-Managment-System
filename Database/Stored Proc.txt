@@ -46,6 +46,12 @@ SET `user_firstname`= (Fname),
  WHERE `id`=(ID);
 END
 
+//Insert_post
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Insert_post`(IN id VARCHAR(45), usrID VARCHAR(45), postText longtext, postIMG longblob, priv VARCHAR(45), likes VARCHAR(45), loves VARCHAR(45), hahas VARCHAR(45), wows VARCHAR(45), sads VARCHAR(45), angrys VARCHAR(45), comments VARCHAR(45))
+BEGIN
+insert into facebook.post (post_id, post_userid, post_text, post_image, post_privacy, post_like, post_love, post_haha, post_wow, post_sad, post_angry, post_comments)
+values (id, usrID, postText, postIMG, priv, likes, loves, hahas, wows, sads, angrys, comments);
+END
 
 
 

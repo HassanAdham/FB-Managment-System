@@ -57,14 +57,22 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 	{
 		TagSeen[i] = "0";
 	}
+
 	p->text = postTxt->Text;
-	p->img = postIMG;
+
+	if (postIMG->Image != nullptr)
+	{
+		MemoryStream^ ms = gcnew MemoryStream();
+		postIMG->Image->Save(ms, postIMG->Image->RawFormat);
+		p->img = ms->ToArray();
+	}
+
 	if (privacyCmbo->Text == "Public")
 		p->isPub = "1";
 	else
-		p->isPub = "1";
+		p->isPub = "0";
+
 	p->UserID = U->id;
-	
 	
 	String^ x = DateTime::Now.ToString();
 	array<String^>^ arr = x->Split(':','/',' ');
@@ -101,6 +109,7 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 
 	PostInfo^ pi = gcnew PostInfo();
 	pi->post = p;
+	p->Insert_post(p);
 	pi->Tag = tagged_userss;
 	pi->TagSeen = TagSeen;
 

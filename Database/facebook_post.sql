@@ -23,20 +23,18 @@ DROP TABLE IF EXISTS `post`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `post` (
-  `postID` varchar(50) NOT NULL,
-  `postImage` blob,
-  `userid` varchar(45) DEFAULT NULL,
-  `commentid` varchar(45) DEFAULT NULL,
-  `privacy` tinyint(4) DEFAULT NULL,
-  `writepost` longtext,
-  `likeid` varchar(45) DEFAULT NULL,
-  `hahaid` varchar(45) DEFAULT NULL,
-  `sadid` varchar(45) DEFAULT NULL,
-  `wowid` varchar(45) DEFAULT NULL,
-  `angryid` varchar(45) DEFAULT NULL,
-  `loveid` varchar(45) DEFAULT NULL,
-  `replyid` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`postID`)
+  `post_id` varchar(45) NOT NULL,
+  `post_userid` varchar(45) NOT NULL,
+  `post_text` longtext NOT NULL,
+  `post_image` longblob,
+  `post_privacy` varchar(45) NOT NULL,
+  `post_like` varchar(45) NOT NULL,
+  `post_love` varchar(45) NOT NULL,
+  `post_haha` varchar(45) NOT NULL,
+  `post_wow` varchar(45) NOT NULL,
+  `post_sad` varchar(45) NOT NULL,
+  `post_angry` varchar(45) NOT NULL,
+  `post_comments` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -58,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-29 17:01:56
+-- Dump completed on 2018-05-01 10:44:31
