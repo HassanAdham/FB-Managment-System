@@ -169,6 +169,11 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 		}
 	}
 	F->serStruct();
+
+	Mainapp ^main = gcnew Mainapp(F, U);
+	this->Hide();
+	main->Show();
+
 	return System::Void();
 }
 
@@ -190,5 +195,13 @@ System::Void FBManagmentSytem::WritePost::WritePost_Load(System::Object ^ sender
 	userLbl->AutoSize = true;
 	MemoryStream^ ms = gcnew MemoryStream(U->profilephoto);
 	pictureBox3->Image = Image::FromStream(ms);
+	return System::Void();
+}
+
+System::Void FBManagmentSytem::WritePost::backBtn_Click(System::Object ^ sender, System::EventArgs ^ e)
+{
+	Mainapp ^main = gcnew Mainapp(F, U);
+	this->Hide();
+	main->Show();
 	return System::Void();
 }

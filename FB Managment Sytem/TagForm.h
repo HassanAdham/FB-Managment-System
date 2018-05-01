@@ -159,6 +159,7 @@ namespace FBManagmentSytem {
 			this->backBtn->TabIndex = 12;
 			this->backBtn->TabStop = false;
 			this->backBtn->Zoom = 10;
+			this->backBtn->Click += gcnew System::EventHandler(this, &TagForm::backBtn_Click);
 			// 
 			// label2
 			// 
@@ -269,5 +270,7 @@ namespace FBManagmentSytem {
 private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void doneBtn_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void backBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

@@ -22,6 +22,7 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::PictureBox^  pictureBox9;
 	private: System::Windows::Forms::PictureBox^  pictureBox10;
 	private: System::Windows::Forms::PictureBox^  pictureBox11;
+	private: System::Windows::Forms::Panel^  panel2;
 
 
 
@@ -149,6 +150,7 @@ namespace FBManagmentSytem {
 			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox10 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
@@ -166,6 +168,7 @@ namespace FBManagmentSytem {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(-57, -1);
@@ -177,6 +180,7 @@ namespace FBManagmentSytem {
 			// 
 			// pictureBox2
 			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::White;
 			this->pictureBox2->Location = System::Drawing::Point(130, 124);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(100, 100);
@@ -185,6 +189,7 @@ namespace FBManagmentSytem {
 			// 
 			// userLbl
 			// 
+			this->userLbl->BackColor = System::Drawing::Color::White;
 			this->userLbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->userLbl->Location = System::Drawing::Point(36, 238);
@@ -402,7 +407,7 @@ namespace FBManagmentSytem {
 			this->feedsPanel->Controls->Add(this->panel1);
 			this->feedsPanel->Location = System::Drawing::Point(0, 275);
 			this->feedsPanel->Name = L"feedsPanel";
-			this->feedsPanel->Size = System::Drawing::Size(360, 348);
+			this->feedsPanel->Size = System::Drawing::Size(360, 179);
 			this->feedsPanel->TabIndex = 7;
 			// 
 			// panel1
@@ -483,12 +488,21 @@ namespace FBManagmentSytem {
 			this->pictureBox9->TabIndex = 4;
 			this->pictureBox9->TabStop = false;
 			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->panel2->Location = System::Drawing::Point(0, 127);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(360, 171);
+			this->panel2->TabIndex = 17;
+			// 
 			// Profile
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->BackColor = System::Drawing::Color::White;
+			this->BackColor = System::Drawing::Color::LightGray;
 			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->backBtn);
 			this->Controls->Add(this->pictureBox9);
@@ -499,6 +513,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->pictureBox11);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->panel2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Profile";

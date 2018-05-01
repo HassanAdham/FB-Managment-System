@@ -1,6 +1,7 @@
 #pragma once
 #include "Facebook.h"
 #include "TagForm.h"
+#include "Mainapp.h"
 
 namespace FBManagmentSytem {
 
@@ -201,6 +202,7 @@ namespace FBManagmentSytem {
 			this->backBtn->TabIndex = 12;
 			this->backBtn->TabStop = false;
 			this->backBtn->Zoom = 10;
+			this->backBtn->Click += gcnew System::EventHandler(this, &WritePost::backBtn_Click);
 			// 
 			// pictureBox3
 			// 
@@ -439,7 +441,6 @@ namespace FBManagmentSytem {
 
 	private: System::Void WritePost_Load(System::Object^  sender, System::EventArgs^  e);
 
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+	private: System::Void backBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

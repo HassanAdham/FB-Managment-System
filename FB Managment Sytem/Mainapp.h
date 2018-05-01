@@ -18,19 +18,14 @@ namespace FBManagmentSytem {
 	{
 	public:
 		Facebook ^ F;
-	private: System::Windows::Forms::Panel^  panel2;
-	public:
-	private: System::Windows::Forms::PictureBox^  pictureBox5;
-	private: System::Windows::Forms::PictureBox^  pictureBox4;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::PictureBox^  pictureBox8;
-	private: System::Windows::Forms::PictureBox^  pictureBox7;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::PictureBox^  pictureBox6;
-	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Panel^  feedsPanel;
 	private: System::Windows::Forms::PictureBox^  pictureBox9;
+	private: System::Windows::Forms::PictureBox^  pictureBox10;
+	private: System::Windows::Forms::PictureBox^  pictureBox11;
+	public:
+
+	public:
+
 			 User ^ U;
 	public:
 		Mainapp(void);
@@ -49,7 +44,8 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::RadioButton^  pplBtn;
 	private: System::Windows::Forms::RadioButton^  noti;
 	private: System::Windows::Forms::RadioButton^  setBtn;
-	private: System::Windows::Forms::Panel^  feedsPanel;
+	private: System::Windows::Forms::Panel^  homePanel;
+
 	private: System::Windows::Forms::Panel^  pplPanel;
 	private: System::Windows::Forms::Panel^  stngsPanel;
 	private: System::Windows::Forms::Panel^  notiPanel;
@@ -97,19 +93,8 @@ namespace FBManagmentSytem {
 			this->pplBtn = (gcnew System::Windows::Forms::RadioButton());
 			this->noti = (gcnew System::Windows::Forms::RadioButton());
 			this->setBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->homePanel = (gcnew System::Windows::Forms::Panel());
 			this->feedsPanel = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pplPanel = (gcnew System::Windows::Forms::Panel());
@@ -137,15 +122,11 @@ namespace FBManagmentSytem {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->acceptImg = (gcnew System::Windows::Forms::PictureBox());
 			this->rejectImg = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox10 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->BeginInit();
-			this->feedsPanel->SuspendLayout();
-			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+			this->homePanel->SuspendLayout();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->stngsPanel->SuspendLayout();
@@ -163,6 +144,9 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->acceptImg))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->rejectImg))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitter1
@@ -173,7 +157,7 @@ namespace FBManagmentSytem {
 			this->splitter1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->splitter1->Location = System::Drawing::Point(0, 0);
 			this->splitter1->Name = L"splitter1";
-			this->splitter1->Size = System::Drawing::Size(1386, 60);
+			this->splitter1->Size = System::Drawing::Size(1458, 60);
 			this->splitter1->TabIndex = 0;
 			this->splitter1->TabStop = false;
 			this->splitter1->SplitterMoved += gcnew System::Windows::Forms::SplitterEventHandler(this, &Mainapp::splitter1_SplitterMoved);
@@ -257,157 +241,25 @@ namespace FBManagmentSytem {
 			this->setBtn->UseVisualStyleBackColor = true;
 			this->setBtn->CheckedChanged += gcnew System::EventHandler(this, &Mainapp::setBtn_CheckedChanged);
 			// 
+			// homePanel
+			// 
+			this->homePanel->BackColor = System::Drawing::Color::LightGray;
+			this->homePanel->Controls->Add(this->feedsPanel);
+			this->homePanel->Controls->Add(this->panel1);
+			this->homePanel->Location = System::Drawing::Point(0, 105);
+			this->homePanel->Name = L"homePanel";
+			this->homePanel->Size = System::Drawing::Size(360, 535);
+			this->homePanel->TabIndex = 4;
+			// 
 			// feedsPanel
 			// 
 			this->feedsPanel->BackColor = System::Drawing::Color::LightGray;
-			this->feedsPanel->Controls->Add(this->panel2);
-			this->feedsPanel->Controls->Add(this->panel1);
-			this->feedsPanel->Location = System::Drawing::Point(0, 105);
+			this->feedsPanel->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->feedsPanel->Location = System::Drawing::Point(0, 80);
 			this->feedsPanel->Name = L"feedsPanel";
-			this->feedsPanel->Size = System::Drawing::Size(360, 535);
-			this->feedsPanel->TabIndex = 4;
-			// 
-			// panel2
-			// 
-			this->panel2->BackColor = System::Drawing::Color::White;
-			this->panel2->Controls->Add(this->label6);
-			this->panel2->Controls->Add(this->pictureBox9);
-			this->panel2->Controls->Add(this->pictureBox8);
-			this->panel2->Controls->Add(this->pictureBox7);
-			this->panel2->Controls->Add(this->pictureBox5);
-			this->panel2->Controls->Add(this->pictureBox4);
-			this->panel2->Controls->Add(this->label5);
-			this->panel2->Controls->Add(this->label3);
-			this->panel2->Controls->Add(this->label4);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->pictureBox6);
-			this->panel2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->panel2->Location = System::Drawing::Point(0, 83);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(360, 386);
-			this->panel2->TabIndex = 5;
-			this->panel2->Click += gcnew System::EventHandler(this, &Mainapp::panel2_Click);
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::Black;
-			this->label6->Location = System::Drawing::Point(55, 317);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(21, 15);
-			this->label6->TabIndex = 3;
-			this->label6->Text = L"35";
-			this->label6->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
-			// 
-			// pictureBox9
-			// 
-			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
-			this->pictureBox9->Location = System::Drawing::Point(10, 313);
-			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(50, 22);
-			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox9->TabIndex = 4;
-			this->pictureBox9->TabStop = false;
-			// 
-			// pictureBox8
-			// 
-			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
-			this->pictureBox8->Location = System::Drawing::Point(207, 351);
-			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(100, 25);
-			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox8->TabIndex = 4;
-			this->pictureBox8->TabStop = false;
-			// 
-			// pictureBox7
-			// 
-			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(58, 351);
-			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(60, 25);
-			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox7->TabIndex = 4;
-			this->pictureBox7->TabStop = false;
-			// 
-			// pictureBox5
-			// 
-			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(0, 152);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(360, 155);
-			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox5->TabIndex = 4;
-			this->pictureBox5->TabStop = false;
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(13, 12);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(46, 43);
-			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox4->TabIndex = 0;
-			this->pictureBox4->TabStop = false;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::Black;
-			this->label5->Location = System::Drawing::Point(272, 320);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(75, 15);
-			this->label5->TabIndex = 3;
-			this->label5->Text = L"9 Comments";
-			this->label5->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::Gray;
-			this->label3->Location = System::Drawing::Point(65, 37);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(65, 15);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"User Name";
-			this->label3->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
-			// 
-			// label4
-			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(11, 62);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(334, 87);
-			this->label4->TabIndex = 3;
-			this->label4->Text = resources->GetString(L"label4.Text");
-			this->label4->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(63, 12);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(107, 25);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"User Name";
-			this->label2->Click += gcnew System::EventHandler(this, &Mainapp::userLbl_Click);
-			// 
-			// pictureBox6
-			// 
-			this->pictureBox6->BackColor = System::Drawing::Color::LightGray;
-			this->pictureBox6->Location = System::Drawing::Point(10, 338);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(340, 3);
-			this->pictureBox6->TabIndex = 0;
-			this->pictureBox6->TabStop = false;
+			this->feedsPanel->Size = System::Drawing::Size(360, 3);
+			this->feedsPanel->TabIndex = 5;
+			this->feedsPanel->Click += gcnew System::EventHandler(this, &Mainapp::panel2_Click);
 			// 
 			// panel1
 			// 
@@ -836,12 +688,47 @@ namespace FBManagmentSytem {
 			this->rejectImg->TabIndex = 16;
 			this->rejectImg->TabStop = false;
 			// 
+			// pictureBox9
+			// 
+			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
+			this->pictureBox9->Location = System::Drawing::Point(393, 42);
+			this->pictureBox9->Name = L"pictureBox9";
+			this->pictureBox9->Size = System::Drawing::Size(0, 0);
+			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox9->TabIndex = 17;
+			this->pictureBox9->TabStop = false;
+			// 
+			// pictureBox10
+			// 
+			this->pictureBox10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.Image")));
+			this->pictureBox10->Location = System::Drawing::Point(393, 12);
+			this->pictureBox10->Name = L"pictureBox10";
+			this->pictureBox10->Size = System::Drawing::Size(0, 0);
+			this->pictureBox10->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox10->TabIndex = 18;
+			this->pictureBox10->TabStop = false;
+			// 
+			// pictureBox11
+			// 
+			this->pictureBox11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox11.Image")));
+			this->pictureBox11->Location = System::Drawing::Point(393, 29);
+			this->pictureBox11->Name = L"pictureBox11";
+			this->pictureBox11->Size = System::Drawing::Size(0, 0);
+			this->pictureBox11->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox11->TabIndex = 19;
+			this->pictureBox11->TabStop = false;
+			// 
 			// Mainapp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1386, 640);
+			this->Controls->Add(this->pictureBox11);
 			this->Controls->Add(this->rejectImg);
+			this->Controls->Add(this->pictureBox10);
+			this->Controls->Add(this->pictureBox9);
 			this->Controls->Add(this->acceptImg);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->searchTxt);
@@ -857,7 +744,7 @@ namespace FBManagmentSytem {
 			this->Controls->Add(this->pplPanel);
 			this->Controls->Add(this->stngsPanel);
 			this->Controls->Add(this->notiPanel);
-			this->Controls->Add(this->feedsPanel);
+			this->Controls->Add(this->homePanel);
 			this->Controls->Add(this->setBtn);
 			this->Controls->Add(this->noti);
 			this->Controls->Add(this->pplBtn);
@@ -871,15 +758,7 @@ namespace FBManagmentSytem {
 			this->Text = L"Facebook";
 			this->Load += gcnew System::EventHandler(this, &Mainapp::Mainapp_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bunifuImageButton1))->EndInit();
-			this->feedsPanel->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+			this->homePanel->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->stngsPanel->ResumeLayout(false);
@@ -898,6 +777,9 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->acceptImg))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->rejectImg))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -922,22 +804,12 @@ namespace FBManagmentSytem {
 
 		}
 
-		private: System::Void feedsBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-
-			feedsPanel->Visible = true;
-			notiPanel->Visible = false;
-			stngsPanel->Visible = false;
-			pplPanel->Visible = false;
-			feedsBtn->BackgroundImage = feedsAct->BackgroundImage;
-			pplBtn->BackgroundImage = pplNotAct->BackgroundImage;
-			noti->BackgroundImage = notiNotAct->BackgroundImage;
-			setBtn->BackgroundImage = setNotAct->BackgroundImage;
-		}
+		private: System::Void feedsBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void pplBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e);
 
 		private: System::Void noti_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			feedsPanel->Visible = false;
+			homePanel->Visible = false;
 			notiPanel->Visible = true;
 			stngsPanel->Visible = false;
 			pplPanel->Visible = false;
@@ -948,7 +820,7 @@ namespace FBManagmentSytem {
 		}
 
 		private: System::Void setBtn_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-			feedsPanel->Visible = false;
+			homePanel->Visible = false;
 			notiPanel->Visible = false;
 			stngsPanel->Visible = true;
 			pplPanel->Visible = false;
