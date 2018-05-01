@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
   `post_id` varchar(45) NOT NULL,
   `post_userid` varchar(45) NOT NULL,
-  `post_text` longtext NOT NULL,
+  `post_text` mediumtext NOT NULL,
   `post_image` longblob,
   `post_privacy` varchar(45) NOT NULL,
   `post_like` varchar(45) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `post` (
   `post_sad` varchar(45) NOT NULL,
   `post_angry` varchar(45) NOT NULL,
   `post_comments` varchar(45) NOT NULL,
-  `post_time` datetime(6) NOT NULL
+  `post_time` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-01 10:58:34
+-- Dump completed on 2018-05-01 11:19:33
