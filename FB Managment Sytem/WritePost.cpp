@@ -51,22 +51,64 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 {
 
 	Posts^ p = gcnew Posts();
-	List<String^>^Tag = gcnew List<String^>();
-	List<String^>^TagSeen = gcnew List<String^>();
 
+	List<String^>^TagSeen = gcnew List<String^>();
+	for (int i = 0; i < tagged_userss->Count; i++)
+	{
+		TagSeen[i] = "0";
+	}
+	p->text = postTxt->Text;
+	p->img = postIMG;
+	if (privacyCmbo->Text == "Public")
+		p->isPub = "1";
+	else
+		p->isPub = "1";
+	p->UserID = U->id;
+	
+	
+	String^ x = DateTime::Now.ToString();
+	array<String^>^ arr = x->Split(':','/',' ');
+	String^ day = arr[1];
+	String^ month;
+	if (arr[0] == "1")
+		month = "Jan";
+	else if (arr[0] == "2")
+		month = "Feb";
+	else if (arr[0] == "3")
+		month = "Mar";
+	else if (arr[0] == "4")
+		month = "Apr";
+	else if (arr[0] == "5")
+		month = "May";
+	else if (arr[0] == "6")
+		month = "Jun";
+	else if (arr[0] == "7")
+		month = "Jul";
+	else if (arr[0] == "8")
+		month = "Aug";
+	else if (arr[0] == "9")
+		month = "Sep";
+	else if (arr[0] == "10")
+		month = "Oct";
+	else if (arr[0] == "11")
+		month = "Nov";
+	else if (arr[0] == "12")
+		month = "Dec";
+	String^ h = arr[3];
+	String^ m = arr[4];
+	String^ M = arr[6];
+	p->date = day + " " + month + " at " + h + ":" + m + " " + M;
 
 	PostInfo^ pi = gcnew PostInfo();
 	pi->post = p;
-	pi->Tag = Tag;
+	pi->Tag = tagged_userss;
 	pi->TagSeen = TagSeen;
 
 	if (F->AllPosts->Count == 0) {
 		for (int i = 0; i < F->f->Count; i++) {
 			List<PostInfo^>^Lpi = gcnew List<PostInfo^>();
-			PostInfo^ PI = gcnew PostInfo();
-			PI = pi;
 			if (i + 1 == Int32::Parse(U->id))
-				PI->PostStat = "1";
+				pi->PostStat = "1";
 			else {
 				String^ req, ^ stat;
 				List<Friends^>^x = F->f[i];
@@ -78,24 +120,23 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 					}
 				}
 				if (req == "0" || req == "2")
-					PI->PostStat = "0";
+					pi->PostStat = "0";
 				else {
-					if (stat == "1"&&PI->post->isPub == "0")
-						PI->PostStat = "0";
+					if (stat == "1"&&pi->post->isPub == "0")
+						pi->PostStat = "0";
 					else
-						PI->PostStat = "2";
+						pi->PostStat = "2";
 				}
 			}
-			Lpi->Add(PI);
+			Lpi->Add(pi);
 			F->AllPosts->Add(Lpi);
 		}
 	}
 	else {
 		for (int i = 0; i < F->f->Count; i++) {
-			PostInfo^ PI = gcnew PostInfo();
-			PI = pi;
+
 			if (i + 1 == Int32::Parse(U->id))
-				PI->PostStat = "1";
+				pi->PostStat = "1";
 			else {
 				String^ req, ^ stat;
 				List<Friends^>^x = F->f[i];
@@ -107,15 +148,15 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 					}
 				}
 				if (req == "0" || req == "2")
-					PI->PostStat = "0";
+					pi->PostStat = "0";
 				else {
-					if (stat == "1"&&PI->post->isPub == "0")
-						PI->PostStat = "0";
+					if (stat == "1"&&pi->post->isPub == "0")
+						pi->PostStat = "0";
 					else
-						PI->PostStat = "2";
+						pi->PostStat = "2";
 				}
 			}
-			F->AllPosts[i]->Add(PI);
+			F->AllPosts[i]->Add(pi);
 		}
 	}
 	F->serStruct();

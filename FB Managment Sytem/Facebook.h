@@ -60,19 +60,10 @@ namespace FBManagmentSytem {
 	};
 
 	[Serializable]
-	public ref  class comment
+	public ref  class comment: public reply
 	{
 	public:
-		List<String^>^ Tag;
-		List<String^>^ TagSeen;
-		List<String^>^ Like;
-		List<String^>^ Haha;
-		List<String^>^ Wow;
-		List<String^>^ Love;
-		List<String^>^ Sad;
-		List<String^>^ Angry;
-		String ^ ID;
-		String^ text;
+
 		List<reply^>^ rep;
 		comment();
 	};
@@ -88,6 +79,7 @@ namespace FBManagmentSytem {
 		List<String^>^ Sad;
 		List<String^>^ Angry;
 		String^ ID;
+		String^ date;
 		String^ UserID;
 		String^ text;
 		[XmlIgnore]

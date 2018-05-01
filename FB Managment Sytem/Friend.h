@@ -473,6 +473,7 @@ namespace FBManagmentSytem {
 			this->unfriBtn->Textcolor = System::Drawing::Color::Black;
 			this->unfriBtn->TextFont = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->unfriBtn->Click += gcnew System::EventHandler(this, &Friend::unfriBtn_Click);
 			// 
 			// xPic
 			// 
@@ -555,5 +556,6 @@ namespace FBManagmentSytem {
 	private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void bunifuTileButton3_Click(System::Object^  sender, System::EventArgs^  e);
 
+private: System::Void unfriBtn_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }

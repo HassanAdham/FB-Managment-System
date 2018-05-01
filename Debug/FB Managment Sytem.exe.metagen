@@ -83,18 +83,9 @@ Class FBManagmentSytem.reply: AutoLayout, AnsiClass, Class, Public, Serializable
     System.Collections.Generic.List`1[System.String] Sad : Public
     System.Collections.Generic.List`1[System.String] Angry : Public
 Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FBManagmentSytem.reply
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Collections.Generic.List`1[System.String] Tag : Public
-    System.Collections.Generic.List`1[System.String] TagSeen : Public
-    System.Collections.Generic.List`1[System.String] Like : Public
-    System.Collections.Generic.List`1[System.String] Haha : Public
-    System.Collections.Generic.List`1[System.String] Wow : Public
-    System.Collections.Generic.List`1[System.String] Love : Public
-    System.Collections.Generic.List`1[System.String] Sad : Public
-    System.Collections.Generic.List`1[System.String] Angry : Public
-    System.String ID : Public
-    System.String text : Public
     System.Collections.Generic.List`1[FBManagmentSytem.reply] rep : Public
 Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -106,6 +97,7 @@ Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable
     System.Collections.Generic.List`1[System.String] Sad : Public
     System.Collections.Generic.List`1[System.String] Angry : Public
     System.String ID : Public
+    System.String date : Public
     System.String UserID : Public
     System.String text : Public
     System.Windows.Forms.PictureBox img : Public
