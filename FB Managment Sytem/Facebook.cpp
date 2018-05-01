@@ -228,19 +228,6 @@ namespace FBManagmentSytem {
 		PostStat = "3";
 	}
 
-	Posts::Posts()
-	{
-		Like = gcnew List<String^>();
-		Haha = gcnew List<String^>();
-		Wow = gcnew List<String^>();
-		Love = gcnew List<String^>();
-		Sad = gcnew List<String^>();
-		Angry = gcnew List<String^>();
-		comm = gcnew List<comment^>();
-		img = nullptr;
-		isPub == "1";
-	}
-
 	void Posts::Insert_post(Posts^ p)
 	{
 		String^ constring = L"datasource=localhost; port=3306; username=root; password=admin";

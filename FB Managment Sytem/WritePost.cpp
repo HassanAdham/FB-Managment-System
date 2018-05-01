@@ -73,7 +73,7 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 		p->isPub = "0";
 
 	p->UserID = U->id;
-	
+	p->userr = U;
 	String^ x = DateTime::Now.ToString();
 	array<String^>^ arr = x->Split(':','/',' ');
 	String^ day = arr[1];

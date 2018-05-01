@@ -85,7 +85,24 @@ namespace FBManagmentSytem {
 		array<Byte>^ img;
 		String^ isPub;
 		List<comment^>^ comm;
-		Posts();
+		User^ userr;
+		Posts()
+		{
+			Like = gcnew List<String^>();
+			Haha = gcnew List<String^>();
+			Wow = gcnew List<String^>();
+			Love = gcnew List<String^>();
+			Sad = gcnew List<String^>();
+			Angry = gcnew List<String^>();
+			comm = gcnew List<comment^>();
+			img = nullptr;
+			isPub == "1";
+			ID = "";
+			date = "";
+			UserID = "";
+			text = "";
+			userr = gcnew User();
+		}
 		void Insert_post(Posts^ p);
 	};
 
