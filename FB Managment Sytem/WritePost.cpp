@@ -109,7 +109,7 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 
 	PostInfo^ pi = gcnew PostInfo();
 	pi->post = p;
-	p->Insert_post(p);
+	/*p->Insert_post(p);*/
 	pi->Tag = tagged_userss;
 	pi->TagSeen = TagSeen;
 
