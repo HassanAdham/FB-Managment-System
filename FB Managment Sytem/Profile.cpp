@@ -47,7 +47,7 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 				feedssPanel->BackColor = System::Drawing::Color::White;
 				feedssPanel->Cursor = System::Windows::Forms::Cursors::Hand;
 				feedssPanel->Location = System::Drawing::Point(0, y);
-				feedssPanel->Size = System::Drawing::Size(360, 380);
+				feedssPanel->Size = System::Drawing::Size(360, 230);
 
 				PictureBox^ propic = gcnew PictureBox();
 				feedssPanel->Controls->Add(propic);
@@ -128,7 +128,7 @@ System::Void FBManagmentSytem::Profile::Profile_Load(System::Object ^ sender, Sy
 					commBtn->Size = System::Drawing::Size(100, 25);
 					commBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 
-					y += 228;
+					y += 235;
 					feedsPanel->Size = System::Drawing::Size(360, feedsPanel->Height+228);
 				}
 				else

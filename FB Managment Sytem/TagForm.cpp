@@ -13,7 +13,7 @@ System::Void FBManagmentSytem::TagForm::TagForm_Load(System::Object ^ sender, Sy
 	int x = 0;
 	for (int i = 1; i < (F->f[0]->Count) ; i++)
 	{
-		if (friendlist[i]->fri__req = "1")
+		if (friendlist[i]->fri__req == "1")
 		{
 			Panel^ pnl = gcnew Panel();
 			panel3->Controls->Add(pnl);

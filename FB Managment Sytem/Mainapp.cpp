@@ -45,14 +45,14 @@ namespace FBManagmentSytem {
 			int y = 3;
 			for (int i = 0; i < postlist->Count; i++)
 			{
-				if (postlist[i]->PostStat == "2")
+				if (postlist[i]->PostStat == "2"|| postlist[i]->PostStat=="1")
 				{
 					Panel^ feedssPanel = gcnew Panel();
 					feedsPanel->Controls->Add(feedssPanel);
 					feedssPanel->BackColor = System::Drawing::Color::White;
 					feedssPanel->Cursor = System::Windows::Forms::Cursors::Hand;
 					feedssPanel->Location = System::Drawing::Point(0, y);
-					feedssPanel->Size = System::Drawing::Size(360, 380);
+					feedssPanel->Size = System::Drawing::Size(360, 240);
 
 					PictureBox^ propic = gcnew PictureBox();
 					feedssPanel->Controls->Add(propic);
@@ -133,7 +133,7 @@ namespace FBManagmentSytem {
 						commBtn->Size = System::Drawing::Size(100, 25);
 						commBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 
-						y += 228;
+						y += 235;
 						feedsPanel->Size = System::Drawing::Size(360, feedsPanel->Height + 228);
 					}
 					else
