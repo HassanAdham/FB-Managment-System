@@ -218,6 +218,14 @@ namespace FBManagmentSytem {
 		return System::Void();
 	}
 
+	System::Void Mainapp::panel2_Click(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		Post^ s = gcnew Post();
+		this->Hide();
+		s->Show();
+		return System::Void();
+	}
+
 	System::Void Mainapp::lblClk_Click(System::Object ^ sender, System::EventArgs ^ e)
 	{
 		Label^ clickedlabel = safe_cast<Label^>(sender);

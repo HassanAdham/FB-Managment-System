@@ -15,13 +15,7 @@ namespace FBManagmentSytem {
 	public ref class Post : public System::Windows::Forms::Form
 	{
 	public:
-		Post(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-		}
+		Post(void);
 
 	protected:
 		/// <summary>
@@ -45,6 +39,23 @@ namespace FBManagmentSytem {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::PictureBox^  pictureBox8;
+	private: System::Windows::Forms::PictureBox^  pictureBox7;
+
+	private: System::Windows::Forms::PictureBox^  pictureBox6;
+
+
+	private: System::Windows::Forms::PictureBox^  pictureBox5;
+	private: System::Windows::Forms::PictureBox^  pictureBox4;
+	private: System::Windows::Forms::PictureBox^  angryPic;
+	private: System::Windows::Forms::PictureBox^  sadPic;
+	private: System::Windows::Forms::PictureBox^  wowPic;
+	private: System::Windows::Forms::PictureBox^  hahaPic;
+	private: System::Windows::Forms::PictureBox^  lovePic;
+	private: System::Windows::Forms::PictureBox^  likePic;
+	private: System::Windows::Forms::PictureBox^  reactsPic;
+	private: System::Windows::Forms::Label^  likesCount;
+	private: System::Windows::Forms::PictureBox^  pictureBox9;
 
 	private:
 		/// <summary>
@@ -65,15 +76,42 @@ namespace FBManagmentSytem {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->angryPic = (gcnew System::Windows::Forms::PictureBox());
+			this->sadPic = (gcnew System::Windows::Forms::PictureBox());
+			this->wowPic = (gcnew System::Windows::Forms::PictureBox());
+			this->hahaPic = (gcnew System::Windows::Forms::PictureBox());
+			this->lovePic = (gcnew System::Windows::Forms::PictureBox());
+			this->likePic = (gcnew System::Windows::Forms::PictureBox());
+			this->reactsPic = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->likesCount = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angryPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sadPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wowPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->hahaPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->lovePic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->likePic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->reactsPic))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -129,27 +167,190 @@ namespace FBManagmentSytem {
 			// 
 			// panel2
 			// 
+			this->panel2->AutoScroll = true;
 			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Controls->Add(this->pictureBox6);
+			this->panel2->Controls->Add(this->pictureBox8);
+			this->panel2->Controls->Add(this->pictureBox5);
+			this->panel2->Controls->Add(this->angryPic);
+			this->panel2->Controls->Add(this->sadPic);
+			this->panel2->Controls->Add(this->wowPic);
+			this->panel2->Controls->Add(this->hahaPic);
+			this->panel2->Controls->Add(this->lovePic);
+			this->panel2->Controls->Add(this->likePic);
+			this->panel2->Controls->Add(this->reactsPic);
+			this->panel2->Controls->Add(this->pictureBox7);
+			this->panel2->Controls->Add(this->pictureBox4);
 			this->panel2->Controls->Add(this->pictureBox2);
 			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Controls->Add(this->pictureBox1);
+			this->panel2->Controls->Add(this->likesCount);
+			this->panel2->Controls->Add(this->pictureBox9);
 			this->panel2->Location = System::Drawing::Point(0, 65);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(360, 910);
+			this->panel2->Size = System::Drawing::Size(360, 577);
 			this->panel2->TabIndex = 16;
 			// 
-			// label1
+			// pictureBox6
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->pictureBox6->BackColor = System::Drawing::Color::LightGray;
+			this->pictureBox6->Location = System::Drawing::Point(10, 477);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(340, 3);
+			this->pictureBox6->TabIndex = 19;
+			this->pictureBox6->TabStop = false;
+			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox8->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
+			this->pictureBox8->Location = System::Drawing::Point(207, 487);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(100, 25);
+			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox8->TabIndex = 21;
+			this->pictureBox8->TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(0, 518);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(360, 56);
+			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox5->TabIndex = 20;
+			this->pictureBox5->TabStop = false;
+			// 
+			// angryPic
+			// 
+			this->angryPic->BackColor = System::Drawing::Color::Transparent;
+			this->angryPic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->angryPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"angryPic.Image")));
+			this->angryPic->Location = System::Drawing::Point(276, 431);
+			this->angryPic->Name = L"angryPic";
+			this->angryPic->Size = System::Drawing::Size(45, 45);
+			this->angryPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->angryPic->TabIndex = 20;
+			this->angryPic->TabStop = false;
+			// 
+			// sadPic
+			// 
+			this->sadPic->BackColor = System::Drawing::Color::Transparent;
+			this->sadPic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->sadPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"sadPic.Image")));
+			this->sadPic->Location = System::Drawing::Point(230, 431);
+			this->sadPic->Name = L"sadPic";
+			this->sadPic->Size = System::Drawing::Size(45, 45);
+			this->sadPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->sadPic->TabIndex = 20;
+			this->sadPic->TabStop = false;
+			// 
+			// wowPic
+			// 
+			this->wowPic->BackColor = System::Drawing::Color::Transparent;
+			this->wowPic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->wowPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"wowPic.Image")));
+			this->wowPic->Location = System::Drawing::Point(184, 431);
+			this->wowPic->Name = L"wowPic";
+			this->wowPic->Size = System::Drawing::Size(45, 45);
+			this->wowPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->wowPic->TabIndex = 20;
+			this->wowPic->TabStop = false;
+			// 
+			// hahaPic
+			// 
+			this->hahaPic->BackColor = System::Drawing::Color::Transparent;
+			this->hahaPic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->hahaPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"hahaPic.Image")));
+			this->hahaPic->Location = System::Drawing::Point(138, 431);
+			this->hahaPic->Name = L"hahaPic";
+			this->hahaPic->Size = System::Drawing::Size(45, 45);
+			this->hahaPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->hahaPic->TabIndex = 20;
+			this->hahaPic->TabStop = false;
+			// 
+			// lovePic
+			// 
+			this->lovePic->BackColor = System::Drawing::Color::Transparent;
+			this->lovePic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->lovePic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lovePic.Image")));
+			this->lovePic->Location = System::Drawing::Point(92, 431);
+			this->lovePic->Name = L"lovePic";
+			this->lovePic->Size = System::Drawing::Size(45, 45);
+			this->lovePic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->lovePic->TabIndex = 20;
+			this->lovePic->TabStop = false;
+			// 
+			// likePic
+			// 
+			this->likePic->BackColor = System::Drawing::Color::Transparent;
+			this->likePic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->likePic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"likePic.Image")));
+			this->likePic->Location = System::Drawing::Point(46, 431);
+			this->likePic->Name = L"likePic";
+			this->likePic->Size = System::Drawing::Size(45, 45);
+			this->likePic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->likePic->TabIndex = 20;
+			this->likePic->TabStop = false;
+			// 
+			// reactsPic
+			// 
+			this->reactsPic->BackColor = System::Drawing::Color::Transparent;
+			this->reactsPic->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->reactsPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"reactsPic.Image")));
+			this->reactsPic->Location = System::Drawing::Point(43, 429);
+			this->reactsPic->Name = L"reactsPic";
+			this->reactsPic->Size = System::Drawing::Size(280, 55);
+			this->reactsPic->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->reactsPic->TabIndex = 20;
+			this->reactsPic->TabStop = false;
+			this->reactsPic->Visible = false;
+			// 
+			// pictureBox7
+			// 
+			this->pictureBox7->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox7->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
+			this->pictureBox7->Location = System::Drawing::Point(46, 487);
+			this->pictureBox7->Name = L"pictureBox7";
+			this->pictureBox7->Size = System::Drawing::Size(60, 25);
+			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox7->TabIndex = 20;
+			this->pictureBox7->TabStop = false;
+			this->pictureBox7->Click += gcnew System::EventHandler(this, &Post::pictureBox7_Click);
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->BackColor = System::Drawing::Color::LightGray;
+			this->pictureBox4->Location = System::Drawing::Point(0, 518);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(360, 3);
+			this->pictureBox4->TabIndex = 19;
+			this->pictureBox4->TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(0, 173);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(360, 248);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox2->TabIndex = 18;
+			this->pictureBox2->TabStop = false;
+			// 
+			// label4
+			// 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(56, 10);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(98, 20);
-			this->label1->TabIndex = 16;
-			this->label1->Text = L"User Name";
+			this->label4->Location = System::Drawing::Point(7, 53);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(341, 117);
+			this->label4->TabIndex = 17;
+			this->label4->Text = resources->GetString(L"label4.Text");
 			// 
 			// label3
 			// 
@@ -164,47 +365,75 @@ namespace FBManagmentSytem {
 			this->label3->TabIndex = 16;
 			this->label3->Text = L"Time";
 			// 
-			// label4
+			// label1
 			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(7, 53);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(341, 562);
-			this->label4->TabIndex = 17;
-			this->label4->Text = resources->GetString(L"label4.Text");
+			this->label1->Location = System::Drawing::Point(56, 10);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(98, 20);
+			this->label1->TabIndex = 16;
+			this->label1->Text = L"User Name";
 			// 
-			// pictureBox2
+			// pictureBox9
 			// 
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(10, 618);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(338, 248);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox2->TabIndex = 18;
-			this->pictureBox2->TabStop = false;
+			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
+			this->pictureBox9->Location = System::Drawing::Point(12, 439);
+			this->pictureBox9->Name = L"pictureBox9";
+			this->pictureBox9->Size = System::Drawing::Size(52, 27);
+			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox9->TabIndex = 22;
+			this->pictureBox9->TabStop = false;
+			// 
+			// likesCount
+			// 
+			this->likesCount->AutoSize = true;
+			this->likesCount->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->likesCount->ForeColor = System::Drawing::Color::Black;
+			this->likesCount->Location = System::Drawing::Point(63, 443);
+			this->likesCount->Name = L"likesCount";
+			this->likesCount->Size = System::Drawing::Size(22, 17);
+			this->likesCount->TabIndex = 23;
+			this->likesCount->Text = L"35";
 			// 
 			// Post
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightGray;
-			this->ClientSize = System::Drawing::Size(360, 1100);
+			this->ClientSize = System::Drawing::Size(360, 640);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Post";
-			this->Text = L"Post";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Facebook";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->angryPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sadPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wowPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->hahaPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->lovePic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->likePic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->reactsPic))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void pictureBox7_Click(System::Object^  sender, System::EventArgs^  e);
+};
 }

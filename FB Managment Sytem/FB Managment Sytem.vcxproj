@@ -94,6 +94,7 @@
     <ClCompile Include="FriendsOP.cpp" />
     <ClCompile Include="EditPro.cpp" />
     <ClCompile Include="About.cpp" />
+    <ClCompile Include="Comments.cpp" />
     <ClCompile Include="TagForm.cpp" />
     <ClCompile Include="WritePost.cpp" />
     <ClCompile Include="Post.cpp" />
@@ -125,6 +126,9 @@
     <ClInclude Include="About.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Comments.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TagForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -150,6 +154,9 @@
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comments.resx">
+      <DependentUpon>Comments.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPro.resx">
       <DependentUpon>EditPro.h</DependentUpon>
