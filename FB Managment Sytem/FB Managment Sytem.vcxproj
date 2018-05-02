@@ -95,6 +95,7 @@
     <ClCompile Include="EditPro.cpp" />
     <ClCompile Include="About.cpp" />
     <ClCompile Include="Comments.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="TagForm.cpp" />
     <ClCompile Include="WritePost.cpp" />
     <ClCompile Include="Post.cpp" />
@@ -127,6 +128,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Comments.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Reply.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TagForm.h">
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reply.resx">
+      <DependentUpon>Reply.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.h</DependentUpon>
