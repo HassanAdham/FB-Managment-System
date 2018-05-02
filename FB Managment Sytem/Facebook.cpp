@@ -255,27 +255,10 @@ namespace FBManagmentSytem {
 
 	comment::comment()
 	{
-		Like = gcnew List<String^>();
-		Haha = gcnew List<String^>();
-		Wow = gcnew List<String^>();
-		Love = gcnew List<String^>();
-		Sad = gcnew List<String^>();
-		Angry = gcnew List<String^>();
-		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<String^>();
-		rep = gcnew List<reply^>();
-	}
-
-	reply::reply()
-	{
-		Like = gcnew List<String^>();
-		Haha = gcnew List<String^>();
-		Wow = gcnew List<String^>();
-		Love = gcnew List<String^>();
-		Sad = gcnew List<String^>();
-		Angry = gcnew List<String^>();
-		Tag = gcnew List<String^>();
-		TagSeen = gcnew List<String^>();
+		reply = gcnew List<String^>();
+		ID = "";
+		text = "";
+		reactsCount = "";
 	}
 
 }

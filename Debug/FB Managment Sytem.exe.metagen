@@ -69,24 +69,13 @@ Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializab
     FBManagmentSytem.User usr : Public
     System.String fri_stat : Public
     System.String fri__req : Public
-Class FBManagmentSytem.reply: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Collections.Generic.List`1[System.String] Tag : Public
-    System.Collections.Generic.List`1[System.String] TagSeen : Public
+    System.Collections.Generic.List`1[System.String] reply : Public
     System.String ID : Public
     System.String text : Public
-    System.Collections.Generic.List`1[System.String] Like : Public
-    System.Collections.Generic.List`1[System.String] Haha : Public
-    System.Collections.Generic.List`1[System.String] Wow : Public
-    System.Collections.Generic.List`1[System.String] Love : Public
-    System.Collections.Generic.List`1[System.String] Sad : Public
-    System.Collections.Generic.List`1[System.String] Angry : Public
-Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
-  :FBManagmentSytem.reply
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Collections.Generic.List`1[FBManagmentSytem.reply] rep : Public
+    System.String reactsCount : Public
 Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:

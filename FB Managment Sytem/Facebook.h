@@ -43,28 +43,13 @@ namespace FBManagmentSytem {
 	};
 
 	[Serializable]
-	public ref class reply
+	public ref  class comment
 	{
 	public:
-		List<String^>^ Tag;
-		List<String^>^ TagSeen;
+		List<String^>^ reply;
 		String ^ ID;
 		String^ text;
-		List<String^>^ Like;
-		List<String^>^ Haha;
-		List<String^>^ Wow;
-		List<String^>^ Love;
-		List<String^>^ Sad;
-		List<String^>^ Angry;
-		reply();
-	};
-
-	[Serializable]
-	public ref  class comment: public reply
-	{
-	public:
-
-		List<reply^>^ rep;
+		String^ reactsCount;
 		comment();
 	};
 

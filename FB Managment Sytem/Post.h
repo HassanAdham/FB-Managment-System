@@ -18,7 +18,9 @@ namespace FBManagmentSytem {
 	public:
 		Facebook ^ F;
 		User^ U;
-		Posts^ P;
+	private: System::Windows::Forms::PictureBox^  sendBtn;
+	public:
+		Posts ^ P;
 		Post(void);
 		Post(Facebook^ f, User^ u, Posts^ p);
 
@@ -97,8 +99,9 @@ namespace FBManagmentSytem {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->likesCount = (gcnew System::Windows::Forms::Label());
+			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
+			this->sendBtn = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->backBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -117,6 +120,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendBtn))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -174,6 +178,7 @@ namespace FBManagmentSytem {
 			// 
 			this->panel2->AutoScroll = true;
 			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Controls->Add(this->sendBtn);
 			this->panel2->Controls->Add(this->pictureBox6);
 			this->panel2->Controls->Add(this->pictureBox8);
 			this->panel2->Controls->Add(this->pictureBox5);
@@ -381,16 +386,6 @@ namespace FBManagmentSytem {
 			this->label1->TabIndex = 16;
 			this->label1->Text = L"User Name";
 			// 
-			// pictureBox9
-			// 
-			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
-			this->pictureBox9->Location = System::Drawing::Point(12, 439);
-			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(52, 27);
-			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox9->TabIndex = 22;
-			this->pictureBox9->TabStop = false;
-			// 
 			// likesCount
 			// 
 			this->likesCount->AutoSize = true;
@@ -402,6 +397,26 @@ namespace FBManagmentSytem {
 			this->likesCount->Size = System::Drawing::Size(22, 17);
 			this->likesCount->TabIndex = 23;
 			this->likesCount->Text = L"35";
+			// 
+			// pictureBox9
+			// 
+			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
+			this->pictureBox9->Location = System::Drawing::Point(12, 439);
+			this->pictureBox9->Name = L"pictureBox9";
+			this->pictureBox9->Size = System::Drawing::Size(52, 27);
+			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox9->TabIndex = 22;
+			this->pictureBox9->TabStop = false;
+			// 
+			// sendBtn
+			// 
+			this->sendBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"sendBtn.Image")));
+			this->sendBtn->Location = System::Drawing::Point(311, 536);
+			this->sendBtn->Name = L"sendBtn";
+			this->sendBtn->Size = System::Drawing::Size(25, 25);
+			this->sendBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->sendBtn->TabIndex = 28;
+			this->sendBtn->TabStop = false;
 			// 
 			// Post
 			// 
@@ -435,6 +450,7 @@ namespace FBManagmentSytem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sendBtn))->EndInit();
 			this->ResumeLayout(false);
 
 		}
