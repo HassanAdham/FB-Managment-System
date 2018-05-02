@@ -55,7 +55,7 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 	List<String^>^TagSeen = gcnew List<String^>();
 	for (int i = 0; i < tagged_userss->Count; i++)
 	{
-		TagSeen[i] = "0";
+		TagSeen->Add("0");
 	}
 
 	p->text = postTxt->Text;
@@ -75,7 +75,7 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 	p->UserID = U->id;
 	p->userr = U;
 	String^ x = DateTime::Now.ToString();
-	array<String^>^ arr = x->Split(':','/',' ');
+	array<String^>^ arr = x->Split(':', '/', ' ');
 	String^ day = arr[1];
 	String^ month;
 	if (arr[0] == "1")
@@ -112,11 +112,29 @@ System::Void FBManagmentSytem::WritePost::postBtn_Click(System::Object ^ sender,
 	/*p->Insert_post(p);*/
 	pi->Tag = tagged_userss;
 	pi->TagSeen = TagSeen;
-
+	List<String^>^tagged_id = gcnew List<String^>();
+	List<Friends^>^ListOfFriends = F->f[0];
+	if (tagged_userss->Count != 0) {
+		for (int i = 0;i < tagged_userss->Count;i++) {
+			for (int j = 0;j < ListOfFriends->Count;j++) {
+				if (tagged_userss[i] == ListOfFriends[j]->usr->username())
+				{
+					tagged_id->Add(ListOfFriends[j]->usr->id);
+				}
+			}
+		}
+	}
 	if (F->AllPosts->Count == 0) {
 		for (int i = 0; i < F->f->Count; i++) {
 			List<PostInfo^>^Lpi = gcnew List<PostInfo^>();
-			if (i + 1 == Int32::Parse(U->id))
+			bool b = false;
+			for (int j = 0;j < tagged_id->Count;j++) {
+				if (i + 1 == Int32::Parse(tagged_id[j]))
+				{
+					b = true;
+				}
+			}
+			if (i + 1 == Int32::Parse(U->id) || b == true)
 				pi->PostStat = "1";
 			else {
 				String^ req, ^ stat;

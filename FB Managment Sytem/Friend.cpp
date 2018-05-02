@@ -70,6 +70,14 @@ System::Void FBManagmentSytem::Friend::bunifuFlatButton1_Click(System::Object ^ 
 				break;
 			}
 		}
+		List<PostInfo^>^ postlist1 = F->AllPosts[Int32::Parse(U2->id) - 1];
+		for (int i = 0; i < postlist1->Count; i++)
+		{
+			if (postlist1[i]->post->userr->id == U1->id&&postlist1[i]->post->isPub == "0") {
+				postlist1[i]->PostStat = "2";
+
+			}
+		}
 	}
 	else
 	{
@@ -89,6 +97,14 @@ System::Void FBManagmentSytem::Friend::bunifuFlatButton1_Click(System::Object ^ 
 			if (y[i]->usr->id == U2->id) {
 				y[i]->fri_stat = "1";
 				break;
+			}
+		}
+		List<PostInfo^>^ postlist1 = F->AllPosts[Int32::Parse(U2->id) - 1];
+		for (int i = 0; i < postlist1->Count; i++)
+		{
+			if (postlist1[i]->post->userr->id == U1->id&&postlist1[i]->post->isPub == "0") {
+				postlist1[i]->PostStat = "0";
+
 			}
 		}
 	}
@@ -120,6 +136,22 @@ System::Void FBManagmentSytem::Friend::unfriBtn_Click(System::Object ^ sender, S
 		if (y[i]->usr->id == U1->id) {
 			y[i]->fri__req = "0";
 			break;
+		}
+	}
+	List<PostInfo^>^ postlist1 = F->AllPosts[Int32::Parse(U1->id) - 1];
+	for (int i = 0; i < postlist1->Count; i++)
+	{
+		if (postlist1[i]->post->userr->id == U2->id) {
+			postlist1[i]->PostStat = "0";
+
+		}
+	}
+	List<PostInfo^>^ postlist2 = F->AllPosts[Int32::Parse(U2->id) - 1];
+	for (int i = 0; i < postlist2->Count; i++)
+	{
+		if (postlist2[i]->post->userr->id == U1->id) {
+			postlist2[i]->PostStat = "0";
+
 		}
 	}
 	F->serStruct();
