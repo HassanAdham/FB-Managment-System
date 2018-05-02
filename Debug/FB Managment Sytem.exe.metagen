@@ -69,12 +69,18 @@ Class FBManagmentSytem.Friends: AutoLayout, AnsiClass, Class, Public, Serializab
     FBManagmentSytem.User usr : Public
     System.String fri_stat : Public
     System.String fri__req : Public
+Class FBManagmentSytem.Reply: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.User user : Public
+    System.String text : Public
 Class FBManagmentSytem.comment: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Collections.Generic.List`1[System.String] reply : Public
+    System.Collections.Generic.List`1[FBManagmentSytem.Reply] reply : Public
     System.String ID : Public
     System.String text : Public
+    FBManagmentSytem.User user : Public
     System.String reactsCount : Public
 Class FBManagmentSytem.Posts: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -199,4 +205,6 @@ Class FBManagmentSytem.EditPro: AutoLayout, AnsiClass, Class, Public, BeforeFiel
     FBManagmentSytem.User U : Public
 Class FBManagmentSytem.Comments: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FBManagmentSytem.Facebook F : Public
+    FBManagmentSytem.User U : Public

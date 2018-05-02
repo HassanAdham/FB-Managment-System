@@ -255,10 +255,17 @@ namespace FBManagmentSytem {
 
 	comment::comment()
 	{
-		reply = gcnew List<String^>();
+		reply = gcnew List<Reply^>();
 		ID = "";
 		text = "";
 		reactsCount = "";
+		user = gcnew User();
+	}
+
+	Reply::Reply()
+	{
+		user = gcnew User();
+		text = "";
 	}
 
 }

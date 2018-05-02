@@ -43,12 +43,22 @@ namespace FBManagmentSytem {
 	};
 
 	[Serializable]
+	public ref  class Reply
+	{
+	public:
+		User ^ user;
+		String^ text;
+		Reply();
+	};
+
+	[Serializable]
 	public ref  class comment
 	{
 	public:
-		List<String^>^ reply;
+		List<Reply^>^ reply;
 		String ^ ID;
 		String^ text;
+		User^ user;
 		String^ reactsCount;
 		comment();
 	};
